@@ -1,8 +1,7 @@
 const { product } = require("../models");
 const db = require("../models");
 var mongoose = require('mongoose');
-var mongodb = require('mongodb');
-const Product = db.product;
+var Product = mongoose.model('product');
 var Category = mongoose.model('category');
 // const Category = db.category;
 const serializeProduct = require("./serializers/product_serializers")
@@ -45,8 +44,7 @@ exports.findAll = async (req, res) => {
     var condition = prod_nom ? { prod_nom: { $regex: new RegExp(prod_nom), $options: "i" } } : {};
 
     const data_producto = await Product.find(condition);
-    res.json(serializeProduct.serializeAllProcucts(data_producto));
-      // data_producto.toJSONFor();
+    res.json(serializeProduct.serializeAllProducts(data_producto));
 
   } catch (error) {
     res.status(500).send({
@@ -64,8 +62,8 @@ exports.findOne = async (req, res) => {
     if (!product)
       res.status(404).send({ message: "Not found Tutorial with id " + id });
     else {
-      res.send(product);
-      // res.json(serializeProduct.serializeOneProcuct(product));
+      res.send(product.toJSONFor());
+      // res.json(serializeProduct.serializeOneProduct(product));
     }
   } catch (error) {
     res

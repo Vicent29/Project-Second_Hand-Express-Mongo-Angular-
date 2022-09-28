@@ -22,7 +22,7 @@ module.exports = app => {
   router.delete("/:id", category.delete);
 
   // Retrieve all products category
-  router.get("/product/:slug", category.findcategoryproduct);
+  router.get("/product/:slug", category.FindProductByCategory);
 
   // Create a new category
   router.delete("/", category.deleteAll);

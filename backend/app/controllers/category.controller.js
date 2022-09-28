@@ -1,6 +1,8 @@
-const { category } = require("../models");
+const { category, product } = require("../models");
 const db = require("../models");
-const Category = db.category;
+var mongoose = require('mongoose');
+var Category = mongoose.model('category');
+var Product = mongoose.model('product');
 const serializeCategory = require('./serializers/serializers_category');
 
 // Create and Save a new Category
@@ -108,11 +110,11 @@ exports.delete = async (req, res) => {
 };
 
 // Find de products with that category
-exports.findcategoryproduct = async (req, res) => {
+exports.FindProductByCategory = async (req, res) => {
   try {
-    const test = await Category.find({ slug: "kjhkjhkj-z8d1q3" });
-    // {slug : req.params.slug}
-    res.json(test)
+    const category = await Category.findOne({ slug: req.params.slug })
+    const products = await Product.find({id_prod_cat : category.slug})
+    res.json(products.map(product => product.toJSONFor()));
   } catch (error) {
     res.json("error");
   }

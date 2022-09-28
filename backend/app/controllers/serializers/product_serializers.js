@@ -1,6 +1,6 @@
 
 module.exports = {
-    serializeOneProcuct(product) {
+    serializeOneProduct(product) {
         return {
             id: product._id,
             slug: product.slug,
@@ -15,7 +15,7 @@ module.exports = {
 }
 
 module.exports = {
-    serializeAllProcucts(product) {
+    serializeAllProducts(product) {
         console.log(product);
         const data_prod = [];
         for (let i = 0; i < product.length; i++) {
