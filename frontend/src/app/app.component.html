@@ -1,0 +1,32 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">SV-Second Hand</a>
+    <div class="navbar-nav mr-auto">
+      <ul class="menu">
+        <li><a>WALLAPOP LIST</a>
+          <ul class="submenu">
+            <li class="nav-item">
+              <a routerLink="product" class="nav-link">List products</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="category" class="nav-link">List categories</a>
+            </li>
+          </ul>
+        </li>
+        <li><a>WALLAPOP ADD</a>
+          <ul class="submenu">
+            <li class="nav-item">
+              <a routerLink="product/add_prod" class="nav-link">Add product</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="category/add_cat" class="nav-link">Add category</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>
