@@ -60,7 +60,7 @@ exports.findOne = async (req, res) => {
   try {
     let product = await Product.findOne({ slug: id })
     if (!product)
-      res.status(404).send({ message: "Not found Tutorial with id " + id });
+      res.status(404).send({ message: "Not found Product with id " + id });
     else {
       res.send(product.toJSONFor());
       // res.json(serializeProduct.serializeOneProduct(product));

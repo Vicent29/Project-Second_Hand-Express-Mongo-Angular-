@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 // Configuring the database
-const dbConfig=process.env.MONGO_URI;
+const dbConfig = process.env.MONGO_URI;
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
@@ -38,14 +38,13 @@ mongoose.connect(dbConfig, {
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({ "message": "Welcome to Secon Hand application. Take notes quickly. Organize and keep track of all your notes." });
+    res.json({ "message": "Welcome to Secon Hand application. Take notes quickly. Organize and keep track of all your products." });
 });
 
-require('./app/routes/product.routes.js')(app);
-require('./app/routes/category.routes.js')(app);
+app.use(require("./app/routes"));
 
 // listen for requests
-const PORT= process.env.PORT
+const PORT = process.env.PORT
 app.listen(PORT, () => {
     console.log("Server is listening on port 3000");
 });

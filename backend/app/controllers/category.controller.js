@@ -37,7 +37,7 @@ exports.findAll = async (req, res) => {
   } catch (error) {
     res.status(500).send({
       message:
-        error.message || "Some error occurred while retrieving tutorials."
+        error.message || "Some error occurred while retrieving category."
     });
   }
 };
@@ -61,7 +61,7 @@ exports.findOne = async (req, res) => {
 
 };
 
-// Update a Tutorial by the id in the request
+// Update a Category by the id in the request
 exports.update = async (req, res) => {
   if (!req.body) {
     return res.status(400).send({
@@ -82,12 +82,12 @@ exports.update = async (req, res) => {
 
   } catch (error) {
     res.status(404).send({
-      message: `Cannot update Tutorial with id=${req.params.id}. Maybe Tutorial was not found!`
+      message: `Cannot update Category with id=${req.params.id}. Maybe Category was not found!`
     });
   }
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete a Category with the specified id in the request
 exports.delete = async (req, res) => {
   const id = req.params.id;
 
@@ -104,7 +104,7 @@ exports.delete = async (req, res) => {
 
   } catch (error) {
     res.status(404).send({
-      message: `Cannot delete Tutorial with id=${id}. Maybe Tutorial was not found!`
+      message: `Cannot delete Category with id=${id}. Maybe Category was not found!`
     });
   }
 };
@@ -136,7 +136,7 @@ exports.deleteAll = async (req, res) => {
   }
 }
 
-// Find all published Tutorials
+// Find all published Category
 exports.findAllPublished = async (req, res) => {
   try {
     Category.find({ published: true })
@@ -144,7 +144,7 @@ exports.findAllPublished = async (req, res) => {
   } catch (error) {
     res.status(500).send({
       message:
-        err.message || "Some error occurred while retrieving tutorials."
+        err.message || "Some error occurred while retrieving Category."
     });
   }
 };
