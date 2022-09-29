@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { ProductListComponent } from './components/product-list/product-list.component';
-// import { ProductDetailsComponent } from './components/product-details/product-details.component';
-// import { AddProductComponent } from './components/add-product/add-product.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'product', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: 'category',
+    path: 'home',
     loadChildren: () =>
-      import('./category.module').then((m) => m.CategoryModule),
+      import('./home/home-module').then((m) => m.HomeModule),
   },
   {
-    path: 'product',
+    path: 'shopt',
     loadChildren: () =>
-      import('./product.module').then((m) => m.ProductModule),
+      import('./shop/shop-module').then((m) => m.ShopModule),
   },
 ];
 

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRUD_Express_Mongo_Angular';
+  title = 'Express_Mongo_Angular';
 }

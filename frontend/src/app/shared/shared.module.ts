@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
-import { ListCategoryComponent } from './list-category/list-category.component';
-import { ListProductsComponent } from './list-products/list-products.component';
+import { CategoryListComponent } from './list-category/list-category.component';
+import { ProductListComponent } from './list-products/list-product.component';
 
 @NgModule({
   imports: [
@@ -16,8 +16,8 @@ import { ListProductsComponent } from './list-products/list-products.component';
     RouterModule,
   ],
   declarations: [
-    ListCategoryComponent,
-    ListProductsComponent,
+    CategoryListComponent,
+    // ProductListComponent,
   ],
   exports: [
     CommonModule,
@@ -25,8 +25,8 @@ import { ListProductsComponent } from './list-products/list-products.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    ListCategoryComponent,
-    ListProductsComponent,
+    CategoryListComponent,
+    // ProductListComponent,
   ],
 })
 export class SharedModule {}
