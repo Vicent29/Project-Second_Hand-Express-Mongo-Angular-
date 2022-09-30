@@ -11,7 +11,7 @@ const baseUrl = 'http://localhost:3000/category';
 
 export class CategoryService {
   constructor(private http: HttpClient) { }
-  getAll(): Observable<Category[]> {
+  getAll_Categoies(): Observable<Category[]> {
     return this.http.get<Category[]>(baseUrl);
   }
 

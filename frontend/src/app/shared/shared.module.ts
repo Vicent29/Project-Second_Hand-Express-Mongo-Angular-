@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { CategoryListComponent } from './list-category/list-category.component';
-import { ProductListComponent } from './list-products/list-product.component';
+// import { ProductListComponent } from './list-products/list-product.component';
 
 @NgModule({
   imports: [

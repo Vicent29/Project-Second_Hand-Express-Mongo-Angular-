@@ -12,7 +12,7 @@ const baseUrl = 'http://localhost:3000/product';
 export class ProductService {
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Product[]> {
+  getAll_Products(): Observable<Product[]> {
     return this.http.get<Product[]>(baseUrl);
   }
 

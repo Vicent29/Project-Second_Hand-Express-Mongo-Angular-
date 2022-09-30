@@ -13,10 +13,15 @@ import { AppComponent } from './app.component';
 import {SharedModule } from './shared';
 import { CoreModule } from './core/core.module';
 
+import { HeaderComponent } from './shared/layout/index';
+import { FooterComponent } from './shared/layout/index';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
