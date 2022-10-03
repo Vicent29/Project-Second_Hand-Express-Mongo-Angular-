@@ -5,7 +5,7 @@ button {
 
 header {
     height: 110px;
-    background-color: #333;
+    background-color: black;
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -32,4 +32,9 @@ header nav button {
     font-size: 1.2em;
     background-color: mintcream;
     border-radius: 20px;
+}
+
+header nav button:hover{
+  background-color: rgb(142, 207, 240);
+  font-weight: bold;
 }
