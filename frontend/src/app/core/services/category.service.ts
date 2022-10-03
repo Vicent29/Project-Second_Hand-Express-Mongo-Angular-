@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Category } from '../models/category.model';
+import { Product } from '../models/product.model';
 
 const baseUrl = 'http://localhost:3000/category';
 
@@ -11,7 +12,7 @@ const baseUrl = 'http://localhost:3000/category';
 
 export class CategoryService {
   constructor(private http: HttpClient) { }
-  getAll_Categoies(): Observable<Category[]> {
+  getAll_Category(): Observable<Category[]> {
     return this.http.get<Category[]>(baseUrl);
   }
 
@@ -19,6 +20,12 @@ export class CategoryService {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
+  FindProductByCategory(slug: any): Observable<Product[]> {
+    return this.http.get<Product[]>(`${baseUrl}/product/${slug}`);
+    // getAll_Products(): Observable<Product[]> {
+    //   return this.http.get<Product[]>(baseUrl);
+    // }
+  }
 
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);

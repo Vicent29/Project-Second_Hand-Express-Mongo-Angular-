@@ -3,11 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShopComponent } from './shop.component';
 
 const routes: Routes = [
-  { path: '', component: ShopComponent }
+  {
+    path: '',
+    component: ShopComponent,
+    resolve: {},
+  },
+  {
+    path: 'category/:slug',
+    component: ShopComponent,
+    resolve: {},
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ShopRoutingModule { }
+
+export class ShopRoutingModule {}

@@ -8,11 +8,15 @@ import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [ShopComponent],
   imports: [
     CommonModule,
     ShopRoutingModule,
     SharedModule
+  ],
+  declarations: [
+    ShopComponent
+  ],
+  providers: [
   ]
 })
 export class ShopModule { }

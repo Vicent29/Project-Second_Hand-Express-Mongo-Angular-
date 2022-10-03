@@ -19,7 +19,7 @@ export class CategoryListComponent implements OnInit {
   }
 
   showCategorys() {
-    this.CategoryService.getAll_Categoies().subscribe((data) => {
+    this.CategoryService.getAll_Category().subscribe((data) => {
       this.categories= data;
     })
   }
