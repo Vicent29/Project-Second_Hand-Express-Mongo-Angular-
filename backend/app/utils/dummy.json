@@ -1,0 +1,80 @@
+[
+    {
+        "id_cat": "Coches",
+        "cat_name": "Coches",
+        "img_cat": "coches.png",
+        "products": []
+    },
+    {
+        "id_cat": "Motos",
+        "cat_name": "Motos",
+        "img_cat": "motos.png",
+        "products": []
+    },
+    {
+        "id_cat": "Moda",
+        "cat_name": "Moda",
+        "img_cat": "moda.png",
+        "products": []
+    },
+    {
+        "id_cat": "Inmobiliaria",
+        "cat_name": "Inmobiliaria",
+        "img_cat": "inmobiliaria.png",
+        "products": []
+    },
+    {
+        "id_cat": "Libros",
+        "cat_name": "Libros",
+        "img_cat": "libros.png",
+        "products": []
+    },
+    {
+        "id_cat": "Electrodomesticos",
+        "cat_name": "Electrodomesticos",
+        "img_cat": "electrodomesticos.png",
+        "products": []
+    },
+    {
+        "id_cat": "Videojuegos",
+        "cat_name": "Videojuegos",
+        "img_cat": "videojuegos.png",
+        "products": []
+    },
+    {
+        "id_cat": "Moviles",
+        "cat_name": "Moviles",
+        "img_cat": "moviles.png",
+        "products": []
+    },
+    {
+        "id_cat": "Informatica",
+        "cat_name": "Informatica",
+        "img_cat": "informatica.png",
+        "products": []
+    },
+    {
+        "id_cat": "Deportes",
+        "cat_name": "Deportes",
+        "img_cat": "deportes.png",
+        "products": []
+    },
+    {
+        "id_cat": "Bicicletas",
+        "cat_name": "Bicicletas",
+        "img_cat": "bicicletas.png",
+        "products": []
+    },
+    {
+        "id_cat": "Hogar",
+        "cat_name": "Hogar",
+        "img_cat": "hogar.png",
+        "products": []
+    },
+    {
+        "id_cat": "Cine",
+        "cat_name": "Cine",
+        "img_cat": "cine.png",
+        "products": []
+    }
+]

@@ -5,8 +5,6 @@ var Category = mongoose.model('category');
 const category = require("../../controllers/category.controller.js");
 const serializeCategory = require('../../controllers/serializers/serializers_category');
 
-var router = require("express").Router();
-
 // Create a new category
 router.post("/", category.create);
 

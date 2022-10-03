@@ -20,6 +20,7 @@ module.exports = {
                 slug: category[i].slug || null,
                 id_cat: category[i].id_cat || null,
                 cat_name: category[i].cat_name || null,
+                img_cat: category[i].img_cat || null,
                 products: category[i].products || null,
 
             });

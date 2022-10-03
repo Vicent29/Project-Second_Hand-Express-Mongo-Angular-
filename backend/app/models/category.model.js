@@ -8,6 +8,7 @@ module.exports = mongoose => {
       slug: { type: String, lowercase: true, unique: true },
       id_cat: String,
       cat_name: String,
+      img_cat: String,
       products: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
     },
     { timestamps: true }
