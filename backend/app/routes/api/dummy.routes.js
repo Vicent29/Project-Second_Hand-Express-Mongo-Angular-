@@ -10,6 +10,7 @@ router.get("/", (req, res) => {
     dummies.map(dummy => {
         // const category = category.send(dummy);
         prueba.push(new Category({
+            slug : dummy.slug,
             id_cat: dummy.id_cat || null,
             cat_name: dummy.cat_name || null,
             img_cat: dummy.img_cat || null,

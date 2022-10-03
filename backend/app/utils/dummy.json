@@ -1,77 +1,90 @@
 [
     {
+        "slug": "Coches-asdfgh",
         "id_cat": "Coches",
         "cat_name": "Coches",
         "img_cat": "coches.png",
         "products": []
     },
     {
+        "slug": "Motos-asdfgh",
         "id_cat": "Motos",
         "cat_name": "Motos",
         "img_cat": "motos.png",
         "products": []
     },
     {
+        "slug": "Moda-asdfgh",
         "id_cat": "Moda",
         "cat_name": "Moda",
         "img_cat": "moda.png",
         "products": []
     },
     {
+        "slug": "Inmobiliaria-asdfgh",
         "id_cat": "Inmobiliaria",
         "cat_name": "Inmobiliaria",
         "img_cat": "inmobiliaria.png",
         "products": []
     },
     {
+        "slug": "Libros-asdfgh",
         "id_cat": "Libros",
         "cat_name": "Libros",
         "img_cat": "libros.png",
         "products": []
     },
     {
+        "slug": "Electrodomesticos-asdfgh",
         "id_cat": "Electrodomesticos",
         "cat_name": "Electrodomesticos",
         "img_cat": "electrodomesticos.png",
         "products": []
     },
     {
+        "slug": "Videojuegos-asdfgh",
         "id_cat": "Videojuegos",
         "cat_name": "Videojuegos",
         "img_cat": "videojuegos.png",
         "products": []
     },
     {
+        "slug": "Moviles-asdfgh",
         "id_cat": "Moviles",
         "cat_name": "Moviles",
         "img_cat": "moviles.png",
         "products": []
     },
     {
+        "slug": "Informatica-asdfgh",
         "id_cat": "Informatica",
         "cat_name": "Informatica",
         "img_cat": "informatica.png",
         "products": []
     },
     {
+        "slug": "Deportes-asdfgh",
         "id_cat": "Deportes",
         "cat_name": "Deportes",
         "img_cat": "deportes.png",
         "products": []
     },
     {
+        "slug": "Bicicicletas-asdfgh",
         "id_cat": "Bicicletas",
         "cat_name": "Bicicletas",
         "img_cat": "bicicletas.png",
         "products": []
     },
     {
+        "slug": "Hogar-asdfgh",
         "id_cat": "Hogar",
         "cat_name": "Hogar",
         "img_cat": "hogar.png",
         "products": []
     },
     {
+        "slug": "Cine-asdfgh",
         "id_cat": "Cine",
         "cat_name": "Cine",
         "img_cat": "cine.png",
