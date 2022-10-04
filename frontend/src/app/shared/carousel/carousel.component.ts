@@ -5,7 +5,7 @@ import { CategoryService } from 'src/app/core/services/category.service';
 @Component({
     selector: 'app-carousel',
     templateUrl: './carousel.component.html',
-    styleUrls: [],
+    styleUrls: ['./carousel.component.css'],
 })
 
 export class Carouselslide {
@@ -13,10 +13,12 @@ export class Carouselslide {
 
     slides_cat?: Category[] = [];
     slides: string[] = [];
+    total?: number;
     i = 0;
 
     ngOnInit(): void {
         this.getCategory();
+        this.prueba();
     }
 
     getCategory() {
@@ -29,6 +31,10 @@ export class Carouselslide {
         })
     }
 
+    prueba(){
+        this.total = 4;
+    }
+
     getSlide() {
         return this.slides[this.i];
     }
@@ -39,6 +45,15 @@ export class Carouselslide {
     //edit here    
     getNext() {
         this.i = this.i === this.slides.length ? this.i : this.i + 1;
+    }
+
+    gotoSlide(newi : any) {
+        this.i = newi;
+        this.getSlide();
+    }
+
+    clickSlide(id : any) {
+        console.log(id);
     }
 
 

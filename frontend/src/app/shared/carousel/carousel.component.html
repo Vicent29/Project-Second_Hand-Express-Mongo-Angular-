@@ -1,8 +1,9 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
     <div class="carousel-inner" role="listbox">
-        <img src="../../../assets/img/category/{{ getSlide() }}" alt="slide">
+        <img src="../../../assets/img/category/{{ getSlide() }}" (click)="clickSlide(getSlide())" alt="slide" class="image">
     </div>
+    <span *ngFor="let a of slides; let i = index" class="dot a{{i}}" (click)='gotoSlide(i)'></span>
 
     <button (click)='getPrev()'>Prev</button>
 

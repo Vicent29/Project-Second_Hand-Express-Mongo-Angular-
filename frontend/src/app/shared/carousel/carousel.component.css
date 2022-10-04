@@ -1,0 +1,16 @@
+.dot {
+    display: inline-flex;
+    /* float: right; */
+    width: 20px;
+    height: 20px;
+    border-radius: 60%;
+    background-color: red !important;
+    /* margin-bottom: 50px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+}
