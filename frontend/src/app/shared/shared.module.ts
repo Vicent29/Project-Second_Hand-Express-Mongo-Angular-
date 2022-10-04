@@ -7,7 +7,9 @@ import { RouterModule } from '@angular/router';
 import { CategoryListComponent } from './list-category/list-category.component';
 import { ProductListComponent } from './list-product/list-product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { CarouselListComponent } from './carousel/carousel.component';
+import { Carouselslide } from './carousel/carousel.component';
+
+
 
 @NgModule({
   imports: [
@@ -21,7 +23,7 @@ import { CarouselListComponent } from './carousel/carousel.component';
     CategoryListComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    CarouselListComponent,
+    Carouselslide
   ],
   exports: [
     CommonModule,
@@ -32,7 +34,7 @@ import { CarouselListComponent } from './carousel/carousel.component';
     CategoryListComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    CarouselListComponent
+    Carouselslide
   ],
 })
 export class SharedModule {}
