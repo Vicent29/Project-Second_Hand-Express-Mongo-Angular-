@@ -1,16 +1,70 @@
-.dot {
-    display: inline-flex;
-    /* float: right; */
-    width: 20px;
-    height: 20px;
-    border-radius: 60%;
-    background-color: red !important;
-    /* margin-bottom: 50px; */
-    margin-left: auto;
-    margin-right: auto;
+#carousel_div {
+  color: #f33784;
+  width: 80%;
+  height: 80px;
+  margin-left: 38%;
+  margin-top: 3%;
 }
 
+.arrow_prev {
+  float: left;
+  width: 3%;
+  margin-left: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border: 0px;
+  background-color: white;
+}
+
+.arrow_prev img {
+  width: 100%;
+  height: 100%;
+}
+
+.div_img {
+  float: left;
+  width: auto;
+  height: auto;
+  margin-top: -2.5%;
+  margin-left: 8%;
+}
 .image {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
+}
+
+.arrow_next {
+  width: 3%;
+  margin-top: 1%;
+  float: right;
+  margin-right: 70%;
+  border: 0px;
+  background-color: white;
+}
+
+.arrow_next img {
+  width: 100%;
+  height: 100%;
+}
+.div_dots {
+  margin-bottom: 2%;
+  margin-left: 47%;
+}
+
+.dot {
+  float: left;
+  width: 11px;
+  height: 11px;
+  border-radius: 60%;
+  background-color: white;
+  border: solid 1px black;
+  margin-bottom: 5%;
+}
+
+.active, .dot:hover {
+  background-color: gray;
+}
+
+.dot_active {
+  background-color: black !important;
 }

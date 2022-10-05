@@ -22,9 +22,6 @@ export class CategoryService {
 
   FindProductByCategory(slug: any): Observable<Product[]> {
     return this.http.get<Product[]>(`${baseUrl}/product/${slug}`);
-    // getAll_Products(): Observable<Product[]> {
-    //   return this.http.get<Product[]>(baseUrl);
-    // }
   }
 
   create(data: any): Observable<any> {

@@ -1,4 +1,4 @@
-<div *ngIf="listProducts.length == 0">No products</div>
+<div *ngIf="listProducts.length == 0"></div>
 <div *ngIf="listProducts" class="container">
     <app-product-details class="item" *ngFor="let product of listProducts" [product]="product"></app-product-details>
 </div>

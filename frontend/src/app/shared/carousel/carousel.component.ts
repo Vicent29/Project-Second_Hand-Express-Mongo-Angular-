@@ -18,7 +18,6 @@ export class Carouselslide {
 
     ngOnInit(): void {
         this.getCategory();
-        this.prueba();
     }
 
     getCategory() {
@@ -31,13 +30,10 @@ export class Carouselslide {
         })
     }
 
-    prueba() {
-        this.total = 4;
-    }
-
     getSlide() {
         return this.slides[this.i];
     }
+
 
     getPrev() {
         this.i = this.i === 0 ? 0 : this.i - 1;
@@ -50,6 +46,18 @@ export class Carouselslide {
     gotoSlide(newi: any) {
         this.i = newi;
         this.getSlide();
+        this.currentDotStyle();
     }
+
+    currentDotStyle() {
+        const cat_lenght = this.slides.length;
+        for (let i = 0; i < cat_lenght; i++) {
+            const currentDot = document.getElementById("dot"+ i) || null;
+            currentDot!.classList.remove("dot_active");
+        }
+        const currentDot = document.getElementById("dot"+ this.i) || null;
+        currentDot!.className += " dot_active";
+    }
+    
 
 }
