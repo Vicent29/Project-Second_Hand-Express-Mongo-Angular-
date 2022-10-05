@@ -113,12 +113,24 @@ exports.delete = async (req, res) => {
 
 // Find de products with that category
 exports.FindProductByCategory = async (req, res) => {
-  try {
-    const category = await Category.findOne({ slug: req.params.slug })
-    const products = await Product.find({ id_prod_cat: category.slug })
-    res.json(products.map(product => product.toJSONFor()));
-  } catch (error) {
-    res.json("error");
+  // res.json("pep");
+  if (req.params.slug.indexOf('-')) {
+    try {
+      let first = req.params.slug.substr(0, 1).toUpperCase();
+      const category = await Category.findOne({ cat_name: first + req.params.slug.replace(/\.[^/.]+$/, "").substr(1) })
+      const products = await Product.find({ id_prod_cat: category.slug })
+      res.json(products.map(product => product.toJSONFor()))
+    } catch (err) {
+      res.json(err);
+    }
+  } else {
+    try {
+      const category = await Category.findOne({ slug: req.params.slug })
+      const products = await Product.find({ id_prod_cat: category.slug })
+      res.json(products.map(product => product.toJSONFor()));
+    } catch (error) {
+      res.json("eee");
+    }
   }
 }
 

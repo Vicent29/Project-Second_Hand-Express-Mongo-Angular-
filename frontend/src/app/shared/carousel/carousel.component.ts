@@ -31,7 +31,7 @@ export class Carouselslide {
         })
     }
 
-    prueba(){
+    prueba() {
         this.total = 4;
     }
 
@@ -44,17 +44,12 @@ export class Carouselslide {
     }
     //edit here    
     getNext() {
-        this.i = this.i === this.slides.length ? this.i : this.i + 1;
+        this.i = this.i === this.slides.length - 1 ? this.i : this.i + 1;
     }
 
-    gotoSlide(newi : any) {
+    gotoSlide(newi: any) {
         this.i = newi;
         this.getSlide();
     }
-
-    clickSlide(id : any) {
-        console.log(id);
-    }
-
 
 }
