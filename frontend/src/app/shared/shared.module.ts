@@ -8,6 +8,8 @@ import { CategoryListComponent } from './list-category/list-category.component';
 import { ProductListComponent } from './list-product/list-product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { Carouselslide } from './carousel/carousel.component';
+import {InfiniteScroll} from './infinite-scroll/inf-scroll.component'
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 
@@ -18,12 +20,14 @@ import { Carouselslide } from './carousel/carousel.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+    InfiniteScrollModule
   ],
   declarations: [
     CategoryListComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    Carouselslide
+    Carouselslide,
+    InfiniteScroll
   ],
   exports: [
     CommonModule,
@@ -34,7 +38,8 @@ import { Carouselslide } from './carousel/carousel.component';
     CategoryListComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    Carouselslide
+    Carouselslide,
+    InfiniteScroll
   ],
 })
 export class SharedModule {}

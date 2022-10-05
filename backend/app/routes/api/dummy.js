@@ -10,7 +10,6 @@ router.get("/", (req, res) => {
         Category.collection.drop();
         let category = [];
         dummies.map(dummy => {
-            // const category = category.send(dummy);
             category.push(new Category({
                 slug: dummy.slug,
                 id_cat: dummy.id_cat || null,
