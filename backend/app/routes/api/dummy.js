@@ -15,6 +15,7 @@ router.get("/", (req, res) => {
                 id_cat: dummy.id_cat || null,
                 cat_name: dummy.cat_name || null,
                 img_cat: dummy.img_cat || null,
+                img_cat2: dummy.img_cat2 || null,
             }))
         })
         Category.insertMany(category);

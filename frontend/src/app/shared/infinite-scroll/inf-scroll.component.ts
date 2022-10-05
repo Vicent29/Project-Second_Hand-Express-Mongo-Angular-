@@ -39,7 +39,6 @@ export class InfiniteScroll {
     addItems(startIndex: number, endIndex = this.sum, _method: string) {
         for (let i = startIndex; (i < (startIndex + endIndex)) && (i < this.data_cat.length); ++i) {
             this.total++;
-            console.log(this.total);
             this.data['push'](this.data_cat[i])
         }
     }

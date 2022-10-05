@@ -9,6 +9,7 @@ module.exports = mongoose => {
       id_cat: String,
       cat_name: String,
       img_cat: String,
+      img_cat2: String,
       products: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
     },
     { timestamps: true }
