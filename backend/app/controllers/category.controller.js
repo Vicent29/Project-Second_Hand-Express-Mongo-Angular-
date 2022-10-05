@@ -113,8 +113,7 @@ exports.delete = async (req, res) => {
 
 // Find de products with that category
 exports.FindProductByCategory = async (req, res) => {
-  // res.json("pep");
-  if (req.params.slug.indexOf('-')) {
+  if (req.params.slug.indexOf('-') == -1) {
     try {
       let first = req.params.slug.substr(0, 1).toUpperCase();
       const category = await Category.findOne({ cat_name: first + req.params.slug.replace(/\.[^/.]+$/, "").substr(1) })

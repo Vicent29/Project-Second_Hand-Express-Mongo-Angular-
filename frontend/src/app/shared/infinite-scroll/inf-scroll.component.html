@@ -3,7 +3,7 @@
   (scrolledUp)="onUp()">
   <div *ngFor="let d of data">
 
-    <div class="alert alert-primary">
+    <div class="alert alert-primary" [routerLink]="['/shop/category/', d.slug]">
       <img src="../../../assets/img/category/{{d.img_cat}}" />
       {{ d.cat_name }}
     </div>
