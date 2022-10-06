@@ -3,104 +3,130 @@
         "slug": "Coches-asdfgh",
         "id_cat": "Coches",
         "cat_name": "Coches",
-        "img_cat": "coches.png",
-        "img_cat2": "coches2.png",
+        "img_cat": [
+            "coches.png",
+            "coches2.png"
+        ],
         "products": []
     },
     {
         "slug": "Motos-asdfgh",
         "id_cat": "Motos",
         "cat_name": "Motos",
-        "img_cat": "motos.png",
-        "img_cat2": "motos2.png",
+        "img_cat": [
+            "motos.png",
+            "motos2.png"
+        ],
         "products": []
     },
     {
         "slug": "Moda-asdfgh",
         "id_cat": "Moda",
         "cat_name": "Moda",
-        "img_cat": "moda.png",
-        "img_cat2": "moda2.png",
+        "img_cat": [
+            "moda.png",
+            "moda2.png"
+        ],
         "products": []
     },
     {
         "slug": "Inmobiliaria-asdfgh",
         "id_cat": "Inmobiliaria",
         "cat_name": "Inmobiliaria",
-        "img_cat": "inmobiliaria.png",
-        "img_cat2": "inmobiliaria2.png",
+        "img_cat": [
+            "inmobiliaria.png",
+            "inmobiliaria2.png"
+        ],
         "products": []
     },
     {
         "slug": "Libros-asdfgh",
         "id_cat": "Libros",
         "cat_name": "Libros",
-        "img_cat": "libros.png",
-        "img_cat2": "libros2.png",
+        "img_cat": [
+            "libros.png",
+            "libros2.png"
+        ],
         "products": []
     },
     {
         "slug": "Electrodomesticos-asdfgh",
         "id_cat": "Electrodomesticos",
         "cat_name": "Electrodomesticos",
-        "img_cat": "electrodomesticos.png",
-        "img_cat2": "electrodomesticos2.png",
+        "img_cat": [
+            "electrodomesticos.png",
+            "electrodomesticos2.png"
+        ],
         "products": []
     },
     {
         "slug": "Videojuegos-asdfgh",
         "id_cat": "Videojuegos",
         "cat_name": "Videojuegos",
-        "img_cat": "videojuegos.png",
-        "img_cat2": "videojuegos2.png",
+        "img_cat": [
+            "videojuegos.png",
+            "videojuegos2.png"
+        ],
         "products": []
     },
     {
         "slug": "Moviles-asdfgh",
         "id_cat": "Moviles",
         "cat_name": "Moviles",
-        "img_cat": "moviles.png",
-        "img_cat2": "moviles2.png",
+        "img_cat": [
+            "moviles.png",
+            "moviles2.png"
+        ],
         "products": []
     },
     {
         "slug": "Informatica-asdfgh",
         "id_cat": "Informatica",
         "cat_name": "Informatica",
-        "img_cat": "informatica.png",
-        "img_cat2": "informatica2.png",
+        "img_cat": [
+            "informatica.png",
+            "informatica2.png"
+        ],
         "products": []
     },
     {
         "slug": "Deportes-asdfgh",
         "id_cat": "Deportes",
         "cat_name": "Deportes",
-        "img_cat": "deportes.png",
-        "img_cat2": "deportes2.png",
+        "img_cat": [
+            "deportes.png",
+            "deportes2.png"
+        ],
         "products": []
     },
     {
         "slug": "Bicicicletas-asdfgh",
         "id_cat": "Bicicletas",
         "cat_name": "Bicicletas",
-        "img_cat": "bicicletas.png",
-        "img_cat2": "bicicletas2.png",
+        "img_cat": [
+            "bicicletas.png",
+            "bicicletas2.png"
+        ],
         "products": []
     },
     {
         "slug": "Hogar-asdfgh",
         "id_cat": "Hogar",
         "cat_name": "Hogar",
-        "img_cat": "hogar.png",
-        "img_cat2": "hogares2.png",
+        "img_cat": [
+            "hogar.png",
+            "hogar2.png"
+        ],
         "products": []
     },
     {
         "slug": "Cine-asdfgh",
         "id_cat": "Cine",
         "cat_name": "Cine",
-        "img_cat": "cine.png",
-        "img_cat2": "cine2.png",
+        "img_cat": [
+            "cine.png",
+            "cine2.png"
+        ],
         "products": []
     }
 ]

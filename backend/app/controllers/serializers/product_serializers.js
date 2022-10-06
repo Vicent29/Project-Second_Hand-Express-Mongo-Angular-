@@ -6,7 +6,7 @@ module.exports = {
             slug: product.slug,
             prod_nom: product.prod_nom || null,
             id_prod_typ: product.id_prod_typ || null,
-            precio: product.precio || null,
+            price: product.price || null,
             prod_desc: product.prod_desc || null,
             id_prod_cat: product.id_prod_cat || null
         }
@@ -23,7 +23,7 @@ module.exports = {
                 id: product[i]._id,
                 slug: product[i].slug,
                 prod_nom: product[i].prod_nom || null,
-                precio: product[i].precio || null,
+                price: product[i].price || null,
                 id_prod_typ: product[i].id_prod_typ || null,
                 prod_desc: product[i].prod_desc || null,
                 id_prod_cat: product[i].id_prod_cat || null

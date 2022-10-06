@@ -19,7 +19,12 @@ export class InfiniteScroll {
 
     // data: string[] = [];
     data_cat: Category[] = [];
-    data: Category[] = [];
+    data: {
+        slug: string,
+        cat_name: string,
+        img_cat: string
+    }[] = [];
+    data_str: any;
     sum = 3;
     throttle = 100;
     total = 0;
@@ -32,6 +37,7 @@ export class InfiniteScroll {
     getCategories() {
         this.CategoryService.getAll_Category().subscribe((data) => {
             this.data_cat = data;
+            this.data_str = JSON.parse(JSON.stringify(this.data_cat));
             this.appendItems(0, this.sum);
         })
     }
@@ -39,7 +45,7 @@ export class InfiniteScroll {
     addItems(startIndex: number, endIndex = this.sum, _method: string) {
         for (let i = startIndex; (i < (startIndex + endIndex)) && (i < this.data_cat.length); ++i) {
             this.total++;
-            this.data['push'](this.data_cat[i])
+            this.data.push({ slug: this.data_str[i].slug, cat_name: this.data_str[i].cat_name, img_cat: this.data_str[i].img_cat[1] })
         }
     }
 

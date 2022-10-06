@@ -25,7 +25,11 @@ export class Carouselslide {
             this.slides_cat = data;
 
             this.slides_cat?.map(cat => {
-                this.slides.push(String(cat.img_cat))
+                // Como es tipo Category[] no podia coger la primera imagen de la array, entonces, convirtiendolo en string
+                // y al mismo tiempo reconvirtiendolo a array de string si que se puede coger una posicion exacta
+                let img_cat = JSON.parse(JSON.stringify(cat.img_cat));
+                this.slides.push(img_cat[0]);
+                // this.slides.push(String(cat.img_cat))
             })
         })
     }
@@ -52,12 +56,12 @@ export class Carouselslide {
     currentDotStyle() {
         const cat_lenght = this.slides.length;
         for (let i = 0; i < cat_lenght; i++) {
-            const currentDot = document.getElementById("dot"+ i) || null;
+            const currentDot = document.getElementById("dot" + i) || null;
             currentDot!.classList.remove("dot_active");
         }
-        const currentDot = document.getElementById("dot"+ this.i) || null;
+        const currentDot = document.getElementById("dot" + this.i) || null;
         currentDot!.className += " dot_active";
     }
-    
+
 
 }

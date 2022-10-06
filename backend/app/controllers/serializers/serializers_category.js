@@ -21,7 +21,6 @@ module.exports = {
                 id_cat: category[i].id_cat || null,
                 cat_name: category[i].cat_name || null,
                 img_cat: category[i].img_cat || null,
-                img_cat2: category[i].img_cat2 || null,
                 products: category[i].products || null,
 
             });

@@ -18,7 +18,7 @@ exports.create = async (req, res) => {
       slug: req.body.slug || null,
       id_prod_typ: req.body.id_prod_typ || null,
       prod_desc: req.body.prod_desc || null,
-      precio: req.body.precio || null,
+      price: req.body.price || null,
       id_prod_cat: req.body.id_prod_cat || null
     });
 
@@ -86,7 +86,7 @@ exports.update = async (req, res) => {
     }//end if
     old_product.prod_nom = req.body.prod_nom || old_product.prod_nom;
     old_product.id_prod_typ = req.body.id_prod_typ || old_product.id_prod_typ;
-    old_product.precio = req.body.precio || old_product.precio;
+    old_product.price = req.body.price || old_product.price;
     old_product.id_prod_cat = req.body.id_prod_cat || old_product.id_prod_cat;
 
     const product = await old_product.save();

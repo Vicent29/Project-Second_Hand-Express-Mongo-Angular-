@@ -19,7 +19,6 @@ exports.create = async (req, res) => {
       id_cat: req.body.id_cat || null,
       cat_name: req.body.cat_name || null,
       img_cat: req.body.img_cat || null,
-      img_cat2: req.body.img_cat2 || null
     });
     await category.save();
     res.send(category);
@@ -79,7 +78,6 @@ exports.update = async (req, res) => {
     old_category.cat_name = req.body.cat_name || old_category.cat_name;
     old_category.id_cat = req.body.id_cat || old_category.id_cat;
     old_category.img_cat = req.body.img_cat || old_category.img_cat;
-    old_category.img_cat2 = req.body.img_cat2 || old_category.img_cat2;
     const category = await old_category.save();
     if (!category) { res.status(404).json(FormatError("Category not found", res.statusCode)); }
     res.json({ msg: "Category updated" })

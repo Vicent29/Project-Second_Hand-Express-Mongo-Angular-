@@ -9,7 +9,7 @@ module.exports = mongoose => {
       prod_nom: String,
       id_prod_typ: String,
       prod_desc: String,
-      precio: String,
+      price: String,
       id_prod_cat: String,
     },
     { timestamps: true }
@@ -42,7 +42,7 @@ module.exports = mongoose => {
       prod_nom: this.prod_nom,
       id_prod_typ: this.id_prod_typ,
       prod_desc: this.prod_desc,
-      precio: this.precio,
+      price: this.price,
       id_prod_cat: this.id_prod_cat,
     };
   };
