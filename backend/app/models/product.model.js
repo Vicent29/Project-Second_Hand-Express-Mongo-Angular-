@@ -30,12 +30,6 @@ module.exports = mongoose => {
     console.log(this.slug);
   };//slugify
 
-  // schema.method("toJSON", function () {
-  //   const { __v, _id, ...object } = this.toObject();
-  //   object.id = _id;
-  //   return object;
-  // });
-
   schema.methods.toJSONFor = function(){
     return {
       slug: this.slug,

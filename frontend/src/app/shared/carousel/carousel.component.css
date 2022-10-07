@@ -1,6 +1,6 @@
 #carousel_div {
   color: #f33784;
-  width: 80%;
+  width: 60%;
   height: 80px;
   margin-left: 38%;
   margin-top: 3%;
@@ -8,8 +8,8 @@
 
 .arrow_prev {
   float: left;
-  width: 3%;
-  margin-left: 2%;
+  width: 4%;
+  margin-left: 7%;
   margin-top: 1%;
   margin-bottom: 1%;
   border: 0px;
@@ -26,18 +26,18 @@
   width: auto;
   height: auto;
   margin-top: -2.5%;
-  margin-left: 8%;
+  margin-left: 1.5%;
 }
 .image {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 .arrow_next {
-  width: 3%;
+  width: 4%;
   margin-top: 1%;
   float: right;
-  margin-right: 70%;
+  margin-right: 69%;
   border: 0px;
   background-color: white;
 }
@@ -48,13 +48,14 @@
 }
 .div_dots {
   margin-bottom: 2%;
-  margin-left: 47%;
+  margin-left: 45%;
+  margin-top: 3%;
 }
 
 .dot {
   float: left;
-  width: 11px;
-  height: 11px;
+  width: 13px;
+  height: 13px;
   border-radius: 60%;
   background-color: white;
   border: solid 1px black;

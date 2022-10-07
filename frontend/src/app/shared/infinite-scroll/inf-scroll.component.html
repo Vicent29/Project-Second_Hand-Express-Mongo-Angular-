@@ -1,12 +1,15 @@
-<div class="search-results" infinite-scroll [infiniteScrollDistance]="scrollDistance"
-  [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()"
-  (scrolledUp)="onUp()">
-  <div *ngFor="let d of data">
+<div class="infinityCat_div">
+  <!-- <h1>Category more visted</h1> -->
+  <div class="search-results" infinite-scroll [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle" (scrolled)="onScrollDown()"
+    (scrolledUp)="onUp()">
+    <div *ngFor="let d of data">
 
-    <div class="alert alert-primary" [routerLink]="['/shop/category/', d.slug]">
-      <img src="../../../assets/img/category/{{d.img_cat}}" />
-      {{ d.cat_name }}
+      <div class="alert alert-primary" [routerLink]="['/shop/category/', d.slug]">
+        <img src="../../../assets/img/category/{{d.img_cat}}" />
+        {{ d.cat_name }}
+      </div>
+
     </div>
-
   </div>
 </div>

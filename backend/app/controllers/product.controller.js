@@ -1,9 +1,8 @@
 const { product } = require("../models");
 const db = require("../models");
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 var Product = mongoose.model('product');
 var Category = mongoose.model('category');
-// const Category = db.category;
 const serializeProduct = require("./serializers/product_serializers")
 
 // Create and Save a new Product
@@ -40,11 +39,30 @@ exports.create = async (req, res) => {
 exports.findAll = async (req, res) => {
 
   try {
-    const prod_nom = req.body.prod_nom;
-    var condition = prod_nom ? { prod_nom: { $regex: new RegExp(prod_nom), $options: "i" } } : {};
 
-    const data_producto = await Product.find(condition);
-    res.json(serializeProduct.serializeAllProducts(data_producto));
+    let query = {};
+    let transUndefined = (varQuery, otherResult) => {
+      return varQuery != "undefined" && varQuery ? varQuery : otherResult;
+    };
+
+    //declaration all parameters query
+    let limit = transUndefined(req.query.limit, 2);
+    let offset = transUndefined(req.query.offset, 0);
+
+    //¡IMPORTANTE! --> pasar la query de los filtros dependiendo de si los tenemos marcados o no
+    query = {};
+
+    const data_products = await Product.find(query)
+      .sort("price")
+      .limit(Number(limit))
+      .skip(Number(offset));
+    const QuantityProducts = await Product.find(query).countDocuments();
+
+    if (!data_products) {
+      res.status(404).json({ msg: "No existe el product" });
+    }
+
+    res.json(serializeProduct.serializeProductsAllFilter(data_products, QuantityProducts));
 
   } catch (error) {
     res.status(500).send({

@@ -8,9 +8,6 @@ router.post("/", product.create);
 // Retrieve all product
 router.get("/", product.findAll);
 
-// Retrieve all published product
-router.get("/published", product.findAllPublished);
-
 // Retrieve a single Product with id
 router.get("/:id", product.findOne);
 

@@ -41,10 +41,12 @@ export class Carouselslide {
 
     getPrev() {
         this.i = this.i === 0 ? 0 : this.i - 1;
+        this.currentDotStyle();
     }
     //edit here    
     getNext() {
         this.i = this.i === this.slides.length - 1 ? this.i : this.i + 1;
+        this.currentDotStyle();
     }
 
     gotoSlide(newi: any) {
