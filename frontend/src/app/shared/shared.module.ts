@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { CategoryListComponent } from './list-category/list-category.component';
 import { ProductListComponent } from './list-product/list-product.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
 import { Carouselslide } from './carousel/carousel.component';
 import {InfiniteScroll} from './infinite-scroll/inf-scroll.component'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -25,7 +24,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
   declarations: [
     CategoryListComponent,
     ProductListComponent,
-    ProductDetailsComponent,
     Carouselslide,
     InfiniteScroll
   ],
@@ -37,7 +35,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     RouterModule,
     CategoryListComponent,
     ProductListComponent,
-    ProductDetailsComponent,
     Carouselslide,
     InfiniteScroll
   ],

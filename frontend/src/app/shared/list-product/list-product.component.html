@@ -1,4 +1,15 @@
 <div *ngIf="listProducts.length == 0"><img src="../../../assets/img/products/no_results.png" alt="Don't have products"></div>
 <div *ngIf="listProducts" class="container">
-    <app-product-details class="item" *ngFor="let product of listProducts" [product]="product"></app-product-details>
+    <div class="item" *ngFor="let product of listProducts" [routerLink]="['/details/', product.slug]">
+            <div class="product" *ngIf="product">
+                <figure class="snip1423">
+                    <img src="../../../assets/img/products/duke.jpg" alt="">
+                    <h3>{{product.prod_nom}}</h3>
+                    <div class="price">
+                        {{product.price}}€
+                    </div>
+                </figure>
+            </div>
+            <div *ngIf="!product">No product</div>
+    </div>
 </div>

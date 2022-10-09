@@ -33,12 +33,16 @@ export class ProductListComponent implements OnInit {
   get_products(): void {
     if (this.slug_Category !== '') {
       this.CategoryService.FindProductByCategory(this.slug_Category).subscribe({
-        next: (data) => {this.listProducts = data;},
+        next: (data) => {
+           this.listProducts = data;},
         error: (e) => {console.error(e);},
       });
     } else {
       this.ProductService.getAll_Products().subscribe({
-        next: (data) => (this.listProducts = data),
+        next: (data) => {
+          ////////////////////////////////////Arreglar////////////////////////////////////
+          let prueba = JSON.parse(JSON.stringify(data));
+          (this.listProducts = prueba[0])},
         error: (e) => console.error(e),
       });
     }
