@@ -1,132 +1,487 @@
 [
-    {
-        "slug": "Coches-asdfgh",
-        "id_cat": "Coches",
-        "cat_name": "Coches",
-        "img_cat": [
-            "coches.png",
-            "coches2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Motos-asdfgh",
-        "id_cat": "Motos",
-        "cat_name": "Motos",
-        "img_cat": [
-            "motos.png",
-            "motos2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Moda-asdfgh",
-        "id_cat": "Moda",
-        "cat_name": "Moda",
-        "img_cat": [
-            "moda.png",
-            "moda2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Inmobiliaria-asdfgh",
-        "id_cat": "Inmobiliaria",
-        "cat_name": "Inmobiliaria",
-        "img_cat": [
-            "inmobiliaria.png",
-            "inmobiliaria2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Libros-asdfgh",
-        "id_cat": "Libros",
-        "cat_name": "Libros",
-        "img_cat": [
-            "libros.png",
-            "libros2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Electrodomesticos-asdfgh",
-        "id_cat": "Electrodomesticos",
-        "cat_name": "Electrodomesticos",
-        "img_cat": [
-            "electrodomesticos.png",
-            "electrodomesticos2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Videojuegos-asdfgh",
-        "id_cat": "Videojuegos",
-        "cat_name": "Videojuegos",
-        "img_cat": [
-            "videojuegos.png",
-            "videojuegos2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Moviles-asdfgh",
-        "id_cat": "Moviles",
-        "cat_name": "Moviles",
-        "img_cat": [
-            "moviles.png",
-            "moviles2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Informatica-asdfgh",
-        "id_cat": "Informatica",
-        "cat_name": "Informatica",
-        "img_cat": [
-            "informatica.png",
-            "informatica2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Deportes-asdfgh",
-        "id_cat": "Deportes",
-        "cat_name": "Deportes",
-        "img_cat": [
-            "deportes.png",
-            "deportes2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Bicicicletas-asdfgh",
-        "id_cat": "Bicicletas",
-        "cat_name": "Bicicletas",
-        "img_cat": [
-            "bicicletas.png",
-            "bicicletas2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Hogar-asdfgh",
-        "id_cat": "Hogar",
-        "cat_name": "Hogar",
-        "img_cat": [
-            "hogar.png",
-            "hogar2.png"
-        ],
-        "products": []
-    },
-    {
-        "slug": "Cine-asdfgh",
-        "id_cat": "Cine",
-        "cat_name": "Cine",
-        "img_cat": [
-            "cine.png",
-            "cine2.png"
-        ],
-        "products": []
-    }
+    [
+        {
+            "slug": "Coches-asdfgh",
+            "id_cat": "Coches",
+            "cat_name": "Coches",
+            "img_cat": [
+                "coches.png",
+                "coches2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Motos-asdfgh",
+            "id_cat": "Motos",
+            "cat_name": "Motos",
+            "img_cat": [
+                "motos.png",
+                "motos2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Moda-asdfgh",
+            "id_cat": "Moda",
+            "cat_name": "Moda",
+            "img_cat": [
+                "moda.png",
+                "moda2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Inmobiliaria-asdfgh",
+            "id_cat": "Inmobiliaria",
+            "cat_name": "Inmobiliaria",
+            "img_cat": [
+                "inmobiliaria.png",
+                "inmobiliaria2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Libros-asdfgh",
+            "id_cat": "Libros",
+            "cat_name": "Libros",
+            "img_cat": [
+                "libros.png",
+                "libros2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Electrodomesticos-asdfgh",
+            "id_cat": "Electrodomesticos",
+            "cat_name": "Electrodomesticos",
+            "img_cat": [
+                "electrodomesticos.png",
+                "electrodomesticos2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Videojuegos-asdfgh",
+            "id_cat": "Videojuegos",
+            "cat_name": "Videojuegos",
+            "img_cat": [
+                "videojuegos.png",
+                "videojuegos2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Moviles-asdfgh",
+            "id_cat": "Moviles",
+            "cat_name": "Moviles",
+            "img_cat": [
+                "moviles.png",
+                "moviles2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Informatica-asdfgh",
+            "id_cat": "Informatica",
+            "cat_name": "Informatica",
+            "img_cat": [
+                "informatica.png",
+                "informatica2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Deportes-asdfgh",
+            "id_cat": "Deportes",
+            "cat_name": "Deportes",
+            "img_cat": [
+                "deportes.png",
+                "deportes2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Bicicicletas-asdfgh",
+            "id_cat": "Bicicletas",
+            "cat_name": "Bicicletas",
+            "img_cat": [
+                "bicicletas.png",
+                "bicicletas2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Hogar-asdfgh",
+            "id_cat": "Hogar",
+            "cat_name": "Hogar",
+            "img_cat": [
+                "hogar.png",
+                "hogar2.png"
+            ],
+            "products": []
+        },
+        {
+            "slug": "Cine-asdfgh",
+            "id_cat": "Cine",
+            "cat_name": "Cine",
+            "img_cat": [
+                "cine.png",
+                "cine2.png"
+            ],
+            "products": []
+        }
+    ],
+    [
+        {
+            "slug": "peugeot206-asdfgh",
+            "prod_nom": "Peugeot 206",
+            "id_prod_typ": "Peugeot",
+            "prod_desc": "Coche bueno bueno",
+            "price": "2000",
+            "img_prod": "peugeot206.png",
+            "id_prod_cat": "Coches-asdfgh"
+        },
+        {
+            "slug": "minicooper-asdfgh",
+            "prod_nom": "Mini Cooper",
+            "id_prod_typ": "Mini",
+            "prod_desc": "Coche bueno bueno",
+            "price": "20",
+            "img_prod": "minicooper.png",
+            "id_prod_cat": "Coches-asdfgh"
+        },
+        {
+            "slug": "forfi-asdfgh",
+            "prod_nom": "Ford Fiesta",
+            "id_prod_typ": "Ford",
+            "prod_desc": "Coche bueno bueno",
+            "price": "90",
+            "img_prod": "forfi.png",
+            "id_prod_cat": "Coches-asdfgh"
+        },
+        {
+            "slug": "yamahar1m-asdfgh",
+            "prod_nom": "Yamaha R1 M",
+            "id_prod_typ": "Yamaha",
+            "prod_desc": "Moto buena buena",
+            "price": "80",
+            "img_prod": "yamahar1m.png",
+            "id_prod_cat": "Motos-asdfgh"
+        },
+        {
+            "slug": "bmvs1000r-asdfgh",
+            "prod_nom": "BMV S1000 R",
+            "id_prod_typ": "BMV",
+            "prod_desc": "Moto buena buena",
+            "price": "70",
+            "img_prod": "bmvs1000r.png",
+            "id_prod_cat": "Motos-asdfgh"
+        },
+        {
+            "slug": "dukpanigalev4r-asdfgh",
+            "prod_nom": "Dukati Panigale V4R",
+            "id_prod_typ": "Dukati",
+            "prod_desc": "Moto buena buena",
+            "price": "60",
+            "img_prod": "dukpanigalev4r.png",
+            "id_prod_cat": "Motos-asdfgh"
+        },
+        {
+            "slug": "bapawpatrol-asdfgh",
+            "prod_nom": "Banador Paw Patrol",
+            "id_prod_typ": "Banador",
+            "prod_desc": "Ropa buena buena",
+            "price": "60",
+            "img_prod": "bapawpatrol.png",
+            "id_prod_cat": "Moda-asdfgh"
+        },
+        {
+            "slug": "caben10-asdfgh",
+            "prod_nom": "Camiseta Ben 10",
+            "id_prod_typ": "Camiseta",
+            "prod_desc": "Ropa buena buena",
+            "price": "70",
+            "img_prod": "caben10.png",
+            "id_prod_cat": "Moda-asdfgh"
+        },
+        {
+            "slug": "papeppapig-asdfgh",
+            "prod_nom": "Pantalon Peppa pig",
+            "id_prod_typ": "Banador",
+            "prod_desc": "Ropa buena buena",
+            "price": "60",
+            "img_prod": "papeppapig.png",
+            "id_prod_cat": "Moda-asdfgh"
+        },
+        {
+            "slug": "aticovalencia-asdfgh",
+            "prod_nom": "Atico Valencia",
+            "id_prod_typ": "Atica",
+            "prod_desc": "Inmobiliario bueno bueno",
+            "price": "10",
+            "img_prod": "aticovalencia.png",
+            "id_prod_cat": "Inmobiliaria-asdfgh"
+        },
+        {
+            "slug": "pisobufali-asdfgh",
+            "prod_nom": "Piso Bufali",
+            "id_prod_typ": "Piso",
+            "prod_desc": "Inmobiliario bueno bueno",
+            "price": "9",
+            "img_prod": "pisobufali.png",
+            "id_prod_cat": "Inmobiliaria-asdfgh"
+        },
+        {
+            "slug": "Pisobajo-asdfgh",
+            "prod_nom": "Piso Bajo Luxemburgo",
+            "id_prod_typ": "Puente",
+            "prod_desc": "Inmobiliario bueno bueno",
+            "price": "0",
+            "img_prod": "Pisobajo.png",
+            "id_prod_cat": "Inmobiliaria-asdfgh"
+        },
+        {
+            "slug": "100chistes-asdfgh",
+            "prod_nom": "100 Chistes",
+            "id_prod_typ": "Chistes",
+            "prod_desc": "Libro bueno bueno",
+            "price": "10",
+            "img_prod": "100chistes.png",
+            "id_prod_cat": "Libros-asdfgh"
+        },
+        {
+            "slug": "eup-asdfgh",
+            "prod_nom": "El ultimo pasajero",
+            "id_prod_typ": "Santillana",
+            "prod_desc": "Libro bueno bueno",
+            "price": "12",
+            "img_prod": "eup.png",
+            "id_prod_cat": "Libros-asdfgh"
+        },
+        {
+            "slug": "eiml-asdfgh",
+            "prod_nom": "El invierno mas largo",
+            "id_prod_typ": "Santillana",
+            "prod_desc": "Libro bueno bueno",
+            "price": "11",
+            "img_prod": "eiml.png",
+            "id_prod_cat": "Libros-asdfgh"
+        },
+        {
+            "slug": "boschlav-asdfgh",
+            "prod_nom": "Lavadora Bosch",
+            "id_prod_typ": "Bosch",
+            "prod_desc": "Electrodomestico bueno bueno",
+            "price": "100",
+            "img_prod": "boschlav.png",
+            "id_prod_cat": "Electrodomesticos-asdfgh"
+        },
+        {
+            "slug": "boschnev-asdfgh",
+            "prod_nom": "Nevera Bosch",
+            "id_prod_typ": "Bosch",
+            "prod_desc": "Electrodomestico bueno bueno",
+            "price": "190",
+            "img_prod": "boschnev.png",
+            "id_prod_cat": "Electrodomesticos-asdfgh"
+        },
+        {
+            "slug": "boschsec-asdfgh",
+            "prod_nom": "Secadora Bosch",
+            "id_prod_typ": "Bosch",
+            "prod_desc": "Electrodomestico bueno bueno",
+            "price": "180",
+            "img_prod": "boschsec.png",
+            "id_prod_cat": "Electrodomesticos-asdfgh"
+        },
+        {
+            "slug": "valorant-asdfgh",
+            "prod_nom": "Valorant",
+            "id_prod_typ": "Riot",
+            "prod_desc": "Videojuego bueno bueno",
+            "price": "0",
+            "img_prod": "valorant.png",
+            "id_prod_cat": "Videojuegos-asdfgh"
+        },
+        {
+            "slug": "fifa23-asdfgh",
+            "prod_nom": "Fifa 23",
+            "id_prod_typ": "EA",
+            "prod_desc": "Videojuego bueno bueno",
+            "price": "80",
+            "img_prod": "fifa23.png",
+            "id_prod_cat": "Videojuegos-asdfgh"
+        },
+        {
+            "slug": "fortnite-asdfgh",
+            "prod_nom": "Fortnite",
+            "id_prod_typ": "Epic Games",
+            "prod_desc": "Videojuego bueno bueno",
+            "price": "0",
+            "img_prod": "fortnite.png",
+            "id_prod_cat": "Videojuegos-asdfgh"
+        },
+        {
+            "slug": "iphone20-asdfgh",
+            "prod_nom": "Iphone 20",
+            "id_prod_typ": "APPLE",
+            "prod_desc": "Movil bueno bueno",
+            "price": "10000",
+            "img_prod": "iphone20.png",
+            "id_prod_cat": "Moviles-asdfgh"
+        },
+        {
+            "slug": "xrn8t-asdfgh",
+            "prod_nom": "Xiaomi Redmi note 8T",
+            "id_prod_typ": "Xiaomi",
+            "prod_desc": "Movil bueno bueno",
+            "price": "190",
+            "img_prod": "xrn8t.png",
+            "id_prod_cat": "Moviles-asdfgh"
+        },
+        {
+            "slug": "sams20-asdfgh",
+            "prod_nom": "Samsung s20",
+            "id_prod_typ": "Samsung",
+            "prod_desc": "Movil bueno bueno",
+            "price": "800",
+            "img_prod": "sams20.png",
+            "id_prod_cat": "Moviles-asdfgh"
+        },
+        {
+            "slug": "vgahdmi-asdfgh",
+            "prod_nom": "Vga to HDMI converter",
+            "id_prod_typ": "Aliexpress",
+            "prod_desc": "Informatica buena buena",
+            "price": "200",
+            "img_prod": "vgahdmi.png",
+            "id_prod_cat": "Informatica-asdfgh"
+        },
+        {
+            "slug": "windows10home-asdfgh",
+            "prod_nom": "Windows 10 Home",
+            "id_prod_typ": "Microsoft",
+            "prod_desc": "Informatica buena buena",
+            "price": "200",
+            "img_prod": "windows10home.png",
+            "id_prod_cat": "Informatica-asdfgh"
+        },
+        {
+            "slug": "windows11home-asdfgh",
+            "prod_nom": "Windows 11 Pro",
+            "id_prod_typ": "Microsoft",
+            "prod_desc": "Informatica buena buena",
+            "price": "300",
+            "img_prod": "windows11home.png",
+            "id_prod_cat": "Informatica-asdfgh"
+        },
+        {
+            "slug": "calnike-asdfgh",
+            "prod_nom": "Calcetines Nike",
+            "id_prod_typ": "Nike",
+            "prod_desc": "Deporte bueno bueno",
+            "price": "20",
+            "img_prod": "calnike.png",
+            "id_prod_cat": "Deportes-asdfgh"
+        },
+        {
+            "slug": "bflaliga-asdfgh",
+            "prod_nom": "Balon Futbol Laliga",
+            "id_prod_typ": "Adidas",
+            "prod_desc": "Deporte bueno bueno",
+            "price": "30",
+            "img_prod": "bflaliga.png",
+            "id_prod_cat": "Deportes-asdfgh"
+        },
+        {
+            "slug": "ppadidas-asdfgh",
+            "prod_nom": "Pala Padel Adidas",
+            "id_prod_typ": "Adidas",
+            "prod_desc": "Deporte bueno bueno",
+            "price": "120",
+            "img_prod": "ppadidas.png",
+            "id_prod_cat": "Deportes-asdfgh"
+        },
+        {
+            "slug": "orbeaz320-asdfgh",
+            "prod_nom": "Orbea z320",
+            "id_prod_typ": "Orbea",
+            "prod_desc": "Bici bueno bueno",
+            "price": "1200",
+            "img_prod": "orbeaz320.png",
+            "id_prod_cat": "Bicicicletas-asdfgh"
+        },
+        {
+            "slug": "rockriderk20-asdfgh",
+            "prod_nom": "RockRider k20",
+            "id_prod_typ": "Decathlon",
+            "prod_desc": "Bici bueno bueno",
+            "price": "100",
+            "img_prod": "rockriderk20.png",
+            "id_prod_cat": "Bicicicletas-asdfgh"
+        },
+        {
+            "slug": "orbeaz320-asdfgh",
+            "prod_nom": "Orbea l10",
+            "id_prod_typ": "Orbea",
+            "prod_desc": "Bici bueno bueno",
+            "price": "1250",
+            "img_prod": "orbeaz320.png",
+            "id_prod_cat": "Bicicicletas-asdfgh"
+        },
+        {
+            "slug": "toystory-asdfgh",
+            "prod_nom": "Toy Story 1",
+            "id_prod_typ": "Toy Story",
+            "prod_desc": "Peli bueno bueno",
+            "price": "20",
+            "img_prod": "toystory.png",
+            "id_prod_cat": "Cine-asdfgh"
+        },
+        {
+            "slug": "cars-asdfgh",
+            "prod_nom": "Cars 1",
+            "id_prod_typ": "Cars",
+            "prod_desc": "Peli bueno bueno",
+            "price": "30",
+            "img_prod": "cars.png",
+            "id_prod_cat": "Cine-asdfgh"
+        },
+        {
+            "slug": "cars3-asdfgh",
+            "prod_nom": "Cars 3",
+            "id_prod_typ": "Cars",
+            "prod_desc": "Peli bueno bueno",
+            "price": "30",
+            "img_prod": "cars3.png",
+            "id_prod_cat": "Cine-asdfgh"
+        },
+        {
+            "slug": "siikea-asdfgh",
+            "prod_nom": "Silla Ikea",
+            "id_prod_typ": "Ikea",
+            "prod_desc": "Mueble bueno bueno",
+            "price": "30",
+            "img_prod": "siikea.png",
+            "id_prod_cat": "Hogar-asdfgh"
+        },
+        {
+            "slug": "soikea-asdfgh",
+            "prod_nom": "Sofa Ikea",
+            "id_prod_typ": "Ikea",
+            "prod_desc": "Mueble bueno bueno",
+            "price": "200",
+            "img_prod": "soikea.png",
+            "id_prod_cat": "Hogar-asdfgh"
+        },
+        {
+            "slug": "laikea-asdfgh",
+            "prod_nom": "Lampara Ikea",
+            "id_prod_typ": "Ikea",
+            "prod_desc": "Mueble bueno bueno",
+            "price": "20",
+            "img_prod": "laikea.png",
+            "id_prod_cat": "Hogar-asdfgh"
+        }
+    ]
 ]
