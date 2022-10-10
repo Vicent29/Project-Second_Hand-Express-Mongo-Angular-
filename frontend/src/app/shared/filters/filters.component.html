@@ -1,0 +1,31 @@
+<h1>hola</h1>
+
+<form [formGroup]="filtform">
+    <div class="filters">
+        <div class="filter">
+            <div>
+                <input type="checkbox" name="" id="nuevo" formControlName="nuevo">Nuevo
+            </div>
+            <div>
+                <input type="checkbox" name="" id="comonuevo" formControlName="comonuevo">Como nuevo
+            </div>
+            <div>
+                <input type="checkbox" name="" id="enbuenestado" formControlName="enbuenestado">En buen estado
+            </div>
+            <div>
+                <input type="checkbox" name="" id="encondicionesaceptables" formControlName="encondicionesaceptables">En
+                condiciones aceptables
+            </div>
+            <div>
+                <input type="checkbox" name="" id="lohadadotodo" formControlName="lohadadotodo">Lo ha dado todo
+            </div>
+            <div>
+                <input type="number" formControlName="minprice">
+                <input type="number" formControlName="maxprice">
+            </div>
+            <div>
+                <button type="button" (click)="getValues()">Go</button>
+            </div>
+        </div>
+    </div>
+</form>

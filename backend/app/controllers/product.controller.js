@@ -18,7 +18,10 @@ exports.create = async (req, res) => {
       id_prod_typ: req.body.id_prod_typ || null,
       prod_desc: req.body.prod_desc || null,
       price: req.body.price || null,
-      id_prod_cat: req.body.id_prod_cat || null
+      id_prod_cat: req.body.id_prod_cat || null,
+      location: req.body.location || null,
+      quality: req.body.quality || null,
+      img_prod: req.body.img_prod || null
     });
 
     // No se puede insertar con el push el slug porque debe de ser un objectID,
@@ -105,7 +108,11 @@ exports.update = async (req, res) => {
     old_product.prod_nom = req.body.prod_nom || old_product.prod_nom;
     old_product.id_prod_typ = req.body.id_prod_typ || old_product.id_prod_typ;
     old_product.price = req.body.price || old_product.price;
+    old_product.location = req.body.location || old_product.location;
+    old_product.quality = req.body.quality || old_product.quality;
     old_product.id_prod_cat = req.body.id_prod_cat || old_product.id_prod_cat;
+    old_product.img_prod = req.body.img_prod || old_product.img_prod;
+
 
     const product = await old_product.save();
     if (!product) { res.status(404).json(FormatError("Product not found", res.statusCode)); }

@@ -10,7 +10,9 @@ module.exports = {
             id_prod_typ: product.id_prod_typ || null,
             price: product.price || null,
             prod_desc: product.prod_desc || null,
-            id_prod_cat: product.id_prod_cat || null
+            id_prod_cat: product.id_prod_cat || null,
+            img_prod: product.img_prod || null,
+            location: product.location || null
         }
     }
 
@@ -28,7 +30,9 @@ module.exports = {
                 price: product[i].price || null,
                 id_prod_typ: product[i].id_prod_typ || null,
                 prod_desc: product[i].prod_desc || null,
-                id_prod_cat: product[i].id_prod_cat || null
+                id_prod_cat: product[i].id_prod_cat || null,
+                img_prod: product.img_prod || null,
+                location: product.location || null
             });
         }
 
@@ -49,7 +53,10 @@ module.exports = {
                 price: product.price || null,
                 id_prod_typ: product.id_prod_typ || null,
                 prod_desc: product.prod_desc || null,
-                id_prod_cat: product.id_prod_cat || null
+                id_prod_cat: product.id_prod_cat || null,
+                img_prod: product.img_prod || null,
+                location: product.location || null,
+                quality: product.quality || null,
             });
         })
 

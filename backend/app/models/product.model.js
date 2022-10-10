@@ -11,6 +11,9 @@ module.exports = mongoose => {
       prod_desc: String,
       price: String,
       id_prod_cat: String,
+      img_prod: Array,
+      location : String,
+      quality : String
     },
     { timestamps: true }
   );
