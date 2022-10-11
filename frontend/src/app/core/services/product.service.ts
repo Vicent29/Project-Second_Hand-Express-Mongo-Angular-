@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
+import { prepareEventListenerParameters } from '@angular/compiler/src/render3/view/template';
 
 const baseUrl = 'http://localhost:3000/product';
 
@@ -12,8 +13,9 @@ const baseUrl = 'http://localhost:3000/product';
 export class ProductService {
   constructor(private http: HttpClient) { }
 
-  getAll_Products(): Observable<Product[]> {
-    return this.http.get<Product[]>(baseUrl);
+  getAll_Products(params: any): Observable<Product[]> {
+    return this.http.get<Product[]>(baseUrl + "?offset=" + params.offset);
+    // return this.http.get<Product[]>(`${baseUrl}`,{params});
   }
 
   get(id: any): Observable<Product> {

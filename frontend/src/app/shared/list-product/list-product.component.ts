@@ -18,6 +18,16 @@ export class ProductListComponent implements OnInit {
   slug_Category: String = '';
   listProductByCategory: [] = [];
 
+  currentPage: number = 1;
+  totalPages: Array<number> = [];
+
+  params: any = {
+    limit: 6,
+    page: 1,
+    offset: 0,
+    // slug_Category: this.slug_Category
+  }
+
   constructor(
     private ProductService: ProductService,
     private CategoryService: CategoryService,
@@ -27,24 +37,39 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.slug_Category =
       this.ActivatedRoute.snapshot.paramMap.get('slug') || '';
-    this.get_products();
+      this.setPageTo(this.currentPage);
   }
 
   get_products(): void {
+
     if (this.slug_Category !== '') {
-      this.CategoryService.FindProductByCategory(this.slug_Category).subscribe({
+        this.CategoryService.FindProductByCategory(this.slug_Category).subscribe({
         next: (data) => {
            this.listProducts = data;},
         error: (e) => {console.error(e);},
       });
     } else {
-      this.ProductService.getAll_Products().subscribe({
+      this.ProductService.getAll_Products(this.params).subscribe({
         next: (data) => {
-          ////////////////////////////////////Arreglar////////////////////////////////////
-          let prueba = JSON.parse(JSON.stringify(data));
-          (this.listProducts = prueba[0])},
+          let all_dates_products = JSON.parse(JSON.stringify(data));
+          let productsCurrenPage= all_dates_products[0];
+          let ProductCount = all_dates_products[1];
+
+          this.listProducts = productsCurrenPage;
+          this.totalPages = Array.from(
+            new Array(Math.ceil(ProductCount / this.params.limit)),
+            (val, index) => index + 1
+          );
+
+        },
         error: (e) => console.error(e),
       });
     }
+  }
+
+  setPageTo(pageNumber: number) {
+    this.currentPage = pageNumber;
+    this.params.offset = this.params.limit * (this.currentPage -1);
+    this.get_products();
   }
 }

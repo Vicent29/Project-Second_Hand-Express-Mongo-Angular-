@@ -10,17 +10,6 @@ router.get("/", (req, res) => {
     try {
         Category.collection.drop();
         Product.collection.drop();
-        let category = [];
-
-        dummies[0].map(dummy => {
-            category.push(new Category({
-                slug: dummy.slug,
-                id_cat: dummy.id_cat || null,
-                cat_name: dummy.cat_name || null,
-                img_cat: dummy.img_cat || null,
-                img_cat2: dummy.img_cat2 || null,
-            }))
-        })
 
         let product = []
         dummies[1].map(dummy => {
@@ -38,8 +27,20 @@ router.get("/", (req, res) => {
                 })
             )
         })
-
         Product.insertMany(product);
+
+        let category = [];
+        dummies[0].map(dummy => {
+            category.push(new Category({
+                slug: dummy.slug,
+                id_cat: dummy.id_cat || null,
+                cat_name: dummy.cat_name || null,
+                img_cat: dummy.img_cat || null,
+                img_cat2: dummy.img_cat2 || null,
+                products: dummy.products || null
+            }))
+        })
+
         Category.insertMany(category);
 
         res.send("All good");

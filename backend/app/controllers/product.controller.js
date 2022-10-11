@@ -49,12 +49,23 @@ exports.findAll = async (req, res) => {
     };
 
     //declaration all parameters query
-    let limit = transUndefined(req.query.limit, 2);
+    let limit = transUndefined(req.query.limit, 6);
     let offset = transUndefined(req.query.offset, 0);
 
-    //¡IMPORTANTE! --> pasar la query de los filtros dependiendo de si los tenemos marcados o no
+    // Dependiendo de que tengamos realizaremos una query u otra
+    if ( "filters" != undefined && "slugCategoria" ==  undefined) {
     query = {};
-
+    }
+    else if ("slugCategoria" != undefined && "filters" == undefined) {
+    query = {};
+    }
+    else if ("slugCategoria" != undefined && "filters" != undefined) {
+    query = {};
+    }
+    else {
+      query = {};
+    }
+    //hacemos el request con la query creada anteriormente
     const data_products = await Product.find(query)
       .sort("price")
       .limit(Number(limit))
@@ -64,7 +75,6 @@ exports.findAll = async (req, res) => {
     if (!data_products) {
       res.status(404).json({ msg: "No existe el product" });
     }
-
     res.json(serializeProduct.serializeProductsAllFilter(data_products, QuantityProducts));
 
   } catch (error) {
@@ -112,7 +122,6 @@ exports.update = async (req, res) => {
     old_product.quality = req.body.quality || old_product.quality;
     old_product.id_prod_cat = req.body.id_prod_cat || old_product.id_prod_cat;
     old_product.img_prod = req.body.img_prod || old_product.img_prod;
-
 
     const product = await old_product.save();
     if (!product) { res.status(404).json(FormatError("Product not found", res.statusCode)); }
