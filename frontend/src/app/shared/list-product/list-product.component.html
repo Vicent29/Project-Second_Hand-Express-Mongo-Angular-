@@ -1,30 +1,32 @@
-<app-filter></app-filter>
-<div *ngIf="listProducts.length == 0"><img src="../../../assets/img/products/no_results.png" alt="Don't have products"></div>
-<div *ngIf="listProducts" class="container">
-    <div class="item" *ngFor="let product of listProducts" [routerLink]="['/details/', product.slug]">
-            <div class="product" *ngIf="product">
-                <figure class="snip1423">
-                    <img src="../../../assets/img/products/duke.jpg" alt="">
-                    <h3>{{product.prod_nom}}</h3>
-                    <div class="price">
-                        {{product.price}}€
-                    </div>
-                </figure>
-            </div>
-            <div *ngIf="!product">No product</div>
-    </div>
+<app-search></app-search>
+<app-filter (filterEvent)="getListFiltered($event)"></app-filter>
+<div *ngIf="listProducts.length == 0"><img src="../../../assets/img/products/no_results.png" alt="Don't have products">
 </div>
-<nav class="d-flex justify-content-center mt-4"  *ngIf="listProducts.length != 0 && totalPages.length != 1">
-    <ul class="pagination pg-blue">
-      <li *ngIf="currentPage != 1" class="page-item" (click)="setPageTo(currentPage-1)">
-        <span class="page-link">Previous</span>
-      </li>
-      <li class="page-item" [ngClass]="{'active': pageNumber === currentPage}"
-      *ngFor="let pageNumber of totalPages" (click)="setPageTo(pageNumber)">
-        <span class="page-link">{{ pageNumber }}</span>
-      </li>
-      <li *ngIf="currentPage != totalPages[totalPages.length-1]" class="page-item" (click)="setPageTo(currentPage+1)">
-        <span class="page-link">Next</span>
-      </li>
-    </ul>
-  </nav>
+<div *ngIf="listProducts" class="container">
+  <div class="item" *ngFor="let product of listProducts">
+    <div class="product" *ngIf="product" [routerLink]="['/details/', product.slug]">
+      <figure class="snip1423">
+        <img src="../../../assets/img/products/JordanOne.jpg" alt="">
+        <h3>{{product.prod_nom}}</h3>
+        <div class="price">
+          {{product.price}}€
+        </div>
+      </figure>
+    </div>
+    <div *ngIf="!product">No product</div>
+  </div>
+</div>
+<nav class="d-flex justify-content-center mt-4" *ngIf="listProducts.length != 0 && totalPages.length != 1">
+  <ul class="pagination pg-blue">
+    <li *ngIf="currentPage != 1" class="page-item" (click)="setPageTo(currentPage-1)">
+      <span class="page-link">Previous</span>
+    </li>
+    <li class="page-item" [ngClass]="{'active': pageNumber === currentPage}" *ngFor="let pageNumber of totalPages"
+      (click)="setPageTo(pageNumber)">
+      <span class="page-link">{{ pageNumber }}</span>
+    </li>
+    <li *ngIf="currentPage != totalPages[totalPages.length-1]" class="page-item" (click)="setPageTo(currentPage+1)">
+      <span class="page-link">Next</span>
+    </li>
+  </ul>
+</nav>

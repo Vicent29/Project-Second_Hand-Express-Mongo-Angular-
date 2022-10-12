@@ -7,8 +7,9 @@ import { RouterModule } from '@angular/router';
 import { CategoryListComponent } from './list-category/list-category.component';
 import { ProductListComponent } from './list-product/list-product.component';
 import { FiltersComponent } from './filters/filters.component';
+import { SearchComponent } from './search/search.component';
 import { Carouselslide } from './carousel/carousel.component';
-import {InfiniteScroll} from './infinite-scroll/inf-scroll.component'
+import { InfiniteScroll } from './infinite-scroll/inf-scroll.component'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
@@ -25,6 +26,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     CategoryListComponent,
     ProductListComponent,
     FiltersComponent,
+    SearchComponent,
     Carouselslide,
     InfiniteScroll
   ],
@@ -37,8 +39,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     CategoryListComponent,
     ProductListComponent,
     FiltersComponent,
+    SearchComponent,
     Carouselslide,
     InfiniteScroll
   ],
 })
-export class SharedModule {}
+export class SharedModule { }

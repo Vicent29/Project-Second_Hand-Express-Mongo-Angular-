@@ -4,3 +4,4 @@ export * from './list-product/list-product.component';
 export * from './carousel/carousel.component';
 export * from './infinite-scroll/inf-scroll.component';
 export * from './filters/filters.component';
+export * from './search/search.component';

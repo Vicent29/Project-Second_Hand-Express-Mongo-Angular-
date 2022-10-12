@@ -117,7 +117,7 @@ exports.FindProductByCategory = async (req, res) => {
     try {
       let first = req.params.slug.substr(0, 1).toUpperCase();
       const category = await Category.findOne({ cat_name: first + req.params.slug.replace(/\.[^/.]+$/, "").substr(1) })
-      const products = await Product.find({ id_prod_cat: category.slug })
+      const products = await Product.find({ id_prod_cat: first + category.slug.substr(1) })
       res.json(products.map(product => product.toJSONFor()))
     } catch (err) {
       res.json(err);

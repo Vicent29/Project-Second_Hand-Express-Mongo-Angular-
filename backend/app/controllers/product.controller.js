@@ -42,6 +42,11 @@ exports.create = async (req, res) => {
 exports.findAll = async (req, res) => {
 
   try {
+    let filters;
+    if (req.query.filters) {
+      filters = JSON.parse(req.query.filters);
+      console.log(filters);
+    }
 
     let query = {};
     let transUndefined = (varQuery, otherResult) => {
@@ -53,24 +58,32 @@ exports.findAll = async (req, res) => {
     let offset = transUndefined(req.query.offset, 0);
 
     // Dependiendo de que tengamos realizaremos una query u otra
-    if ( "filters" != undefined && "slugCategoria" ==  undefined) {
-    query = {};
+    if (filters != undefined && filters.quality != "" && filters.price[0] == 0) {
+      query = { quality: filters.quality };
+    } else if (filters != undefined && filters.quality == "" && filters.price[0] != 0) {
+      query = { price: { $gte: filters.price[0], $lte: filters.price[1] } }
+    } else if (filters != undefined && filters.quality != "" && filters.price[0] != 0) {
+      query = {
+        quality: filters.quality, price: { $gte: filters.price[0], $lte: filters.price[1] }
+      }
     }
-    else if ("slugCategoria" != undefined && "filters" == undefined) {
-    query = {};
-    }
-    else if ("slugCategoria" != undefined && "filters" != undefined) {
-    query = {};
-    }
-    else {
-      query = {};
-    }
+    // else if (slugCategoria != undefined && "filters" == undefined) {
+    //   query = {"aa":"x"};
+    // }
+    // else if (slugCategoria != undefined && "filters" != undefined) {
+    //   query = {"b":"c"};
+    // }
+    // else {
+    //   query = {"c":"c"};
+    // }
+    console.log(query)
     //hacemos el request con la query creada anteriormente
     const data_products = await Product.find(query)
-      .sort("price")
-      .limit(Number(limit))
-      .skip(Number(offset));
+    .sort("price")
+    .limit(Number(limit))
+    .skip(Number(offset));
     const QuantityProducts = await Product.find(query).countDocuments();
+    console.log(QuantityProducts);
 
     if (!data_products) {
       res.status(404).json({ msg: "No existe el product" });

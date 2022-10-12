@@ -10,12 +10,20 @@ const baseUrl = 'http://localhost:3000/product';
   providedIn: 'root'
 })
 
+
 export class ProductService {
+
   constructor(private http: HttpClient) { }
 
   getAll_Products(params: any): Observable<Product[]> {
     return this.http.get<Product[]>(baseUrl + "?offset=" + params.offset);
     // return this.http.get<Product[]>(`${baseUrl}`,{params});
+  }
+
+  getListFiltered(filters: {}, params: any): Observable<Product[]> {
+    console.log(filters)
+    let filt_str = JSON.stringify(filters);
+    return this.http.get<Product[]>(`${baseUrl}?filters=${filt_str}&offset=${params.offset}`);
   }
 
   get(id: any): Observable<Product> {

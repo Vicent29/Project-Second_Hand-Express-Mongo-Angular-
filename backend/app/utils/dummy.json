@@ -4,7 +4,10 @@
       "slug": "Coches-asdfgh",
       "id_cat": "Coches",
       "cat_name": "Coches",
-      "img_cat": ["coches.png", "coches2.png"],
+      "img_cat": [
+        "coches.png",
+        "coches2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee15",
         "63443e6dbb4a1d801590ee16",
@@ -15,7 +18,10 @@
       "slug": "Motos-asdfgh",
       "id_cat": "Motos",
       "cat_name": "Motos",
-      "img_cat": ["motos.png", "motos2.png"],
+      "img_cat": [
+        "motos.png",
+        "motos2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee18",
         "63443e6dbb4a1d801590ee19",
@@ -26,7 +32,10 @@
       "slug": "Moda-asdfgh",
       "id_cat": "Moda",
       "cat_name": "Moda",
-      "img_cat": ["moda.png", "moda2.png"],
+      "img_cat": [
+        "moda.png",
+        "moda2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee1b",
         "63443e6dbb4a1d801590ee1c",
@@ -37,7 +46,10 @@
       "slug": "Inmobiliaria-asdfgh",
       "id_cat": "Inmobiliaria",
       "cat_name": "Inmobiliaria",
-      "img_cat": ["inmobiliaria.png", "inmobiliaria2.png"],
+      "img_cat": [
+        "inmobiliaria.png",
+        "inmobiliaria2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee1e",
         "63443e6dbb4a1d801590ee1f",
@@ -48,7 +60,10 @@
       "slug": "Libros-asdfgh",
       "id_cat": "Libros",
       "cat_name": "Libros",
-      "img_cat": ["libros.png", "libros2.png"],
+      "img_cat": [
+        "libros.png",
+        "libros2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee21",
         "63443e6dbb4a1d801590ee22",
@@ -59,7 +74,10 @@
       "slug": "Electrodomesticos-asdfgh",
       "id_cat": "Electrodomesticos",
       "cat_name": "Electrodomesticos",
-      "img_cat": ["electrodomesticos.png", "electrodomesticos2.png"],
+      "img_cat": [
+        "electrodomesticos.png",
+        "electrodomesticos2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee24",
         "63443e6dbb4a1d801590ee25",
@@ -70,7 +88,10 @@
       "slug": "Videojuegos-asdfgh",
       "id_cat": "Videojuegos",
       "cat_name": "Videojuegos",
-      "img_cat": ["videojuegos.png", "videojuegos2.png"],
+      "img_cat": [
+        "videojuegos.png",
+        "videojuegos2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee27",
         "63443e6dbb4a1d801590ee28",
@@ -81,7 +102,10 @@
       "slug": "Moviles-asdfgh",
       "id_cat": "Moviles",
       "cat_name": "Moviles",
-      "img_cat": ["moviles.png", "moviles2.png"],
+      "img_cat": [
+        "moviles.png",
+        "moviles2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee2a",
         "63443e6dbb4a1d801590ee2b",
@@ -92,7 +116,10 @@
       "slug": "Informatica-asdfgh",
       "id_cat": "Informatica",
       "cat_name": "Informatica",
-      "img_cat": ["informatica.png", "informatica2.png"],
+      "img_cat": [
+        "informatica.png",
+        "informatica2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee2d",
         "63443e6dbb4a1d801590ee2e",
@@ -103,7 +130,10 @@
       "slug": "Deportes-asdfgh",
       "id_cat": "Deportes",
       "cat_name": "Deportes",
-      "img_cat": ["deportes.png", "deportes2.png"],
+      "img_cat": [
+        "deportes.png",
+        "deportes2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee30",
         "63443e6dbb4a1d801590ee31",
@@ -114,7 +144,10 @@
       "slug": "Bicicicletas-asdfgh",
       "id_cat": "Bicicletas",
       "cat_name": "Bicicletas",
-      "img_cat": ["bicicletas.png", "bicicletas2.png"],
+      "img_cat": [
+        "bicicletas.png",
+        "bicicletas2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee33",
         "63443e6dbb4a1d801590ee34",
@@ -125,7 +158,10 @@
       "slug": "Hogar-asdfgh",
       "id_cat": "Hogar",
       "cat_name": "Hogar",
-      "img_cat": ["hogar.png", "hogar2.png"],
+      "img_cat": [
+        "hogar.png",
+        "hogar2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee36",
         "63443e6dbb4a1d801590ee37",
@@ -136,7 +172,10 @@
       "slug": "Cine-asdfgh",
       "id_cat": "Cine",
       "cat_name": "Cine",
-      "img_cat": ["cine.png", "cine2.png"],
+      "img_cat": [
+        "cine.png",
+        "cine2.png"
+      ],
       "products": [
         "63443e6dbb4a1d801590ee39",
         "63443e6dbb4a1d801590ee3a",
@@ -153,9 +192,13 @@
       "prod_nom": "Peugeot 206",
       "id_prod_typ": "Peugeot",
       "prod_desc": "Coche bueno bueno",
-      "price": "2000",
+      "price": 2000,
       "id_prod_cat": "Coches-asdfgh",
-      "img_prod": ["peugeot206_1.png", "peugeot206_2.png", "peugeot206_3.png"],
+      "img_prod": [
+        "peugeot206_1.png",
+        "peugeot206_2.png",
+        "peugeot206_3.png"
+      ],
       "location": "Valencia",
       "quality": "Nuevo",
       "__v": 0,
@@ -173,7 +216,7 @@
       "prod_nom": "Mini Cooper",
       "id_prod_typ": "Mini",
       "prod_desc": "Coche bueno bueno",
-      "price": "20",
+      "price": 20,
       "id_prod_cat": "Coches-asdfgh",
       "img_prod": [
         "minicooper_1.png.png",
@@ -197,11 +240,15 @@
       "prod_nom": "Ford Fiesta",
       "id_prod_typ": "Ford",
       "prod_desc": "Coche bueno bueno",
-      "price": "90",
+      "price": 90,
       "id_prod_cat": "Coches-asdfgh",
-      "img_prod": ["forfi_1.png", "forfi_2.png", "forfi_3.png"],
+      "img_prod": [
+        "forfi_1.png",
+        "forfi_2.png",
+        "forfi_3.png"
+      ],
       "location": "Sevilla",
-      "quality": "Como nuevo",
+      "quality": "Como Nuevo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -217,11 +264,15 @@
       "prod_nom": "Yamaha R1 M",
       "id_prod_typ": "Yamaha",
       "prod_desc": "Moto buena buena",
-      "price": "80",
+      "price": 80,
       "id_prod_cat": "Motos-asdfgh",
-      "img_prod": ["yamahar1m_1.png", "yamahar1m_2.png", "yamahar1m_3.png"],
+      "img_prod": [
+        "yamahar1m_1.png",
+        "yamahar1m_2.png",
+        "yamahar1m_3.png"
+      ],
       "location": "Valencia",
-      "quality": "Lo ha dado todo",
+      "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -237,9 +288,13 @@
       "prod_nom": "BMV S1000 R",
       "id_prod_typ": "BMV",
       "prod_desc": "Moto buena buena",
-      "price": "70",
+      "price": 70,
       "id_prod_cat": "Motos-asdfgh",
-      "img_prod": ["bmvs1000r_1.png", "bmvs1000r_2.png", "bmvs1000r_3.png"],
+      "img_prod": [
+        "bmvs1000r_1.png",
+        "bmvs1000r_2.png",
+        "bmvs1000r_3.png"
+      ],
       "location": "Barcelona",
       "quality": "Nuevo",
       "__v": 0,
@@ -257,7 +312,7 @@
       "prod_nom": "Dukati Panigale V4R",
       "id_prod_typ": "Dukati",
       "prod_desc": "Moto buena buena",
-      "price": "60",
+      "price": 60,
       "id_prod_cat": "Motos-asdfgh",
       "img_prod": [
         "dukpanigalev4r_1.png",
@@ -265,7 +320,7 @@
         "dukpanigalev4r_3.png"
       ],
       "location": "Vigo",
-      "quality": "Lo ha dado todo",
+      "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -281,7 +336,7 @@
       "prod_nom": "Banador Paw Patrol",
       "id_prod_typ": "Banador",
       "prod_desc": "Ropa buena buena",
-      "price": "60",
+      "price": 60,
       "id_prod_cat": "Moda-asdfgh",
       "img_prod": [
         "bapawpatrol_1.png",
@@ -289,7 +344,7 @@
         "bapawpatrol_3.png"
       ],
       "location": "Madrid",
-      "quality": "Lo ha dado todo",
+      "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -305,11 +360,15 @@
       "prod_nom": "Camiseta Ben 10",
       "id_prod_typ": "Camiseta",
       "prod_desc": "Ropa buena buena",
-      "price": "70",
+      "price": 70,
       "id_prod_cat": "Moda-asdfgh",
-      "img_prod": ["caben10_1.png", "caben10_2.png", "caben10_3.png"],
+      "img_prod": [
+        "caben10_1.png",
+        "caben10_2.png",
+        "caben10_3.png"
+      ],
       "location": "Casteellon",
-      "quality": "Lo ha dado todo",
+      "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -325,11 +384,15 @@
       "prod_nom": "Pantalon Peppa pig",
       "id_prod_typ": "Pantalon",
       "prod_desc": "Ropa buena buena",
-      "price": "60",
+      "price": 60,
       "id_prod_cat": "Moda-asdfgh",
-      "img_prod": ["papeppapig_1.png", "papeppapig_2.png", "papeppapig_3.png"],
+      "img_prod": [
+        "papeppapig_1.png",
+        "papeppapig_2.png",
+        "papeppapig_3.png"
+      ],
       "location": "Alicante",
-      "quality": "Lo ha dado todo",
+      "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -345,7 +408,7 @@
       "prod_nom": "Atico Valencia",
       "id_prod_typ": "Atica",
       "prod_desc": "Inmobiliario bueno bueno",
-      "price": "10",
+      "price": 10,
       "id_prod_cat": "Inmobiliaria-asdfgh",
       "img_prod": [
         "aticovalencia_1.png",
@@ -353,7 +416,7 @@
         "aticovalencia_3.png"
       ],
       "location": "Madrid",
-      "quality": "Lo ha dado todo",
+      "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -369,11 +432,15 @@
       "prod_nom": "Piso Bufali",
       "id_prod_typ": "Piso",
       "prod_desc": "Inmobiliario bueno bueno",
-      "price": "9",
+      "price": 9,
       "id_prod_cat": "Inmobiliaria-asdfgh",
-      "img_prod": ["pisobufali_1.png", "pisobufali_2.png", "pisobufali_3.png"],
+      "img_prod": [
+        "pisobufali_1.png",
+        "pisobufali_2.png",
+        "pisobufali_3.png"
+      ],
       "location": "Sevilla",
-      "quality": "Lo ha dado todo",
+      "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -389,11 +456,15 @@
       "prod_nom": "Piso Bajo Luxemburgo",
       "id_prod_typ": "Puente",
       "prod_desc": "Inmobiliario bueno bueno",
-      "price": "0",
+      "price": 1,
       "id_prod_cat": "Inmobiliaria-asdfgh",
-      "img_prod": ["Pisobajo.png_1", "Pisobajo_2.png", "Pisobajo_3.png"],
+      "img_prod": [
+        "Pisobajo.png_1",
+        "Pisobajo_2.png",
+        "Pisobajo_3.png"
+      ],
       "location": "Barcelona",
-      "quality": "Lo ha dado todo",
+      "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -409,11 +480,15 @@
       "prod_nom": "100 Chistes",
       "id_prod_typ": "Chistes",
       "prod_desc": "Libro bueno bueno",
-      "price": "10",
+      "price": 10,
       "id_prod_cat": "Libros-asdfgh",
-      "img_prod": ["100chistes_1.png", "100chistes_2.png", "100chistes_3.png"],
+      "img_prod": [
+        "100chistes_1.png",
+        "100chistes_2.png",
+        "100chistes_3.png"
+      ],
       "location": "Valencia",
-      "quality": "Lo ha dado todo",
+      "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -429,11 +504,15 @@
       "prod_nom": "El ultimo pasajero",
       "id_prod_typ": "Santillana",
       "prod_desc": "Libro bueno bueno",
-      "price": "12",
+      "price": 12,
       "id_prod_cat": "Libros-asdfgh",
-      "img_prod": ["eup_1.png", "eup_2.png", "eup_3.png"],
+      "img_prod": [
+        "eup_1.png",
+        "eup_2.png",
+        "eup_3.png"
+      ],
       "location": "Reus",
-      "quality": "En condiciones aceptables",
+      "quality": "En Condiciones Aceptables",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -449,11 +528,15 @@
       "prod_nom": "El invierno mas largo",
       "id_prod_typ": "Santillana",
       "prod_desc": "Libro bueno bueno",
-      "price": "11",
+      "price": 11,
       "id_prod_cat": "Libros-asdfgh",
-      "img_prod": ["eiml_1.png", "eiml_2.png", "eiml_3.png"],
+      "img_prod": [
+        "eiml_1.png",
+        "eiml_2.png",
+        "eiml_3.png"
+      ],
       "location": "Cantabria",
-      "quality": "En condiciones aceptables",
+      "quality": "En Condiciones Aceptables",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -469,11 +552,15 @@
       "prod_nom": "Lavadora Bosch",
       "id_prod_typ": "Bosch",
       "prod_desc": "Electrodomestico bueno bueno",
-      "price": "100",
+      "price": 100,
       "id_prod_cat": "Electrodomesticos-asdfgh",
-      "img_prod": ["boschlav_1.png", "boschlav_2.png", "boschlav_3.png"],
+      "img_prod": [
+        "boschlav_1.png",
+        "boschlav_2.png",
+        "boschlav_3.png"
+      ],
       "location": "Vigo",
-      "quality": "En condiciones aceptables",
+      "quality": "En Condiciones Aceptables",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -489,11 +576,15 @@
       "prod_nom": "Nevera Bosch",
       "id_prod_typ": "Bosch",
       "prod_desc": "Electrodomestico bueno bueno",
-      "price": "190",
+      "price": 190,
       "id_prod_cat": "Electrodomesticos-asdfgh",
-      "img_prod": ["boschnev_1.png", "boschnev_2.png", "boschnev_3.png"],
+      "img_prod": [
+        "boschnev_1.png",
+        "boschnev_2.png",
+        "boschnev_3.png"
+      ],
       "location": "Cordoba",
-      "quality": "En condiciones aceptables",
+      "quality": "En Condiciones Aceptables",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -509,11 +600,15 @@
       "prod_nom": "Secadora Bosch",
       "id_prod_typ": "Bosch",
       "prod_desc": "Electrodomestico bueno bueno",
-      "price": "180",
+      "price": 180,
       "id_prod_cat": "Electrodomesticos-asdfgh",
-      "img_prod": ["boschsec_1.png", "boschsec_2.png", "boschsec_3.png"],
+      "img_prod": [
+        "boschsec_1.png",
+        "boschsec_2.png",
+        "boschsec_3.png"
+      ],
       "location": "Cordoba",
-      "quality": "En condiciones aceptables",
+      "quality": "En Condiciones Aceptables",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -529,11 +624,15 @@
       "prod_nom": "Valorant",
       "id_prod_typ": "Riot",
       "prod_desc": "Videojuego bueno bueno",
-      "price": "0",
+      "price": 1,
       "id_prod_cat": "Videojuegos-asdfgh",
-      "img_prod": ["valorant_1.png", "valorant_2.png", "valorant_3.png"],
+      "img_prod": [
+        "valorant_1.png",
+        "valorant_2.png",
+        "valorant_3.png"
+      ],
       "location": "Madrid",
-      "quality": "En condiciones aceptables",
+      "quality": "En Condiciones Aceptables",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -549,11 +648,15 @@
       "prod_nom": "Fifa 23",
       "id_prod_typ": "EA",
       "prod_desc": "Videojuego bueno bueno",
-      "price": "80",
+      "price": 80,
       "id_prod_cat": "Videojuegos-asdfgh",
-      "img_prod": ["fifa23_1.png", "fifa23_2.png", "fifa23_3.png"],
+      "img_prod": [
+        "fifa23_1.png",
+        "fifa23_2.png",
+        "fifa23_3.png"
+      ],
       "location": "Alicante",
-      "quality": "En buen estado",
+      "quality": "En Buen Estado",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -569,11 +672,15 @@
       "prod_nom": "Fortnite",
       "id_prod_typ": "Epic Games",
       "prod_desc": "Videojuego bueno bueno",
-      "price": null,
+      "price": 1,
       "id_prod_cat": "Videojuegos-asdfgh",
-      "img_prod": ["fortnite_1.png", "fortnite_2.png", "fortnite_3.png"],
+      "img_prod": [
+        "fortnite_1.png",
+        "fortnite_2.png",
+        "fortnite_3.png"
+      ],
       "location": "Casteellon",
-      "quality": "En condiciones aceptables",
+      "quality": "En Condiciones Aceptables",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -589,11 +696,15 @@
       "prod_nom": "Iphone 20",
       "id_prod_typ": "APPLE",
       "prod_desc": "Movil bueno bueno",
-      "price": "10000",
+      "price": 10000,
       "id_prod_cat": "Moviles-asdfgh",
-      "img_prod": ["iphone20_1.png", "iphone20_2.png", "iphone20_3.png"],
+      "img_prod": [
+        "iphone20_1.png",
+        "iphone20_2.png",
+        "iphone20_3.png"
+      ],
       "location": "Reus",
-      "quality": "En buen estado",
+      "quality": "En Buen Estado",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -609,11 +720,15 @@
       "prod_nom": "Xiaomi Redmi note 8T",
       "id_prod_typ": "Xiaomi",
       "prod_desc": "Movil bueno bueno",
-      "price": "190",
+      "price": 190,
       "id_prod_cat": "Moviles-asdfgh",
-      "img_prod": ["xrn8t_1.png", "xrn8t_2.png", "xrn8t_3.png"],
+      "img_prod": [
+        "xrn8t_1.png",
+        "xrn8t_2.png",
+        "xrn8t_3.png"
+      ],
       "location": "Santander",
-      "quality": "En buen estado",
+      "quality": "En Buen Estado",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -629,11 +744,15 @@
       "prod_nom": "Samsung s20",
       "id_prod_typ": "Samsung",
       "prod_desc": "Movil bueno bueno",
-      "price": "800",
+      "price": 800,
       "id_prod_cat": "Moviles-asdfgh",
-      "img_prod": ["sams20_1.png", "sams20_2.png", "sams20_3.png"],
+      "img_prod": [
+        "sams20_1.png",
+        "sams20_2.png",
+        "sams20_3.png"
+      ],
       "location": "Santander",
-      "quality": "En buen estado",
+      "quality": "En Buen Estado",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -649,11 +768,15 @@
       "prod_nom": "Vga to HDMI converter",
       "id_prod_typ": "Aliexpress",
       "prod_desc": "Informatica buena buena",
-      "price": "200",
+      "price": 200,
       "id_prod_cat": "Informatica-asdfgh",
-      "img_prod": ["vgahdmi_1.png", "vgahdmi_1.png", "vgahdmi_1.png"],
+      "img_prod": [
+        "vgahdmi_1.png",
+        "vgahdmi_1.png",
+        "vgahdmi_1.png"
+      ],
       "location": "Vigo",
-      "quality": "En buen estado",
+      "quality": "En Buen Estado",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -669,7 +792,7 @@
       "prod_nom": "Windows 10 Home",
       "id_prod_typ": "Microsoft",
       "prod_desc": "Informatica buena buena",
-      "price": "200",
+      "price": 200,
       "id_prod_cat": "Informatica-asdfgh",
       "img_prod": [
         "windows10home_1.png",
@@ -677,7 +800,7 @@
         "windows10home_3.png"
       ],
       "location": "Madrid",
-      "quality": "En buen estado",
+      "quality": "En Buen Estado",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -693,7 +816,7 @@
       "prod_nom": "Windows 11 Pro",
       "id_prod_typ": "Microsoft",
       "prod_desc": "Informatica buena buena",
-      "price": "300",
+      "price": 300,
       "id_prod_cat": "Informatica-asdfgh",
       "img_prod": [
         "windows11home_1.png",
@@ -701,7 +824,7 @@
         "windows11home_3.png"
       ],
       "location": "Reus",
-      "quality": "En buen estado",
+      "quality": "En Buen Estado",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -717,11 +840,15 @@
       "prod_nom": "Calcetines Nike",
       "id_prod_typ": "Nike",
       "prod_desc": "Deporte bueno bueno",
-      "price": "20",
+      "price": 20,
       "id_prod_cat": "Deportes-asdfgh",
-      "img_prod": ["calnike_1.png", "calnike_2.png", "calnike_3.png"],
+      "img_prod": [
+        "calnike_1.png",
+        "calnike_2.png",
+        "calnike_3.png"
+      ],
       "location": "Barcelona",
-      "quality": "Como nuevo",
+      "quality": "Como Nuevo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -737,9 +864,13 @@
       "prod_nom": "Balon Futbol Laliga",
       "id_prod_typ": "Adidas",
       "prod_desc": "Deporte bueno bueno",
-      "price": "30",
+      "price": 30,
       "id_prod_cat": "Deportes-asdfgh",
-      "img_prod": ["bflaliga_1.png", "bflaliga_2.png", "bflaliga_3.png"],
+      "img_prod": [
+        "bflaliga_1.png",
+        "bflaliga_2.png",
+        "bflaliga_3.png"
+      ],
       "location": "Santander",
       "quality": "Nuevo",
       "__v": 0,
@@ -757,11 +888,15 @@
       "prod_nom": "Pala Padel Adidas",
       "id_prod_typ": "Adidas",
       "prod_desc": "Deporte bueno bueno",
-      "price": "120",
+      "price": 120,
       "id_prod_cat": "Deportes-asdfgh",
-      "img_prod": ["ppadidas_1.png", "ppadidas_2.png", "ppadidas_3.png"],
+      "img_prod": [
+        "ppadidas_1.png",
+        "ppadidas_2.png",
+        "ppadidas_3.png"
+      ],
       "location": "Mallorca",
-      "quality": "Como nuevo",
+      "quality": "Como Nuevo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -777,9 +912,13 @@
       "prod_nom": "Orbea z320",
       "id_prod_typ": "Orbea",
       "prod_desc": "Bici bueno bueno",
-      "price": "1200",
+      "price": 1200,
       "id_prod_cat": "Bicicicletas-asdfgh",
-      "img_prod": ["orbeaz320_1.png", "orbeaz320_2.png", "orbeaz320_3.png"],
+      "img_prod": [
+        "orbeaz320_1.png",
+        "orbeaz320_2.png",
+        "orbeaz320_3.png"
+      ],
       "location": "Valencia",
       "quality": "Nuevo",
       "__v": 0,
@@ -797,7 +936,7 @@
       "prod_nom": "RockRider k20",
       "id_prod_typ": "Decathlon",
       "prod_desc": "Bici bueno bueno",
-      "price": "100",
+      "price": 100,
       "id_prod_cat": "Bicicicletas-asdfgh",
       "img_prod": [
         "rockriderk20_1.png",
@@ -805,7 +944,7 @@
         "rockriderk20_3.png"
       ],
       "location": "Sevilla",
-      "quality": "Como nuevo",
+      "quality": "Como Nuevo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -821,9 +960,13 @@
       "prod_nom": "Orbea l10",
       "id_prod_typ": "Orbea",
       "prod_desc": "Bici bueno bueno",
-      "price": "1250",
+      "price": 1250,
       "id_prod_cat": "Bicicicletas-asdfgh",
-      "img_prod": ["orbeazla10_1.png", "orbeal10_2.png", "orbeal10_3.png"],
+      "img_prod": [
+        "orbeazla10_1.png",
+        "orbeal10_2.png",
+        "orbeal10_3.png"
+      ],
       "location": "Mallorca",
       "quality": "Nuevo",
       "__v": 0,
@@ -841,11 +984,15 @@
       "prod_nom": "Toy Story 1",
       "id_prod_typ": "Toy Story",
       "prod_desc": "Peli bueno bueno",
-      "price": "20",
+      "price": 20,
       "id_prod_cat": "Cine-asdfgh",
-      "img_prod": ["toystory_1.png", "toystory_2.png", "toystory_3.png"],
+      "img_prod": [
+        "toystory_1.png",
+        "toystory_2.png",
+        "toystory_3.png"
+      ],
       "location": "Madrid",
-      "quality": "Como nuevo",
+      "quality": "Como Nuevo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -861,9 +1008,13 @@
       "prod_nom": "Cars 1",
       "id_prod_typ": "Cars",
       "prod_desc": "Peli bueno bueno",
-      "price": "30",
+      "price": 30,
       "id_prod_cat": "Cine-asdfgh",
-      "img_prod": ["cars_1.png", "cars_2.png", "cars_3.png"],
+      "img_prod": [
+        "cars_1.png",
+        "cars_2.png",
+        "cars_3.png"
+      ],
       "location": "Casteellon",
       "quality": "Nuevo",
       "__v": 0,
@@ -881,11 +1032,15 @@
       "prod_nom": "Cars 3",
       "id_prod_typ": "Cars",
       "prod_desc": "Peli bueno bueno",
-      "price": "30",
+      "price": 30,
       "id_prod_cat": "Cine-asdfgh",
-      "img_prod": ["cars3_1.png", "cars3_2.png", "cars3_3.png"],
+      "img_prod": [
+        "cars3_1.png",
+        "cars3_2.png",
+        "cars3_3.png"
+      ],
       "location": "Alicante",
-      "quality": "Como nuevo",
+      "quality": "Como Nuevo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -901,11 +1056,15 @@
       "prod_nom": "Silla Ikea",
       "id_prod_typ": "Ikea",
       "prod_desc": "Mueble bueno bueno",
-      "price": "30",
+      "price": 30,
       "id_prod_cat": "Hogar-asdfgh",
-      "img_prod": ["siikea_1.png", "siikea_2.png", "siikea_3.png"],
+      "img_prod": [
+        "siikea_1.png",
+        "siikea_2.png",
+        "siikea_3.png"
+      ],
       "location": "Sevilla",
-      "quality": "Como nuevo",
+      "quality": "Como Nuevo",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -921,9 +1080,13 @@
       "prod_nom": "Sofa Ikea",
       "id_prod_typ": "Ikea",
       "prod_desc": "Mueble bueno bueno",
-      "price": "200",
+      "price": 200,
       "id_prod_cat": "Hogar-asdfgh",
-      "img_prod": ["soikea_1.png", "soikea_2.png", "soikea_3.png"],
+      "img_prod": [
+        "soikea_1.png",
+        "soikea_2.png",
+        "soikea_3.png"
+      ],
       "location": "Valencia",
       "quality": "Nuevo",
       "__v": 0,
@@ -941,11 +1104,15 @@
       "prod_nom": "Lampara Ikea",
       "id_prod_typ": "Ikea",
       "prod_desc": "Mueble bueno bueno",
-      "price": "20",
+      "price": 20,
       "id_prod_cat": "Hogar-asdfgh",
-      "img_prod": ["laikea_1.png", "laikea_2.png", "laikea_3.png"],
+      "img_prod": [
+        "laikea_1.png",
+        "laikea_2.png",
+        "laikea_3.png"
+      ],
       "location": "Santander",
-      "quality": "Como nuevo",
+      "quality": "Como Nuevo",
       "__v": 0,
       "createdAt": {
         "$date": {

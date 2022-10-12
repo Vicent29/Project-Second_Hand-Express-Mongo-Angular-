@@ -34,7 +34,7 @@ export class Carouselslide {
         })
     }
 
-    getSlide() {
+    getSlide() {        
         return this.slides[this.i];
     }
 

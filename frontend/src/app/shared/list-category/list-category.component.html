@@ -1,10 +1,11 @@
+<app-search></app-search>
 <div class="row">
-    <div class="col-md-4" *ngFor="let category of categories">
-      <div class="card text-center mb-4">
-        <div [routerLink]="['/shop/category/', category.slug]" class="card-body">
-          <img src="../../../assets/img/category/cat_moto.jpeg" alt="photo category">
-          <h5 class="card-title m-1">{{category.cat_name}}</h5>
-        </div>
+  <div class="col-md-4" *ngFor="let category of categories">
+    <div class="card text-center mb-4">
+      <div [routerLink]="['/shop/category/', category.slug]" class="card-body">
+        <img src="../../../assets/img/category/cat_moto.jpeg" alt="photo category">
+        <h5 class="card-title m-1">{{category.cat_name}}</h5>
       </div>
     </div>
   </div>
+</div>

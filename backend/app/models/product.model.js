@@ -9,7 +9,7 @@ module.exports = mongoose => {
       prod_nom: String,
       id_prod_typ: String,
       prod_desc: String,
-      price: String,
+      price: Number,
       id_prod_cat: String,
       img_prod: Array,
       location : String,
