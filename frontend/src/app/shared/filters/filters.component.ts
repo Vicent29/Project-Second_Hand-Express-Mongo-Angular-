@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
     selector: 'app-filter',
@@ -9,6 +11,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/f
 
 export class FiltersComponent {
     public filtform: FormGroup;
+    routeFilters: {} = {}
     filtcheck = ['Nuevo', "ComoNuevo", "EnBuenEstado", "EnCondicionesAceptables", "LoHaDadoTodo"];
     emit: {
         quality: string[],
@@ -17,7 +20,12 @@ export class FiltersComponent {
 
     @Output() filterEvent: EventEmitter<{}> = new EventEmitter();
 
-    constructor(private fb: FormBuilder) {
+    constructor(
+        private fb: FormBuilder,
+        private location: Location,
+        private ActivatedRoute: ActivatedRoute
+    ) {
+
         this.filtform = this.fb.group({
             Nuevo: false,
             ComoNuevo: false,
@@ -30,8 +38,21 @@ export class FiltersComponent {
     }
 
     ngOnInit(): void {
+        this.ActivatedRoute.snapshot.paramMap.get('filters') != undefined ? this.setHighlights() : "a";
+        this.routeFilters = atob(this.ActivatedRoute.snapshot.paramMap.get('filters') || '')
     }
 
+    setHighlights() {
+        let routeFilters = JSON.parse(atob(this.ActivatedRoute.snapshot.paramMap.get('filters') || ''))
+        console.log(routeFilters);
+
+        for (let row in routeFilters.quality) {
+            console.log(routeFilters.quality[row].replace(/\s+/g, ''));
+            this.filtform.get(routeFilters.quality[row].replace(/\s+/g, ''))?.setValue(true)
+        }
+        this.filtform.get('minprice')?.setValue(routeFilters.price[0]);
+        this.filtform.get('maxprice')?.setValue(routeFilters.price[1]);
+    }
 
     getValues() {
         let min = this.filtform.get('minprice')?.value;
@@ -42,6 +63,7 @@ export class FiltersComponent {
         }
         if (min > max) min = 0, max = 0;
         this.emit = ({ quality: values, price: [min, max] })
+        this.location.replaceState('/shop/' + btoa(JSON.stringify(this.emit)));
         this.filterEvent.emit(this.emit)
     }
 }

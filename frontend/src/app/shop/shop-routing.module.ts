@@ -12,6 +12,11 @@ const routes: Routes = [
     path: 'category/:slug',
     component: ShopComponent,
     resolve: {},
+  },
+  {
+    path: ':filters',
+    component: ShopComponent,
+    resolve: {},
   }
 ];
 
@@ -20,4 +25,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 
-export class ShopRoutingModule {}
+export class ShopRoutingModule { }

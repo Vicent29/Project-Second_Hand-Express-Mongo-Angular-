@@ -21,7 +21,9 @@ export class ProductListComponent implements OnInit {
   currentPage: number = 1;
   totalPages: Array<number> = [];
   prodquantity: number = 0;
-  filters: {} = { quality: [''], price: [0, 0]};
+  routeFilters: {} = {};
+  filters: {} = { quality: [''], price: [0, 0] };
+  noenter: number = 0;
 
   data_prod: {
     slug: string;
@@ -41,16 +43,28 @@ export class ProductListComponent implements OnInit {
     private ProductService: ProductService,
     private CategoryService: CategoryService,
     private ActivatedRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.slug_Category =
-      this.ActivatedRoute.snapshot.paramMap.get('slug') || '';
+    this.routeFilters = atob(this.ActivatedRoute.snapshot.paramMap.get('filters') || '')
+    this.slug_Category = this.ActivatedRoute.snapshot.paramMap.get('slug') || '';
+
     this.setPageTo(this.currentPage);
   }
 
 
   getListProduct(filters: {}) {
+
+    if (this.routeFilters == "") {
+      this.routeFilters = filters;
+      this.noenter = 1;
+    } else {
+      if (this.noenter == 0) {
+        this.noenter = 1;
+        filters = JSON.parse(String(this.routeFilters));
+        this.routeFilters = [];
+      }
+    }
 
     if (this.slug_Category !== '') {
       this.CategoryService.FindProductByCategory(this.slug_Category).subscribe({
@@ -66,11 +80,11 @@ export class ProductListComponent implements OnInit {
         this.filters = filters;
       }
       let search = JSON.parse(JSON.stringify(filters)).search
-      filters = {...filters, search :search};
-      
+      filters = { ...filters, search: search };
+
       this.ProductService.getListProduct(filters, this.params).subscribe({
         next: (data) => {
-          
+
           let all_dates_products = JSON.parse(JSON.stringify(data));
           if (data[1] != this.prodquantity) {
             this.prodquantity = JSON.parse(JSON.stringify(data[1]));
@@ -84,7 +98,7 @@ export class ProductListComponent implements OnInit {
             this.data_prod.push({
               slug: productsCurrenPage[i].slug,
               prod_nom: productsCurrenPage[i].prod_nom,
-              price : productsCurrenPage[i].price,
+              price: productsCurrenPage[i].price,
               img_prod: productsCurrenPage[i].img_prod[0],
             });
           }
