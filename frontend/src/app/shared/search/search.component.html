@@ -1,3 +1,8 @@
-<div>
-    <input type="text" id="search" />
-</div>
+<form [formGroup]="formSearch">
+    <div class="search">
+        <div class="filter">
+            <input type="text" autocomplete="off" name="search" id="search" formControlName="search">
+            <button type="button" (click)="getSearch()">Go</button>
+        </div>
+    </div>
+</form>

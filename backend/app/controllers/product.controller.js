@@ -46,6 +46,7 @@ exports.findAll = async (req, res) => {
     if (req.query.filters) {
       filters = JSON.parse(req.query.filters);
       console.log(filters);
+      // filters = {quality : "", price : [0,0],search : filters.search}
     }
 
     let query = {};
@@ -58,14 +59,24 @@ exports.findAll = async (req, res) => {
     let offset = transUndefined(req.query.offset, 0);
 
     // Dependiendo de que tengamos realizaremos una query u otra
+
+    if (filters.quality == undefined) filters = { ...filters, quality: [""] };
+    if (filters.price == undefined) filters = { ...filters, price: [0, 0] };
+
     if (filters != undefined && filters.quality != "" && filters.price[0] == 0) {
       query = { quality: filters.quality };
+      console.log("a");
     } else if (filters != undefined && filters.quality == "" && filters.price[0] != 0) {
       query = { price: { $gte: filters.price[0], $lte: filters.price[1] } }
+      console.log("b");
     } else if (filters != undefined && filters.quality != "" && filters.price[0] != 0) {
+      console.log("c");
       query = {
         quality: filters.quality, price: { $gte: filters.price[0], $lte: filters.price[1] }
       }
+    } else if (filters != undefined && filters.search != undefined) {
+      console.log("hola");
+      query = { prod_nom: { $regex: filters.search, $options:'i' } };
     }
     // else if (slugCategoria != undefined && "filters" == undefined) {
     //   query = {"aa":"x"};
@@ -79,9 +90,9 @@ exports.findAll = async (req, res) => {
     console.log(query)
     //hacemos el request con la query creada anteriormente
     const data_products = await Product.find(query)
-    .sort("price")
-    .limit(Number(limit))
-    .skip(Number(offset));
+      .sort("price")
+      .limit(Number(limit))
+      .skip(Number(offset));
     const QuantityProducts = await Product.find(query).countDocuments();
     console.log(QuantityProducts);
 

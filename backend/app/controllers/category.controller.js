@@ -124,8 +124,9 @@ exports.FindProductByCategory = async (req, res) => {
     }
   } else {
     try {
-      const category = await Category.findOne({ slug: req.params.slug })
-      const products = await Product.find({ id_prod_cat: category.slug })
+      let first = req.params.slug.substr(0, 1).toUpperCase();
+      const category = await Category.findOne({ slug: first + req.params.slug.substr(1) })
+      const products = await Product.find({ id_prod_cat: first + category.slug.substr(1) })
       res.json(products.map(product => product.toJSONFor()));
     } catch (error) {
       res.json("eee");

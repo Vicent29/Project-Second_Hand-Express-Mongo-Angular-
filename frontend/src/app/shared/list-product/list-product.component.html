@@ -1,16 +1,14 @@
-<app-search></app-search>
-<app-filter (filterEvent)="getListFiltered($event)"></app-filter>
-<div *ngIf="listProducts.length == 0"><img src="../../../assets/img/products/no_results.png" alt="Don't have products">
-</div>
+<app-search (filterEvent)="getListProduct($event)"></app-search>
+<app-filter (filterEvent)="getListProduct($event)"></app-filter>
+<div *ngIf="listProducts.length == 0"></div>
 <div *ngIf="listProducts" class="container">
   <div class="item" *ngFor="let product of listProducts">
     <div class="product" *ngIf="product" [routerLink]="['/details/', product.slug]">
-      <figure class="snip1423">
-        <img src="../../../assets/img/products/JordanOne.jpg" alt="">
+      <figure class="product_info">
+        <div class="div_img"><img src="../../../assets/img/products/aticovalencia_1.png" alt=""></div>
         <h3>{{product.prod_nom}}</h3>
-        <div class="price">
-          {{product.price}}€
-        </div>
+        <div class="price">{{product.price}}€</div>
+        <div class="like"><img src="../../../assets/img/img_web/like_rojo.png" alt="foto"></div>
       </figure>
     </div>
     <div *ngIf="!product">No product</div>

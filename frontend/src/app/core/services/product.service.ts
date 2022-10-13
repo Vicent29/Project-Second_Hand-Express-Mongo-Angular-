@@ -20,8 +20,7 @@ export class ProductService {
     // return this.http.get<Product[]>(`${baseUrl}`,{params});
   }
 
-  getListFiltered(filters: {}, params: any): Observable<Product[]> {
-    console.log(filters)
+  getListProduct(filters: any, params: any): Observable<Product[]> {
     let filt_str = JSON.stringify(filters);
     return this.http.get<Product[]>(`${baseUrl}?filters=${filt_str}&offset=${params.offset}`);
   }
