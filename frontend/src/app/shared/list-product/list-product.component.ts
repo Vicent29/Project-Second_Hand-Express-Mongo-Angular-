@@ -36,22 +36,22 @@ export class ProductListComponent implements OnInit {
     limit: 6,
     page: 1,
     offset: 0,
-    // slug_Category: this.slug_Category
   };
 
   constructor(
     private ProductService: ProductService,
     private CategoryService: CategoryService,
     private ActivatedRoute: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.routeFilters = atob(this.ActivatedRoute.snapshot.paramMap.get('filters') || '')
-    this.slug_Category = this.ActivatedRoute.snapshot.paramMap.get('slug') || '';
-
+    this.routeFilters = atob(
+      this.ActivatedRoute.snapshot.paramMap.get('filters') || ''
+    );
+    this.slug_Category =
+      this.ActivatedRoute.snapshot.paramMap.get('slug') || '';
     this.setPageTo(this.currentPage);
   }
-
 
   getListProduct(filters: {}) {
 
@@ -66,54 +66,44 @@ export class ProductListComponent implements OnInit {
       }
     }
 
-    if (this.slug_Category !== '') {
-      this.CategoryService.FindProductByCategory(this.slug_Category).subscribe({
-        next: (data) => {
-          this.listProducts = data;
-        },
-        error: (e) => {
-          console.error(e);
-        },
-      });
-    } else {
-      if (filters != undefined) {
-        this.filters = filters;
-      }
-      let search = JSON.parse(JSON.stringify(filters)).search
-      filters = { ...filters, search: search };
+    let search = JSON.parse(JSON.stringify(filters)).search;
+    filters = { ...filters, search: search, category: this.slug_Category };
 
-      this.ProductService.getListProduct(filters, this.params).subscribe({
-        next: (data) => {
-
-          let all_dates_products = JSON.parse(JSON.stringify(data));
-          if (data[1] != this.prodquantity) {
-            this.prodquantity = JSON.parse(JSON.stringify(data[1]));
-            this.setPageTo(1);
-          }
-
-          let productsCurrenPage = all_dates_products[0];
-          let ProductCount = all_dates_products[1];
-          this.data_prod = [];
-          for (let i = 0; i < productsCurrenPage.length; i++) {
-            this.data_prod.push({
-              slug: productsCurrenPage[i].slug,
-              prod_nom: productsCurrenPage[i].prod_nom,
-              price: productsCurrenPage[i].price,
-              img_prod: productsCurrenPage[i].img_prod[0],
-            });
-          }
-
-          this.listProducts = this.data_prod;
-          this.totalPages = Array.from(
-            new Array(Math.ceil(ProductCount / this.params.limit)),
-            (val, index) => index + 1
-          );
-        },
-        error: (e) => {
-          console.error(e);
-        },
-      });
+    if (filters != undefined) {
+      this.filters = filters;
     }
+
+    this.ProductService.getListProduct(filters, this.params).subscribe({
+      next: (data) => {
+        let all_dates_products = JSON.parse(JSON.stringify(data));
+        if (data[1] != this.prodquantity) {
+          this.prodquantity = JSON.parse(JSON.stringify(data[1]));
+          this.setPageTo(1);
+        }
+
+        let productsCurrenPage = all_dates_products[0];
+        let ProductCount = all_dates_products[1];
+        this.data_prod = [];
+        for (let i = 0; i < productsCurrenPage.length; i++) {
+          this.data_prod.push({
+            slug: productsCurrenPage[i].slug,
+            prod_nom: productsCurrenPage[i].prod_nom,
+            price: productsCurrenPage[i].price,
+            img_prod: productsCurrenPage[i].img_prod[0],
+          });
+        }
+
+        this.listProducts = this.data_prod;
+        this.totalPages = Array.from(
+          new Array(Math.ceil(ProductCount / this.params.limit)),
+          (val, index) => index + 1
+        );
+      },
+      error: (e) => {
+        console.error(e);
+      },
+    });
+    // }
   }
 
   setPageTo(pageNumber: number) {

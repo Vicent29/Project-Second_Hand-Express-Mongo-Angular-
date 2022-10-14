@@ -219,7 +219,7 @@
       "price": 20,
       "id_prod_cat": "Coches-asdfgh",
       "img_prod": [
-        "minicooper_1.png.png",
+        "minicooper_1.png",
         "minicooper_2.png",
         "minicooper_3.png"
       ],
@@ -237,7 +237,7 @@
         "$oid": "63443e6dbb4a1d801590ee17"
       },
       "slug": "forfi-asdfgh",
-      "prod_nom": "Ford Fiesta",
+      "prod_nom": "Ford Focus",
       "id_prod_typ": "Ford",
       "prod_desc": "Coche bueno bueno",
       "price": 90,
@@ -333,7 +333,7 @@
         "$oid": "63443e6dbb4a1d801590ee1b"
       },
       "slug": "bapawpatrol-asdfgh",
-      "prod_nom": "Banador Paw Patrol",
+      "prod_nom": "Bañador Paw Patrol",
       "id_prod_typ": "Banador",
       "prod_desc": "Ropa buena buena",
       "price": 60,
@@ -415,7 +415,7 @@
         "aticovalencia_2.png",
         "aticovalencia_3.png"
       ],
-      "location": "Madrid",
+      "location": "Valencia",
       "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
@@ -459,11 +459,11 @@
       "price": 1,
       "id_prod_cat": "Inmobiliaria-asdfgh",
       "img_prod": [
-        "Pisobajo.png_1",
+        "Pisobajo_1.png",
         "Pisobajo_2.png",
         "Pisobajo_3.png"
       ],
-      "location": "Barcelona",
+      "location": "Luxemburgo",
       "quality": "Lo Ha Dado Todo",
       "__v": 0,
       "createdAt": {
@@ -597,15 +597,15 @@
         "$oid": "63443e6dbb4a1d801590ee26"
       },
       "slug": "boschsec-asdfgh",
-      "prod_nom": "Secadora Bosch",
-      "id_prod_typ": "Bosch",
+      "prod_nom": "Microndas Miele",
+      "id_prod_typ": "Miele",
       "prod_desc": "Electrodomestico bueno bueno",
       "price": 180,
       "id_prod_cat": "Electrodomesticos-asdfgh",
       "img_prod": [
-        "boschsec_1.png",
-        "boschsec_2.png",
-        "boschsec_3.png"
+        "micro_1.png",
+        "micro_2.png",
+        "micro_3.png"
       ],
       "location": "Cordoba",
       "quality": "En Condiciones Aceptables",
@@ -693,15 +693,15 @@
         "$oid": "63443e6dbb4a1d801590ee2a"
       },
       "slug": "iphone20-asdfgh",
-      "prod_nom": "Iphone 20",
+      "prod_nom": "Iphone 14",
       "id_prod_typ": "APPLE",
       "prod_desc": "Movil bueno bueno",
       "price": 10000,
       "id_prod_cat": "Moviles-asdfgh",
       "img_prod": [
-        "iphone20_1.png",
-        "iphone20_2.png",
-        "iphone20_3.png"
+        "iphone14_1.png",
+        "iphone14_2.png",
+        "iphone14_3.png"
       ],
       "location": "Reus",
       "quality": "En Buen Estado",
@@ -1004,16 +1004,16 @@
       "_id": {
         "$oid": "63443e6dbb4a1d801590ee37"
       },
-      "slug": "cars-asdfgh",
-      "prod_nom": "Cars 1",
-      "id_prod_typ": "Cars",
+      "slug": "fast-asdfgh",
+      "prod_nom": "Fast and Forious 7",
+      "id_prod_typ": "Fast",
       "prod_desc": "Peli bueno bueno",
       "price": 30,
       "id_prod_cat": "Cine-asdfgh",
       "img_prod": [
-        "cars_1.png",
-        "cars_2.png",
-        "cars_3.png"
+        "fast_1.png",
+        "fast_2.png",
+        "fast_3.png"
       ],
       "location": "Casteellon",
       "quality": "Nuevo",

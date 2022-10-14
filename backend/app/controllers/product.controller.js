@@ -45,8 +45,9 @@ exports.findAll = async (req, res) => {
     let filters;
     if (req.query.filters) {
       filters = JSON.parse(req.query.filters);
-      console.log(filters);
-      // filters = {quality : "", price : [0,0],search : filters.search}
+      console.log(filters.category);
+    } else {
+      filters = { quality: "", price: [0, 0], search: "", category: '' }
     }
 
     let query = {};
@@ -65,28 +66,26 @@ exports.findAll = async (req, res) => {
 
     if (filters != undefined && filters.quality != "" && filters.price[0] == 0) {
       query = { quality: filters.quality };
-      console.log("a");
     } else if (filters != undefined && filters.quality == "" && filters.price[0] != 0) {
       query = { price: { $gte: filters.price[0], $lte: filters.price[1] } }
-      console.log("b");
     } else if (filters != undefined && filters.quality != "" && filters.price[0] != 0) {
-      console.log("c");
       query = {
         quality: filters.quality, price: { $gte: filters.price[0], $lte: filters.price[1] }
       }
     } else if (filters != undefined && filters.search != undefined) {
-      console.log("hola");
-      query = { prod_nom: { $regex: filters.search, $options:'i' } };
+      query = { prod_nom: { $regex: filters.search, $options: 'i' } };
     }
-    // else if (slugCategoria != undefined && "filters" == undefined) {
-    //   query = {"aa":"x"};
-    // }
-    // else if (slugCategoria != undefined && "filters" != undefined) {
-    //   query = {"b":"c"};
-    // }
-    // else {
-    //   query = {"c":"c"};
-    // }
+    else if (filters != undefined && filters.category != '') {
+      let first = filters.category.substr(0, 1).toUpperCase();
+      if (filters.category.indexOf('-') == -1) {
+        const categories = await Category.findOne({ cat_name: first + filters.category.replace(/\.[^/.]+$/, "").substr(1) })
+        console.log(categories);
+      query = { id_prod_cat: first + categories.slug.substr(1) };
+      console.log(first + categories.slug.substr(1));
+      } else {
+      query = { id_prod_cat: first + filters.category.substr(1) };
+      }
+    }
     console.log(query)
     //hacemos el request con la query creada anteriormente
     const data_products = await Product.find(query)

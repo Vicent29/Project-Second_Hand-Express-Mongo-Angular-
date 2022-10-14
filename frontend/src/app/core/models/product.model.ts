@@ -4,5 +4,6 @@ export class Product {
     id_prod_typ?: String;
     prod_desc?: String;
     price?: String;
-    id_prod_cat?: String
+    id_prod_cat?: String;
+    img_prod?: String;
 }
