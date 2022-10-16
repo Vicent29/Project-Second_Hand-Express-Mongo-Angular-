@@ -201,6 +201,7 @@
       ],
       "location": "Valencia",
       "quality": "Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -225,6 +226,7 @@
       ],
       "location": "Madrid",
       "quality": "Como Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -249,6 +251,7 @@
       ],
       "location": "Sevilla",
       "quality": "Como Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -273,6 +276,7 @@
       ],
       "location": "Valencia",
       "quality": "Lo Ha Dado Todo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -297,6 +301,7 @@
       ],
       "location": "Barcelona",
       "quality": "Nuevo",
+      "disponibility": "En Tienda",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -321,6 +326,7 @@
       ],
       "location": "Vigo",
       "quality": "Lo Ha Dado Todo",
+      "disponibility": "En Tienda",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -345,6 +351,7 @@
       ],
       "location": "Madrid",
       "quality": "Lo Ha Dado Todo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -369,6 +376,7 @@
       ],
       "location": "Casteellon",
       "quality": "Lo Ha Dado Todo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -393,6 +401,7 @@
       ],
       "location": "Alicante",
       "quality": "Lo Ha Dado Todo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -417,6 +426,7 @@
       ],
       "location": "Valencia",
       "quality": "Lo Ha Dado Todo",
+      "disponibility": "En Tienda",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -441,6 +451,7 @@
       ],
       "location": "Sevilla",
       "quality": "Lo Ha Dado Todo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -465,6 +476,7 @@
       ],
       "location": "Luxemburgo",
       "quality": "Lo Ha Dado Todo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -489,6 +501,7 @@
       ],
       "location": "Valencia",
       "quality": "Lo Ha Dado Todo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -513,6 +526,7 @@
       ],
       "location": "Reus",
       "quality": "En Condiciones Aceptables",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -537,6 +551,7 @@
       ],
       "location": "Cantabria",
       "quality": "En Condiciones Aceptables",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -561,6 +576,7 @@
       ],
       "location": "Vigo",
       "quality": "En Condiciones Aceptables",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -585,6 +601,7 @@
       ],
       "location": "Cordoba",
       "quality": "En Condiciones Aceptables",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -609,6 +626,7 @@
       ],
       "location": "Cordoba",
       "quality": "En Condiciones Aceptables",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -633,6 +651,7 @@
       ],
       "location": "Madrid",
       "quality": "En Condiciones Aceptables",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -657,6 +676,7 @@
       ],
       "location": "Alicante",
       "quality": "En Buen Estado",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -681,6 +701,7 @@
       ],
       "location": "Casteellon",
       "quality": "En Condiciones Aceptables",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -705,6 +726,7 @@
       ],
       "location": "Reus",
       "quality": "En Buen Estado",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -729,6 +751,7 @@
       ],
       "location": "Santander",
       "quality": "En Buen Estado",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -753,6 +776,7 @@
       ],
       "location": "Santander",
       "quality": "En Buen Estado",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -777,6 +801,7 @@
       ],
       "location": "Vigo",
       "quality": "En Buen Estado",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -801,6 +826,7 @@
       ],
       "location": "Madrid",
       "quality": "En Buen Estado",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -825,6 +851,7 @@
       ],
       "location": "Reus",
       "quality": "En Buen Estado",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -849,6 +876,7 @@
       ],
       "location": "Barcelona",
       "quality": "Como Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -873,6 +901,7 @@
       ],
       "location": "Santander",
       "quality": "Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -897,6 +926,7 @@
       ],
       "location": "Mallorca",
       "quality": "Como Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -921,6 +951,7 @@
       ],
       "location": "Valencia",
       "quality": "Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -945,6 +976,7 @@
       ],
       "location": "Sevilla",
       "quality": "Como Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -969,6 +1001,7 @@
       ],
       "location": "Mallorca",
       "quality": "Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -993,6 +1026,7 @@
       ],
       "location": "Madrid",
       "quality": "Como Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -1017,6 +1051,7 @@
       ],
       "location": "Casteellon",
       "quality": "Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -1041,6 +1076,7 @@
       ],
       "location": "Alicante",
       "quality": "Como Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -1065,6 +1101,7 @@
       ],
       "location": "Sevilla",
       "quality": "Como Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -1089,6 +1126,7 @@
       ],
       "location": "Valencia",
       "quality": "Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {
@@ -1113,6 +1151,7 @@
       ],
       "location": "Santander",
       "quality": "Como Nuevo",
+      "disponibility": "En Stock",
       "__v": 0,
       "createdAt": {
         "$date": {

@@ -57,6 +57,7 @@ module.exports = {
                 img_prod: product.img_prod || null,
                 location: product.location || null,
                 quality: product.quality || null,
+                disponibility: product.disponibility || null
             });
         })
 

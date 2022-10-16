@@ -21,7 +21,8 @@ exports.create = async (req, res) => {
       id_prod_cat: req.body.id_prod_cat || null,
       location: req.body.location || null,
       quality: req.body.quality || null,
-      img_prod: req.body.img_prod || null
+      img_prod: req.body.img_prod || null,
+      disponibility: req.body.disponibility || null
     });
 
     // No se puede insertar con el push el slug porque debe de ser un objectID,
@@ -45,7 +46,7 @@ exports.findAll = async (req, res) => {
     let filters;
     if (req.query.filters) {
       filters = JSON.parse(req.query.filters);
-      console.log(filters.category);
+      console.log(filters);
     } else {
       filters = { quality: "", price: [0, 0], search: "", category: '' }
     }
@@ -63,27 +64,35 @@ exports.findAll = async (req, res) => {
 
     if (filters.quality == undefined) filters = { ...filters, quality: [""] };
     if (filters.price == undefined) filters = { ...filters, price: [0, 0] };
+    if (filters.disponibility == undefined) filters = { ...filters, disponibility: [""] };
 
-    if (filters != undefined && filters.quality != "" && filters.price[0] == 0) {
+    if (filters != undefined && filters.quality != "" && filters.price[0] == 0 && filters.disponibility == "") {
       query = { quality: filters.quality };
-    } else if (filters != undefined && filters.quality == "" && filters.price[0] != 0) {
+    } else if (filters != undefined && filters.quality == "" && filters.price[0] != 0 && filters.disponibility == "") {
       query = { price: { $gte: filters.price[0], $lte: filters.price[1] } }
-    } else if (filters != undefined && filters.quality != "" && filters.price[0] != 0) {
+    } else if (filters != undefined && filters.quality != "" && filters.price[0] != 0 && filters.disponibility == "") {
       query = {
         quality: filters.quality, price: { $gte: filters.price[0], $lte: filters.price[1] }
       }
+    } else if (filters != undefined && filters.quality == "" && filters.price[0] == 0 && filters.disponibility != "") {
+      query = { disponibility: filters.disponibility }
+    } else if (filters != undefined && filters.quality != "" && filters.price[0] == 0 && filters.disponibility != "") {
+      query = { quality: filters.quality, disponibility: filters.disponibility }
+    } else if ((filters != undefined && filters.quality != "" && filters.price[0] != 0 && filters.disponibility != "")) {
+      query = {
+        quality: filters.quality, price: { $gte: filters.price[0], $lte: filters.price[1] }, disponibility: filters.disponibility
+      }
     } else if (filters != undefined && filters.search != undefined) {
       query = { prod_nom: { $regex: filters.search, $options: 'i' } };
-    }
-    else if (filters != undefined && filters.category != '') {
+    } else if (filters != undefined && filters.category != '') {
       let first = filters.category.substr(0, 1).toUpperCase();
       if (filters.category.indexOf('-') == -1) {
         const categories = await Category.findOne({ cat_name: first + filters.category.replace(/\.[^/.]+$/, "").substr(1) })
         console.log(categories);
-      query = { id_prod_cat: first + categories.slug.substr(1) };
-      console.log(first + categories.slug.substr(1));
+        query = { id_prod_cat: first + categories.slug.substr(1) };
+        console.log(first + categories.slug.substr(1));
       } else {
-      query = { id_prod_cat: first + filters.category.substr(1) };
+        query = { id_prod_cat: first + filters.category.substr(1) };
       }
     }
     console.log(query)
@@ -145,6 +154,7 @@ exports.update = async (req, res) => {
     old_product.quality = req.body.quality || old_product.quality;
     old_product.id_prod_cat = req.body.id_prod_cat || old_product.id_prod_cat;
     old_product.img_prod = req.body.img_prod || old_product.img_prod;
+    old_product.disponibility = req.body.disponibility || old_product.disponibility;
 
     const product = await old_product.save();
     if (!product) { res.status(404).json(FormatError("Product not found", res.statusCode)); }

@@ -16,7 +16,8 @@ export class FiltersComponent {
     emit: {
         quality: string[],
         price: number[],
-    } = { quality: [""], price: [0, 0] };
+        disponibility: string[]
+    } = { quality: [""], price: [0, 0], disponibility: [""] };
 
     @Output() filterEvent: EventEmitter<{}> = new EventEmitter();
 
@@ -33,7 +34,9 @@ export class FiltersComponent {
             EnCondicionesAceptables: false,
             LoHaDadoTodo: false,
             minprice: 0,
-            maxprice: 0
+            maxprice: 0,
+            EnTienda: null,
+            EnStock: null
         });
     }
 
@@ -47,22 +50,29 @@ export class FiltersComponent {
         console.log(routeFilters);
 
         for (let row in routeFilters.quality) {
-            console.log(routeFilters.quality[row].replace(/\s+/g, ''));
             this.filtform.get(routeFilters.quality[row].replace(/\s+/g, ''))?.setValue(true)
         }
         this.filtform.get('minprice')?.setValue(routeFilters.price[0]);
         this.filtform.get('maxprice')?.setValue(routeFilters.price[1]);
+        for (let row in routeFilters.disponibility) {
+            this.filtform.get(routeFilters.disponibility[row].replace(/\s+/g, ''))?.setValue(true)
+        }
     }
 
     getValues() {
         let min = this.filtform.get('minprice')?.value;
         let max = this.filtform.get('maxprice')?.value;
+        let disponibilities = [];
+        this.filtform.get('EnStock')?.value == true ? disponibilities.push("En Stock") : "";
+        this.filtform.get('EnTienda')?.value == true ? disponibilities.push("En Tienda") : "";
         let values = [];
         for (let row in this.filtcheck) {
             this.filtform.get(this.filtcheck[row])?.value == true ? values.push(this.filtcheck[row].replace(/([A-Z])/g, ' $1').trim()) : false;
         }
         if (min > max) min = 0, max = 0;
-        this.emit = ({ quality: values, price: [min, max] })
+        this.emit = ({ quality: values, price: [min, max], disponibility: disponibilities })
+        console.log(this.emit);
+
         this.location.replaceState('/shop/' + btoa(JSON.stringify(this.emit)));
         this.filterEvent.emit(this.emit)
     }

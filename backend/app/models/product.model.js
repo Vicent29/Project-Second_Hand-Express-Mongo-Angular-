@@ -13,7 +13,8 @@ module.exports = mongoose => {
       id_prod_cat: String,
       img_prod: Array,
       location : String,
-      quality : String
+      quality : String,
+      disponibility: String
     },
     { timestamps: true }
   );
@@ -41,6 +42,7 @@ module.exports = mongoose => {
       prod_desc: this.prod_desc,
       price: this.price,
       id_prod_cat: this.id_prod_cat,
+      disponibility: this.disponibility
     };
   };
 

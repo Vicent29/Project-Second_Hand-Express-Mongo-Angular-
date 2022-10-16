@@ -23,12 +23,12 @@ router.get("/", (req, res) => {
                     img_prod: dummy.img_prod || null,
                     id_prod_cat: dummy.id_prod_cat || null,
                     location: dummy.location || null,
-                    quality: dummy.quality || null
+                    quality: dummy.quality || null,
+                    disponibility: dummy.disponibility || null
                 })
             )
         })
         Product.insertMany(product);
-
         let category = [];
         dummies[0].map(dummy => {
             category.push(new Category({

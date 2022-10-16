@@ -21,6 +21,15 @@
                 <input type="number" formControlName="minprice">
                 <input type="number" formControlName="maxprice">
             </div>
+            <b>
+                Disponibilidad
+            </b>
+            <div>
+                <input type="checkbox" name="" id="EnStock" formControlName="EnStock">En stock
+            </div>
+            <div>
+                <input type="checkbox" name="" id="EnTienda" formControlName="EnTienda">En tienda
+            </div>
             <div>
                 <button type="button" (click)="getValues()">Go</button>
             </div>
