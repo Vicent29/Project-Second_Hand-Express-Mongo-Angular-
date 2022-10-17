@@ -46,17 +46,18 @@ export class FiltersComponent {
     }
 
     setHighlights() {
-        let routeFilters = JSON.parse(atob(this.ActivatedRoute.snapshot.paramMap.get('filters') || ''))
-        console.log(routeFilters);
-
-        for (let row in routeFilters.quality) {
-            this.filtform.get(routeFilters.quality[row].replace(/\s+/g, ''))?.setValue(true)
+        let routeFilters = JSON.parse(atob(this.ActivatedRoute.snapshot.paramMap.get('filters') || ''));
+        if (routeFilters.search == undefined) {
+            for (let row in routeFilters.quality) {
+                this.filtform.get(routeFilters.quality[row].replace(/\s+/g, ''))?.setValue(true)
+            }
+            this.filtform.get('minprice')?.setValue(routeFilters.price[0]);
+            this.filtform.get('maxprice')?.setValue(routeFilters.price[1]);
+            for (let row in routeFilters.disponibility) {
+                this.filtform.get(routeFilters.disponibility[row].replace(/\s+/g, ''))?.setValue(true)
+            }
         }
-        this.filtform.get('minprice')?.setValue(routeFilters.price[0]);
-        this.filtform.get('maxprice')?.setValue(routeFilters.price[1]);
-        for (let row in routeFilters.disponibility) {
-            this.filtform.get(routeFilters.disponibility[row].replace(/\s+/g, ''))?.setValue(true)
-        }
+       
     }
 
     getValues() {

@@ -54,8 +54,7 @@ export class ProductListComponent implements OnInit {
   }
 
   getListProduct(filters: {}) {
-
-    if (this.routeFilters == "") {
+    if (this.routeFilters == '') {
       this.routeFilters = filters;
       this.noenter = 1;
     } else {
