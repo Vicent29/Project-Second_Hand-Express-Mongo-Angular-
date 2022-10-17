@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require("cors");
 const connectdb = require("./app/config/database.config")
 const mongoose = require('mongoose');
+const session = require('express-session')
 const logger = require('morgan');
 
 const bodyParser = require('body-parser');
@@ -12,6 +13,7 @@ const app = express();
 var corsOptions = {
     origin: process.env.CORSURL || "http://localhost:4200"
 };
+app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false  }));
 
 app.use(cors(corsOptions));
 app.use(logger('dev'));
@@ -40,6 +42,9 @@ mongoose.connect(dbConfig, {
 app.get('/', (req, res) => {
     res.json({ "message": "Welcome to Secon Hand application. Take notes quickly. Organize and keep track of all your products." });
 });
+
+require('./app/models/');
+require('./app/config/passport');
 
 app.use(require("./app/routes"));
 

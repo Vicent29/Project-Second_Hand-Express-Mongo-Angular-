@@ -1,0 +1,47 @@
+var mongoose = require('mongoose');
+var router = require('express').Router();
+var passport = require('passport');
+var User = mongoose.model('user');
+var auth = require('../auth');
+
+router.get('/', auth.required, function (req, res, next) {
+    User.findById(req.payload.id).then(function (user) {
+        if (!user) { return res.sendStatus(401); }
+
+        return res.json({ user: user.toAuthJSON() });
+    }).catch(next);
+});
+
+router.post('/register', function (req, res, next) {
+    var user = new User();
+
+    user.username = req.body.username;
+    user.email = req.body.email;
+    user.setPassword(req.body.password);
+
+    user.save().then(function () {
+        return res.json({ user: user.toAuthJSON() });
+    }).catch(next);
+});
+
+router.post('/login', function(req, res, next){
+    if(!req.body.user.email){
+      return res.status(422).json({errors: {email: "can't be blank"}});
+    }
+  
+    if(!req.body.user.password){
+      return res.status(422).json({errors: {password: "can't be blank"}});
+    }
+  user = req.body.user;
+    passport.authenticate('local', {session: false}, function(err, user, info){
+      if(err){ return next(err); }
+  
+      if(user){
+        return res.json({user: user.toAuthJSON()});
+      } else {
+        return res.status(422).json(info);
+      }
+    })(req, res, next);
+  });
+
+module.exports = router;
