@@ -1,0 +1,54 @@
+<!-- <section class="vh-100 bg-primary">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 ">
+                    <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+                        <h1 class="mb-5 text-center">{{ title }}</h1>
+                
+                        <div class="container">
+                            <div class="form-group">
+                                <label for="uname"  *ngIf="authType == '/register'"><b>Username (Opcional)</b></label>
+                                <input class="form-control form-control-sm" formControlName="username" type="text" placeholder="Enter Username" name="uname" *ngIf="authType == '/register'">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email"><b>Email</b></label>
+                                <input class="form-control form-control-sm" formControlName="email" type="text" placeholder="Enter Email" name="email">
+                            </div>
+                            
+                            <div class="text-danger" *ngIf="authForm.get('email')?.hasError('required') &&
+                                authForm.get('email')?.touched || authForm.get('email')?.hasError('email') &&
+                                authForm.get('email')?.touched">
+                                <span>El e-mail <strong>es obligatorio</strong></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="psw"><b>Password</b></label>
+                                <input class="form-control form-control-sm" formControlName="password" type="password" placeholder="Enter Password" name="psw">
+                            </div>
+                
+                            <div class="text-danger" *ngIf="authForm.get('password')?.hasError('required') &&
+                            authForm.get('password')?.touched || authForm.get('password')?.hasError('minlength') &&
+                            authForm.get('password')?.touched">
+                                <span>El password <strong>es obligatorio</strong> con un mínimo de 5 carácteres</span>
+                            </div>
+                
+                            
+                            Checkbox
+                            <div class="form-check d-flex justify-content-start mb-4">
+                                <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                                <label class="form-check-label" for="form1Example3"> Remember password </label>
+                            </div>
+                
+                            <button class="btn btn-lg btn-block btn-primary mb-2" [disabled]="!authForm.valid" type="submit">{{ title }}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<h1>hoal</h1>

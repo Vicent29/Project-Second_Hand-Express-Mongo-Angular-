@@ -6,12 +6,16 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { JwtService } from './jwt.service';
 import { User } from '../models';
 import { map ,  distinctUntilChanged } from 'rxjs/operators';
+const baseUrl = 'http://localhost:3000/user';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+
+    
   private currentUserSubject = new BehaviorSubject<User>({} as User);
   public currentUser = this.currentUserSubject.asObservable().pipe(distinctUntilChanged());
 
@@ -20,12 +24,13 @@ export class UserService {
 
   constructor (
     private http: HttpClient,
-    private jwtService: JwtService
+    private jwtService: JwtService,
   ) {}
 
   // Verify JWT in localstorage with server & load user's info.
   // This runs once on application startup.
   populate() {
+    console.log("prueba");
     // If JWT detected, attempt to get & store user's info
     if (this.jwtService.getToken()) {
       this.http.get('/user')
@@ -40,6 +45,8 @@ export class UserService {
   }
 
   setAuth(user: User) {
+    console.log("Holaaa");
+    
     // Save JWT sent from server in localstorage
     this.jwtService.saveToken(user.token);
     // Set current user data into observable
@@ -57,16 +64,26 @@ export class UserService {
     this.isAuthenticatedSubject.next(false);
   }
 
-  // attemptAuth(type, credentials): Observable<User> {
-  //   const route = (type === 'login') ? '/login' : '';
-  //   return this.http.post(`/users${route}`, {user: credentials})
-  //     .pipe(map(
-  //     data => {
-  //       this.setAuth(data.user);
-  //       return data;
-  //     }
-  //   ));
-  // }
+  attemptAuth(type: any, credentials:any): Observable<User> {
+    const route = (type === 'login') ? '/login' : '/register';
+    // console.log(this.http.post<User>(baseUrl+route, {user : credentials}));
+    
+    return this.http.post<User>(baseUrl+route, {user : credentials})
+    // .pipe(map(
+    //   data => {
+    //     this.setAuth(data.user);
+    //     return data;
+    //   }
+    // ));
+
+    // return this.http.post(`/user${route}`, {user: credentials})
+    //   .pipe(map(
+    //   data => {
+    //     this.setAuth(data.user);
+    //     return data;
+    //   }
+    // ));
+  }
 
   getCurrentUser(): User {
     return this.currentUserSubject.value;

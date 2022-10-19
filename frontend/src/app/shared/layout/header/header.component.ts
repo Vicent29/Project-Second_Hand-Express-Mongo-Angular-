@@ -1,15 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import {User, UserService } from '../../../core';
+import { Router} from '@angular/router';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-header-div',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-
 export class HeaderComponent implements OnInit {
+  constructor(
+    private userService: UserService,
+    private cd: ChangeDetectorRef,
+    private router: Router,
+  ) {}
 
-  constructor() { }
+  currentUser!: User;
 
-  ngOnInit(): void { }
+  ngOnInit() {
+    this.userService.currentUser.subscribe(
+      (userData) => {
+        
+        this.currentUser = userData;
+        this.cd.markForCheck();
+      }
+    );
+  }
 
+
+  logout() {
+    this.userService.purgeAuth();
+    this.router.navigateByUrl('/');
+  }
 }

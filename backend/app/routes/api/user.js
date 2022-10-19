@@ -15,9 +15,9 @@ router.get('/', auth.required, function (req, res, next) {
 router.post('/register', function (req, res, next) {
     var user = new User();
 
-    user.username = req.body.username;
-    user.email = req.body.email;
-    user.setPassword(req.body.password);
+    user.username = req.body.user.username;
+    user.email = req.body.user.email;
+    user.setPassword(req.body.user.password);
 
     user.save().then(function () {
         return res.json({ user: user.toAuthJSON() });
