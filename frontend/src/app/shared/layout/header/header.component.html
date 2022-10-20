@@ -3,16 +3,9 @@
   <nav>
     <button routerLink="home">Home</button>
     <button routerLink="shop">Shop</button>
-    <button routerLink="auth/login">Login</button>
-    <button routerLink="auth/register">Register</button>
-    <button routerLink="auth/login" (click)="logout()">Logout</button>
-    <!-- <ul *appShowAuthed="false" class="nav navbar-nav pull-xs-right">
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/profile', currentUser.username]" routerLinkActive="active">
-        <img [src]="currentUser.image || 'https://static.productionready.io/images/smiley-cyrus.jpg'"
-          *ngIf="currentUser.image" class="user-pic" alt="user image" />
-        {{ currentUser.username }}
-      </a>
-    </li> -->
+    <button routerLink="auth/login">reserva</button>
+    <button *appShowAuthed="false" routerLink="auth/login">Login</button>
+    <button *appShowAuthed="false" routerLink="auth/register">Register</button>
+    <button *appShowAuthed="true" routerLink="auth/login" (click)="logout()">Logout</button>
   </nav>
 </header>

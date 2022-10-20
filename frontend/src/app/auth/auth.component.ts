@@ -52,9 +52,8 @@ export class AuthComponent implements OnInit {
     this.UserService.attemptAuth(this.authType, credentials).subscribe(
       (data) => {
         console.log(data);
-
         this.notifyService.showSuccess('Ya estás dentro', 'Whispop');
-        // this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/');
       },
       (err) => {
         this.notifyService.showError(

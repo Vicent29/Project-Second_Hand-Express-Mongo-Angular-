@@ -30,7 +30,6 @@ export class UserService {
   // Verify JWT in localstorage with server & load user's info.
   // This runs once on application startup.
   populate() {
-    console.log("prueba");
     // If JWT detected, attempt to get & store user's info
     if (this.jwtService.getToken()) {
       this.http.get('/user')
@@ -45,7 +44,8 @@ export class UserService {
   }
 
   setAuth(user: User) {
-    console.log("Holaaa");
+    console.log(user);
+  
     
     // Save JWT sent from server in localstorage
     this.jwtService.saveToken(user.token);
@@ -69,12 +69,12 @@ export class UserService {
     // console.log(this.http.post<User>(baseUrl+route, {user : credentials}));
     
     return this.http.post<User>(baseUrl+route, {user : credentials})
-    // .pipe(map(
-    //   data => {
-    //     this.setAuth(data.user);
-    //     return data;
-    //   }
-    // ));
+    .pipe(map(
+      data => {
+        this.setAuth(data);
+        return data;
+      }
+    ));
 
     // return this.http.post(`/user${route}`, {user: credentials})
     //   .pipe(map(

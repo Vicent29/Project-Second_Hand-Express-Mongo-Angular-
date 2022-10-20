@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { Carouselslide } from './carousel/carousel.component';
 import { InfiniteScroll } from './infinite-scroll/inf-scroll.component'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ShowAuthedDirective } from './show-authed.directive';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
   ],
   declarations: [
     CategoryListComponent,
@@ -28,7 +29,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     FiltersComponent,
     SearchComponent,
     Carouselslide,
-    InfiniteScroll
+    InfiniteScroll,
+    ShowAuthedDirective
   ],
   exports: [
     CommonModule,
@@ -41,7 +43,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     FiltersComponent,
     SearchComponent,
     Carouselslide,
-    InfiniteScroll
+    InfiniteScroll,
+    ShowAuthedDirective
   ],
 })
 export class SharedModule { }

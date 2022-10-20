@@ -38,7 +38,7 @@ router.post('/login', function (req, res, next) {
     if (err) { return next(err); }
 
     if (user) {
-      return res.json({ user: user.toAuthJSON() });
+      return res.json(user.toAuthJSON() );
     } else {
       return res.status(422).json(info);
     }

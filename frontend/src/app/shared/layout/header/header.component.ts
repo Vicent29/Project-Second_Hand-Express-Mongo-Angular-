@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.userService.currentUser.subscribe(
       (userData) => {
-        
         this.currentUser = userData;
         this.cd.markForCheck();
       }
