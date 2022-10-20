@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import {  NotificationService, User } from '../core';
-import { UserService} from '../core/services/user.service';
+import { NotificationService, User } from '../core';
+import { UserService } from '../core/services/user.service';
 
 @Component({
   selector: 'app-auth',
@@ -25,14 +25,12 @@ export class AuthComponent implements OnInit {
     private notifyService: NotificationService
   ) {
     this.authForm = this.fb.group({
-      'username': ['', Validators.required],
+      'email': ['', Validators.required],
       'password': ['', Validators.required]
     });
   }
 
   ngOnInit() {
-    console.log("hola");
-    
     this.route.url.subscribe(data => {
       this.authType = data[data.length - 1].path;
       this.title = (this.authType === 'login') ? 'Sign in' : 'Sign up';
@@ -54,7 +52,7 @@ export class AuthComponent implements OnInit {
     this.UserService.attemptAuth(this.authType, credentials).subscribe(
       (data) => {
         console.log(data);
-        
+
         this.notifyService.showSuccess('Ya estás dentro', 'Whispop');
         // this.router.navigateByUrl('/');
       },

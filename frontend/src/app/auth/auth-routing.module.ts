@@ -7,20 +7,21 @@ const routes: Routes = [
   {
     path: 'register',
     component: AuthComponent,
-    canActivate: [NoAuthGuard]
+    // canActivate: [NoAuthGuard]
   },
   {
     path: 'login',
     component: AuthComponent,
-    canActivate: [NoAuthGuard]
+    // canActivate: [NoAuthGuard]
   },
   {
     path: '',
     redirectTo: "/auth/login",
-    canActivate: [NoAuthGuard]
+    component: AuthComponent,
+    // canActivate: [NoAuthGuard]
   }
 ];
-console.log(routes);
+console.log();
 
 
 @NgModule({
