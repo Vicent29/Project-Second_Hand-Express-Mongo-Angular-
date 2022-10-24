@@ -6,6 +6,7 @@ import { JsonPipe } from '@angular/common';
 @Component({
   selector: 'app-header-div',
   templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {

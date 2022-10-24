@@ -1,11 +1,14 @@
 <header>
-  <img src="../../../../assets/img/header/logo.png" routerLink="home" alt="logo">
+  <img class="logo" src="../../../../assets/img/header/logo.png" routerLink="home" alt="logo">
   <nav>
-    <button routerLink="home">Home</button>
-    <button routerLink="shop">Shop</button>
-    <button routerLink="auth/login">reserva</button>
-    <button *appShowAuthed="false" routerLink="auth/login">Login</button>
-    <button *appShowAuthed="false" routerLink="auth/register">Register</button>
-    <button *appShowAuthed="true" routerLink="auth/login" (click)="logout()">Logout</button>
+    <button class="btn_home" routerLink="home">Home</button>
+    <button class="btn_shop" routerLink="shop">Shop</button>
+    <button class="btn_prueba" routerLink="auth/login">P</button>
+    <button class="btn_login" *appShowAuthed="false" routerLink="auth/login"><i class="fa-solid fa-user"></i></button>
+    <button class="btn_reg" *appShowAuthed="false" routerLink="auth/register"><i class="fa-solid fa-user-plus"></i></button>
+
+    <button class="btn_profile" *appShowAuthed="true" routerLink="#"><img src="https://avatars.dicebear.com/api/personas/{{ currentUser.username }}.svg" alt=""><p class="username">{{ currentUser.username }}</p></button>
+    <button class="btn_like" *appShowAuthed="true" routerLink="" (click)="logout()"><i class="fa-solid fa-heart"></i></button>
+    <button class="btn_logout" *appShowAuthed="true" routerLink="auth/login" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></button>
   </nav>
 </header>

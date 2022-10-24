@@ -17,3 +17,9 @@ p{
 text-align: center;
 color: rgb(161, 158, 155);
 }
+
+app-search {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}

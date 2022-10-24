@@ -71,7 +71,17 @@
   margin-bottom: 15%;
   z-index: 100;
 }
-.like img {
-  height: 40px;
+.like{
+  /* height: 60px; */
+  color: rgb(119, 112, 112);
+}
+
+.like:hover{
+  color: rgb(247, 0, 0);
+  font-size: 1.1em;
+}
+
+#icono{
+ font-size: 1.5em;
 }
 
