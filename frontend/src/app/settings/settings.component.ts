@@ -45,7 +45,8 @@ export class SettingsComponent implements OnInit {
     this.router.navigateByUrl('/');
   }
 
-  submitForm() {
+  submitForm() {    
+    
     this.isSubmitting = true;
 
     // update the model
@@ -53,13 +54,11 @@ export class SettingsComponent implements OnInit {
 
     this.userService
     .update(this.user)
-    .subscribe(
-      updatedUser => this.router.navigateByUrl('/profile/' + updatedUser.username),
-      err => {
-        this.errors = err;
-        this.isSubmitting = false;
-        this.cd.markForCheck();
-      }
+    .subscribe((data) => {
+      console.log("holss aasa");
+      // updatedUser => this.router.navigateByUrl('/profile/' + updatedUser.username)
+      console.log(data);
+    }
     );
   }
 

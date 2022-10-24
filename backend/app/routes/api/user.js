@@ -21,7 +21,7 @@ router.post('/register', function (req, res, next) {
 
 
   user.save().then(function () {
-    return res.json({ user: user.toAuthJSON() });
+    return res.json(user.toAuthJSON());
   }).catch(next);
 });
 
@@ -46,22 +46,25 @@ router.post('/login', function (req, res, next) {
 });
 
 router.put('/', auth.required, function (req, res, next) {
+  console.log(req.body.user);
   User.findById(req.auth.id).then(function (user) {
     if (!user) { return res.sendStatus(401); }
 
-    if (typeof req.body.user.username !== 'undefined') {
+    if (req.body.user.username != "") {
       user.username = req.body.user.username;
     }
-    if (typeof req.body.user.email !== 'undefined') {
+    if (req.body.user.email != "") {
       user.email = req.body.user.email;
     }
-    if (typeof req.body.user.bio !== 'undefined') {
+    if (req.body.user.bio != "") {
       user.bio = req.body.user.bio;
     }
-    if (typeof req.body.user.image !== 'undefined') {
+    if (req.body.user.image != "") {
       user.image = req.body.user.image;
     }
-    if (typeof req.body.user.password !== 'undefined') {
+    if (req.body.user.password != "") {
+      console.log("cambio");
+      console.log(req.body.user.password);
       user.setPassword(req.body.user.password);
     }
 

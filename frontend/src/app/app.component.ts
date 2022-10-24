@@ -11,9 +11,9 @@ import { UserService } from './core';
 export class AppComponent {
   title = 'Express_Mongo_Angular';
 
-  // constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {}
 
-  // ngOnInit() {
-  //   this.userService.populate();
-  // }
+  ngOnInit() {
+    this.userService.populate();
+  }
 }

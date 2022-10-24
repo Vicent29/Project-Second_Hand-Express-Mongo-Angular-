@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ArticleListConfig, Profile } from '../core';
+// import { ArticleListConfig, Profile } from '../core';
 
 @Component({
   selector: 'app-profile-articles',
