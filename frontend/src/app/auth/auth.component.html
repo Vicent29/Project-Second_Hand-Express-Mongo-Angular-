@@ -16,6 +16,7 @@
                             <div class="form-group">
                                 <label for="email"><b>Email</b></label>
                                 <input class="form-control form-control-sm" formControlName="email" type="text" placeholder="Enter Email" name="email">
+                                <span id="err_email" style="color: red;"></span>
                             </div>
                             
                             <div class="text-danger" *ngIf="authForm.get('email')?.hasError('required') &&

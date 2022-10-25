@@ -55,6 +55,9 @@ export class AuthComponent implements OnInit {
         this.router.navigateByUrl('/');
       },
       (err) => {
+        console.log(err);
+        if (err.error.msg == "emailnotavailable") document.getElementById("err_email")!.innerHTML="Email ya utilizado";
+        
         this.notifyService.showError(
           'Ha habido algún error en el formulario, compruebe que los datos estén corréctamente',
           'Whispop'

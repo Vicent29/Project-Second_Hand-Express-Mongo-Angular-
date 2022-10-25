@@ -13,16 +13,24 @@ router.get('/', auth.required, function (req, res, next) {
 });
 
 router.post('/register', function (req, res, next) {
-  var user = new User();
 
-  user.username = req.body.user.username;
-  user.email = req.body.user.email;
-  user.setPassword(req.body.user.password);
+  let prueba = User.find({ "email": req.body.user.email })
+    .then(function (data) {
+      if (data == '') {
+        var user = new User();
+
+        user.username = req.body.user.username;
+        user.email = req.body.user.email;
+        user.setPassword(req.body.user.password);
 
 
-  user.save().then(function () {
-    return res.json(user.toAuthJSON());
-  }).catch(next);
+        user.save().then(function () {
+          return res.json(user.toAuthJSON());
+        }).catch(next);
+      } else {
+        return res.json(401, {msg: "emailnotavailable" })
+      }
+    })
 });
 
 router.post('/login', function (req, res, next) {
