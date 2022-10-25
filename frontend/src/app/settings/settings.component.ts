@@ -1,3 +1,4 @@
+import { leadingComment } from '@angular/compiler';
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -55,9 +56,9 @@ export class SettingsComponent implements OnInit {
     this.userService
     .update(this.user)
     .subscribe((data) => {
-      console.log("holss aasa");
-      // updatedUser => this.router.navigateByUrl('/profile/' + updatedUser.username)
-      console.log(data);
+      let users = JSON.parse(JSON.stringify(data))
+      this.userService.setAuth(users.user);
+      this.router.navigateByUrl('/')
     }
     );
   }

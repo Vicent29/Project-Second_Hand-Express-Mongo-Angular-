@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import {User, UserService } from '../../../core';
-import { Router} from '@angular/router';
+import { User, UserService } from '../../../core';
+import { Router } from '@angular/router';
 import { JsonPipe } from '@angular/common';
 
 @Component({
@@ -10,11 +10,12 @@ import { JsonPipe } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
+  controller?= 0
   constructor(
     private userService: UserService,
     private cd: ChangeDetectorRef,
     private router: Router,
-  ) {}
+  ) { }
 
   currentUser!: User;
 

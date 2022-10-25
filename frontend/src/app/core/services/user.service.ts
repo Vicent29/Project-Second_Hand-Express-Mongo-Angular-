@@ -20,16 +20,16 @@ export class UserService {
   private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
   public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 
-  constructor(private http: HttpClient, private jwtService: JwtService) {}
+  constructor(private http: HttpClient, private jwtService: JwtService) { }
 
   // Verify JWT in localstorage with server & load user's info.
   // This runs once on application startup.
-  populate() {    
+  populate() {
     // If JWT detected, attempt to get & store user's info
     if (this.jwtService.getToken()) {
       this.http.get<User>(baseUrl).subscribe(
-        users =>{ 
-          let user = JSON.parse(JSON.stringify(users)) 
+        users => {
+          let user = JSON.parse(JSON.stringify(users))
           this.setAuth(user.user)
         },
         err => this.purgeAuth()
@@ -41,8 +41,7 @@ export class UserService {
   }
 
   setAuth(user: User) {
-    console.log(user.token);
-
+    this.purgeAuth();
     // Save JWT sent from server in localstorage
     this.jwtService.saveToken(user.token);
     // Set current user data into observable
@@ -79,12 +78,12 @@ export class UserService {
   // Update the user on the server (email, pass, etc)
   update(user: User): Observable<User> {
     return this.http.put<User>(baseUrl, { user })
-    .pipe(
-      map((data) => {        
-      // Update the currentUser observable
-        this.currentUserSubject.next(data);
-        return data;
-      })
-    );
+      .pipe(
+        map((data) => {
+          // Update the currentUser observable
+          this.currentUserSubject.next(data);
+          return data;
+        })
+      );
   }
 }

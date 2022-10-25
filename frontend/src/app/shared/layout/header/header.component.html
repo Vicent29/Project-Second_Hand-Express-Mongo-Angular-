@@ -4,10 +4,16 @@
     <button class="btn_home" routerLink="home">Home</button>
     <button class="btn_shop" routerLink="shop">Shop</button>
     <button class="btn_login" *appShowAuthed="false" routerLink="auth/login"><i class="fa-solid fa-user"></i></button>
-    <button class="btn_reg" *appShowAuthed="false" routerLink="auth/register"><i class="fa-solid fa-user-plus"></i></button>
+    <button class="btn_reg" *appShowAuthed="false" routerLink="auth/register"><i
+        class="fa-solid fa-user-plus"></i></button>
 
-    <button class="btn_profile" *appShowAuthed="true" routerLink="settings"><img src="https://avatars.dicebear.com/api/personas/{{ currentUser.username }}.svg" alt=""><p class="username">{{ currentUser.username }}</p></button>
-    <button class="btn_like" *appShowAuthed="true" routerLink="" (click)="logout()"><i class="fa-solid fa-heart"></i></button>
-    <button class="btn_logout" *appShowAuthed="true" routerLink="auth/login" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i></button>
+    <button class="btn_profile" *appShowAuthed="true" routerLink="settings"><img
+        src="https://avatars.dicebear.com/api/personas/{{ currentUser.username }}.svg" alt="">
+      <p class="username">{{ currentUser.username }}</p>
+    </button>
+    <button class="btn_like" *appShowAuthed="true" routerLink="" (click)="logout()"><i
+        class="fa-solid fa-heart"></i></button>
+    <button class="btn_logout" *appShowAuthed="true" routerLink="auth/login" (click)="logout()"><i
+        class="fa-solid fa-right-from-bracket"></i></button>
   </nav>
 </header>
