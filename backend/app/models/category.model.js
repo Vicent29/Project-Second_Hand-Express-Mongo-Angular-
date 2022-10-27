@@ -9,7 +9,7 @@ module.exports = mongoose => {
       id_cat: String,
       cat_name: String,
       img_cat: Array,
-      products: [{ type: mongoose.Schema.Types.ObjectId, ref: "Product" }],
+      products: [{ type: mongoose.Schema.Types.ObjectId, ref: "product" }],
     },
     { timestamps: true }
   );

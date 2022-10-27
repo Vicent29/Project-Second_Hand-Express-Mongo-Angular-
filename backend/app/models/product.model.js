@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const slug = require('slug');
 const uniqueValidator = require('mongoose-unique-validator');
+const User = require('./user.model')
+// const User = mongoose.model('user');
 
 module.exports = mongoose => {
   var schema = mongoose.Schema(
@@ -12,9 +14,12 @@ module.exports = mongoose => {
       price: Number,
       id_prod_cat: String,
       img_prod: Array,
-      location : String,
-      quality : String,
-      disponibility: String
+      location: String,
+      quality: String,
+      disponibility: String,
+      favorites: Number,
+      comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'comment' }],
+      author: { type: mongoose.Schema.Types.ObjectId, ref: 'user' }
     },
     { timestamps: true }
   );
@@ -34,7 +39,19 @@ module.exports = mongoose => {
     console.log(this.slug);
   };//slugify
 
-  schema.methods.toJSONFor = function(){
+  schema.methods.updateFavoriteCount = function () {
+    var product = this;
+    // --------------------------------------------------------- 
+    // Yolanda, que es count y como funciona
+    // --------------------------------------------------------- 
+    return User.count({ favorites: { $in: [product._id] } }).then(function (count) {
+      product.favoritesCount = count;
+
+      return product.save();
+    });
+  };
+
+  schema.methods.toJSONFor = function () {
     return {
       slug: this.slug,
       prod_nom: this.prod_nom,
@@ -42,9 +59,11 @@ module.exports = mongoose => {
       prod_desc: this.prod_desc,
       price: this.price,
       id_prod_cat: this.id_prod_cat,
-      disponibility: this.disponibility
+      disponibility: this.disponibility,
+      favorites: this.favorites || 0,
     };
   };
+
 
   const Product = mongoose.model("product", schema);
   return Product;
