@@ -1,44 +1,42 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
-import { User, UserService, Profile } from '../core';
-import { concatMap ,  tap } from 'rxjs/operators';
+import { Profile } from '../core/models/profile.model';
+import { User, UserService } from '../core';
+// import { concatMap, tap } from 'rxjs/operators';
+// import { SharedModule } from '../shared/shared.module';
 
 @Component({
-  selector: 'app-profile-page',
+  selector: 'app-profile',
   templateUrl: './profile.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+  profile: Profile = {} as Profile;
+  currentUser: User = {} as User;
+  isUser: boolean = false;
+
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
     private cd: ChangeDetectorRef
-  ) { }
+  ) {}
 
-  profile: Profile;
-  currentUser: User;
-  isUser: boolean;
-
-  ngOnInit() {
-    this.route.data.pipe(
-      concatMap((data: { profile: Profile }) => {
-        this.profile = data.profile;
-        // Load the current user's data.
-        return this.userService.currentUser.pipe(tap(
-          (userData: User) => {
-            this.currentUser = userData;
-            this.isUser = (this.currentUser.username === this.profile.username);
-          }
-        ));
-      })
-    ).subscribe((() => {
-      this.cd.markForCheck();
-    }));
+  ngOnInit(): void {    
+    this.route.data.subscribe({
+      next: (data) => {console.log(data);
+      (this.profile = data['profile'] as Profile)},
+      error: (e) => console.error(e),
+    }); //get profile
+    console.log(this.profile);
+    
+    this.userService.currentUser.subscribe({
+      next: (data) => (this.isUser = data.username === this.profile.username),
+      error: (e) => console.error(e),
+    }); //check current user
   }
-
-  onToggleFollowing(following: boolean) {
-    this.profile.following = following;
-  }
-
-}
+} //class

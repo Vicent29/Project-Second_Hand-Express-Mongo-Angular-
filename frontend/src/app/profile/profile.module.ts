@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 
-import { ProfileArticlesComponent } from './profile-articles.component';
+// import { ProfileArticlesComponent } from './profile-articles.component';
 import { ProfileComponent } from './profile.component';
-import { ProfileFavoritesComponent } from './profile-favorites.component';
+// import { ProfileFavoritesComponent } from './profile-favorites.component';
 import { SharedModule } from '../shared';
 import { ProfileRoutingModule } from './profile-routing.module';
 
@@ -12,11 +12,12 @@ import { ProfileRoutingModule } from './profile-routing.module';
     ProfileRoutingModule
   ],
   declarations: [
-    ProfileArticlesComponent,
+    // ProfileArticlesComponent,
     ProfileComponent,
-    ProfileFavoritesComponent
+    // ProfileFavoritesComponent
   ],
   providers: [
   ]
 })
 export class ProfileModule {}
+

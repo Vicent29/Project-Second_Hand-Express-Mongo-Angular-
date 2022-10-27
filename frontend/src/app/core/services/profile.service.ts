@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Profile } from '../models/profile.model';
 import { map } from 'rxjs/operators';
 
-const baseUrl = 'http://localhost:3001/profile'
+const baseUrl = 'http://localhost:3000/profile'
 
 @Injectable({
     providedIn: 'root'
@@ -16,6 +16,6 @@ export class ProfilesService {
     ) { }
 
     get(username: string): Observable<Profile> {
-        return this.http.get<Profile>(`${baseUrl}/${username}`);
+        return this.http.get<Profile>(`${baseUrl}`);
     }
 }

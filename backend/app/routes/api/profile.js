@@ -15,6 +15,7 @@ router.param('email', function (req, res, next, email) {
 });
 
 router.get('/', auth.required, function (req, res, next) {
+    console.log("hola");
     User.findById(req.auth.id).then(function (user) {
         if (!user) { return res.sendStatus(401); }
 
