@@ -29,10 +29,9 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {    
     this.route.data.subscribe({
       next: (data) => {console.log(data);
-      (this.profile = data['profile'] as Profile)},
+      (this.profile = data['profile']['user'] as Profile)},
       error: (e) => console.error(e),
     }); //get profile
-    console.log(this.profile);
     
     this.userService.currentUser.subscribe({
       next: (data) => (this.isUser = data.username === this.profile.username),
