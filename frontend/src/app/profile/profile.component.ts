@@ -7,7 +7,7 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { Profile } from '../core/models/profile.model';
 import { User, UserService } from '../core';
-// import { concatMap, tap } from 'rxjs/operators';
+import { concatMap, tap } from 'rxjs/operators';
 // import { SharedModule } from '../shared/shared.module';
 
 @Component({
@@ -23,19 +23,26 @@ export class ProfileComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
   ) {}
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.route.data.subscribe({
-      next: (data) => {console.log(data);
-      (this.profile = data['profile']['user'] as Profile)},
+      next: (data) => {
+        console.log(data);
+        this.profile = data['profile']['user'] as Profile;
+      },
       error: (e) => console.error(e),
     }); //get profile
-    
+
     this.userService.currentUser.subscribe({
       next: (data) => (this.isUser = data.username === this.profile.username),
       error: (e) => console.error(e),
     }); //check current user
   }
+
+  onToggleFollowing(following: boolean) {
+    this.profile.following = following;
+  }
+
 } //class

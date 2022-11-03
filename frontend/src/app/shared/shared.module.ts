@@ -12,6 +12,7 @@ import { Carouselslide } from './carousel/carousel.component';
 import { InfiniteScroll } from './infinite-scroll/inf-scroll.component'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ShowAuthedDirective } from './show-authed.directive';
+import { FollowButtonComponent } from './buttons/follow-button.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ShowAuthedDirective } from './show-authed.directive';
     SearchComponent,
     Carouselslide,
     InfiniteScroll,
-    ShowAuthedDirective
+    ShowAuthedDirective,
+    FollowButtonComponent
   ],
   exports: [
     CommonModule,
@@ -44,7 +46,8 @@ import { ShowAuthedDirective } from './show-authed.directive';
     SearchComponent,
     Carouselslide,
     InfiniteScroll,
-    ShowAuthedDirective
+    ShowAuthedDirective,
+    FollowButtonComponent
   ],
 })
 export class SharedModule { }

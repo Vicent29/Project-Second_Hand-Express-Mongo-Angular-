@@ -5,17 +5,27 @@ import { HttpClient } from '@angular/common/http';
 import { Profile } from '../models/profile.model';
 import { map } from 'rxjs/operators';
 
-const baseUrl = 'http://localhost:3000/profile'
+const baseUrl = 'http://localhost:3000/profile';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProfilesService {
-    constructor(
-        private http: HttpClient
-    ) { }
+  constructor(private http: HttpClient) {}
 
-    get(username: string): Observable<Profile> {
-        return this.http.get<Profile>(`${baseUrl}`);
-    }
+  get(username: string): Observable<Profile> {
+    return this.http.get<Profile>(`${baseUrl}`);
+  }
+
+  getOther(username: String) {
+    return this.http.get<Profile>(`${baseUrl}/${username}`);
+  }
+  
+  follow(email: string): Observable<any> {
+    return this.http.post(`${baseUrl}/${email}/follow`, null);
+  }
+
+  unfollow(email: string): Observable<any> {
+    return this.http.delete(`${baseUrl}/${email}/follow`);
+  }
 }
