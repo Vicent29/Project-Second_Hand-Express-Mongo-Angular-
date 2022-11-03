@@ -24,7 +24,8 @@ router.get("/", (req, res) => {
                     id_prod_cat: dummy.id_prod_cat || null,
                     location: dummy.location || null,
                     quality: dummy.quality || null,
-                    disponibility: dummy.disponibility || null
+                    disponibility: dummy.disponibility || null,
+                    author: dummy.author || null
                 })
             )
         })
@@ -37,7 +38,8 @@ router.get("/", (req, res) => {
                 cat_name: dummy.cat_name || null,
                 img_cat: dummy.img_cat || null,
                 img_cat2: dummy.img_cat2 || null,
-                products: dummy.products || null
+                products: dummy.products || null,
+                author: dummy.author || null
             }))
         })
 

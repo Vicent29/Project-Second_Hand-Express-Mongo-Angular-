@@ -7,3 +7,4 @@ export * from './filters/filters.component';
 export * from './search/search.component';
 export * from './show-authed.directive';
 export * from './buttons/follow-button.component';
+export * from './buttons/favorite-button.component';

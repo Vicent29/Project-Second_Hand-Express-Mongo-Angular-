@@ -13,6 +13,7 @@ import { ThisReceiver } from '@angular/compiler';
   styleUrls: ['./list-product.component.css'],
 })
 export class ProductListComponent implements OnInit {
+
   listProducts: Product[] = [];
   listCategories: Category[] = [];
   slug_Category: String = '';
@@ -30,6 +31,7 @@ export class ProductListComponent implements OnInit {
     prod_nom: string;
     price: string;
     img_prod: string;
+    author: string;
   }[] = [];
 
   params: any = {
@@ -73,7 +75,8 @@ export class ProductListComponent implements OnInit {
     }
 
     this.ProductService.getListProduct(filters, this.params).subscribe({
-      next: (data) => {
+      next: (data) => { console.log(data);
+      
         let all_dates_products = JSON.parse(JSON.stringify(data));
         if (data[1] != this.prodquantity) {
           this.prodquantity = JSON.parse(JSON.stringify(data[1]));
@@ -89,6 +92,7 @@ export class ProductListComponent implements OnInit {
             prod_nom: productsCurrenPage[i].prod_nom,
             price: productsCurrenPage[i].price,
             img_prod: productsCurrenPage[i].img_prod[0],
+            author:productsCurrenPage[i].author
           });
         }
 
@@ -109,5 +113,9 @@ export class ProductListComponent implements OnInit {
     this.currentPage = pageNumber;
     this.params.offset = this.params.limit * (this.currentPage - 1);
     this.getListProduct(this.filters);
+  }
+
+  onToggleFavorite(favorited : boolean, product: Product) {    
+    product['favorited'] = favorited;    
   }
 }

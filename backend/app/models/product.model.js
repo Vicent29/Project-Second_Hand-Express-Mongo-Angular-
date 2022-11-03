@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const slug = require('slug');
 const uniqueValidator = require('mongoose-unique-validator');
-const User = require('./user.model')
-// const User = mongoose.model('user');
+const User = require('./user.model');
 
 module.exports = mongoose => {
   var schema = mongoose.Schema(
@@ -19,7 +18,8 @@ module.exports = mongoose => {
       disponibility: String,
       favorites: Number,
       comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'comment' }],
-      author: { type: mongoose.Schema.Types.ObjectId, ref: 'user' }
+      // author: { type: mongoose.Schema.Types.ObjectId, ref: 'user' }
+      author: String
     },
     { timestamps: true }
   );
@@ -61,6 +61,7 @@ module.exports = mongoose => {
       id_prod_cat: this.id_prod_cat,
       disponibility: this.disponibility,
       favorites: this.favorites || 0,
+      author: this.author,
     };
   };
 

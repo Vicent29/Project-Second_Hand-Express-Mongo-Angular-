@@ -6,4 +6,6 @@ export class Product {
     price?: String;
     id_prod_cat?: String;
     img_prod?: String;
+    favorited?: boolean;
+    author?:String;
 }

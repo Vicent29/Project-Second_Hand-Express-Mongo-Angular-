@@ -49,4 +49,12 @@ export class ProductService {
   findByTitle(prod_nom: any): Observable<Product[]> {
     return this.http.get<Product[]>(`${baseUrl}?prod_nom=${prod_nom}`);
   }
+
+  favorite(slug: string): Observable<any> {
+    return this.http.post(`${baseUrl}/${slug}/favorite`,null);
+  }
+
+  unfavorite(slug: string): Observable<Product> {
+    return this.http.delete(`${baseUrl}/${slug}/favorite`);
+  }
 }
