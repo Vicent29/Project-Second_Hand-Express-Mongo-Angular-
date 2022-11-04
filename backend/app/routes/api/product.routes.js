@@ -8,6 +8,7 @@ const product = require("../../controllers/product.controller.js");
 
 // Preload product
 router.param('product', function (req, res, next, slug) {
+    console.log("hola");
     Product.findOne({ slug: slug })
         .populate('author')
         .then(function (product) {
@@ -80,6 +81,7 @@ router.delete('/:product/favorite', auth.required, function (req, res, next) {
 
 router.get('/:product/comment', auth.optional, function (req, res, next) {
     var productSlug = req.product.slug;
+    console.log("hoa");
 
     Promise.resolve(req.auth ? User.findById(req.auth.id) : null)
         .then(function (user) {

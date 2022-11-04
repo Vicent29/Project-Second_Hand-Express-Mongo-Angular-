@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ProductService, Product } from '../core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { ProductService, Product, Comment, User, CommentsService, UserService } from '../core';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgControlStatusGroup } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
 
 @Component({
     selector: 'app-details',
@@ -10,49 +12,106 @@ import { NgControlStatusGroup } from '@angular/forms';
 })
 export class DetailsComponent implements OnInit {
 
-    @Input() product?: Product;
+
+    comments!: Comment[];
+    product!: Product;
+    currentUser!: User;
+    canModify!: boolean;
+    commentControl = new FormControl();
+    commentFormErrors = {};
+    isSubmitting = false;
+    isDeleting = false;
+    userimg!: String;
 
     constructor(
         private ProductService: ProductService,
         private ActivatedRoute: ActivatedRoute,
-        private router: Router) { }
+        private router: Router,
+        private route: ActivatedRoute,
+        private cd: ChangeDetectorRef,
+        private commentsService: CommentsService,
+        private userService: UserService
+    ) { }
 
     ngOnInit(): void {
         console.log(this.ActivatedRoute.snapshot.paramMap.get('slug'))
-        this.getProduct(this.ActivatedRoute.snapshot.paramMap.get('slug'));
+        this.getProduct(this.ActivatedRoute.snapshot.paramMap.get('slug')!);
+        this.populateComments(this.ActivatedRoute.snapshot.paramMap.get('slug')!);
+
     }
 
-    getProduct(slug: any): void {
+    getProduct(slug: string): void {
         if (slug) {
             this.ProductService.get(slug)
                 .subscribe({
                     next: (data) => {
-                        console.log(data);
                         this.product = data;
+                        this.getUser()
                     },
-                    error: (e) =>  {console.error(e)}
+                    error: (e) => { console.error(e) }
                 });
         } else {
         }
     }
 
-    //     getProduct() {
-    //         const slug: any = this.ActivatedRoute.snapshot.paramMap.get('slug');
-    //         console.log(slug);
-    //         console.log(this.ProductService.get("632a144f7709772950281c02"))
-    //         if (this.ProductService.get(slug)) {
-    //         }
-    //         this.product = this.ProductService.product;
-    //     } else {
-    //     this.ProductService.get_product(slug).subscribe({
-    //         next: data => this.ProductService.product = data,
-    //         error: e => console.error(e)
-    //     });
-    // }
+    getUser() {
+        this.userService.currentUser.subscribe(
+            (userData: User) => {
+                this.currentUser = userData;
+                this.userimg = userData.username;
+                console.log(this.canModify);
 
-    // this.ProductService.product$.subscribe({
-    //     next: data => this.product = data,
-    //     error: e => console.error(e)
-    // })
-    //     }
+                this.cd.markForCheck();
+            }
+        );
+    }
+
+    addComment() {
+        this.isSubmitting = true;
+        this.commentFormErrors = {};
+
+        const commentBody = this.commentControl.value;
+        this.commentsService
+            .add(this.product.slug, commentBody)
+            .subscribe(
+                comment => {
+                    // this.comments.unshift(comment);
+                    this.commentControl.reset('');
+                    this.isSubmitting = false;
+                    this.cd.markForCheck();
+                    this.populateComments(this.product.slug)
+                },
+                errors => {
+                    this.isSubmitting = false;
+                    this.commentFormErrors = errors;
+                    this.cd.markForCheck();
+                }
+            );
+    }
+
+    populateComments(slug: string) {
+        this.commentsService.getAll(slug)
+            .subscribe(comments => {
+                this.canModify = (this.currentUser.username == this.product.author);
+                let commentsStr = JSON.parse(JSON.stringify(comments)).comments
+                this.comments = commentsStr;
+                this.cd.markForCheck();
+            });
+    }
+
+    trackByFn(index: any, item: Comment) {
+        return index;
+    }
+
+    onDeleteComment(comment:any) {
+        this.commentsService.destroy(comment.id, this.product.slug)
+          .subscribe(
+            success => {
+              this.comments = this.comments.filter((item) => item !== comment);
+              this.cd.markForCheck();
+              this.populateComments(this.product.slug)
+            }
+          );
+      }
+
 }//class

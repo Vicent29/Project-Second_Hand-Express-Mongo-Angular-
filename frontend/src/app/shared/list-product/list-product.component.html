@@ -5,10 +5,10 @@
   <div class="item" *ngFor="let product of listProducts">
     <div class="product" *ngIf="product">
       <figure class="product_info">
-        <div class="div_img" [routerLink]="['/details/', product.slug]"><img src="../../../assets/img/products/{{product.img_prod}}" alt=""></div>
+        <div class="div_img"><img [routerLink]="['/details/', product.slug]" src="../../../assets/img/products/{{product.img_prod}}" alt=""></div>
         <h3>{{product.prod_nom}}</h3>
         <div class="price">{{product.price}}€</div>
-        <div calss="author" [routerLink]="['/profile/', product.author]"><img class="img_author" src="https://avatars.dicebear.com/api/personas/Vicent.svg" alt=""></div>
+        <div calss="author" [routerLink]="['/profile/', product.author]"><img class="img_author" src="https://avatars.dicebear.com/api/personas/{{product.author}}.svg" alt=""></div>
         <app-favorite-button
         [product]="product"
         (toggle)="onToggleFavorite($event, product)"

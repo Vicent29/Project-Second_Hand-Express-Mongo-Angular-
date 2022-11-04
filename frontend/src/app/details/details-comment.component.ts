@@ -4,11 +4,11 @@ import { Comment, User, UserService } from '../core';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-product-comment',
-  templateUrl: './product-comment.component.html',
+  selector: 'app-details-comment',
+  templateUrl: './details-comment.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductCommentComponent implements OnInit, OnDestroy {
+export class DetailsCommentComponent implements OnInit, OnDestroy {
   constructor(
     private userService: UserService,
     private cd: ChangeDetectorRef
@@ -17,7 +17,7 @@ export class ProductCommentComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
   
 
-  @Input() comment: Comment;
+  @Input() comment!: Comment;
   @Output() deleteComment = new EventEmitter<boolean>();
 
   canModify!: boolean;

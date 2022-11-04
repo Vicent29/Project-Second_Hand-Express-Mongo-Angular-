@@ -10,3 +10,29 @@
         </figure>
     </div>
 </div>
+
+<app-details-comment *ngFor="let comment of comments; trackBy: trackByFn" [comment]="comment"
+  (deleteComment)="onDeleteComment(comment)">
+</app-details-comment>
+
+<br><br>
+
+<div *appShowAuthed="true">
+    <form class="card comment-form" (ngSubmit)="addComment()">
+      <fieldset [disabled]="isSubmitting">
+        <div class="card-block">
+          <textarea class="form-control"
+            placeholder="Write a comment..."
+            rows="3"
+            [formControl]="commentControl"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <img src="https://avatars.dicebear.com/api/personas/{{userimg}}.svg" alt="user image" class="comment-author-img" width="50px"/>
+          <button class="btn btn-sm btn-primary" type="submit">
+           Post Comment
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>

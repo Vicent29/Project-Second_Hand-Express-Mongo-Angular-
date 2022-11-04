@@ -1,0 +1,25 @@
+.btn {
+    font-size: x-large;
+    border: 0px;
+}
+
+.btn:hover {
+    background-color:transparent;
+    color: red;
+    border: 0px;
+}
+
+i.ion-heart::before {
+    font-size: 200%;
+}
+
+
+button.btn.btn-primary {
+    color: red;
+    background-color:transparent;
+    border: 0px;
+}
+
+button.btn.btn-primary:hover {
+    color: blue;
+}

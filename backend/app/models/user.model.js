@@ -87,6 +87,7 @@ module.exports = mongoose => {
     UserSchema.methods.toProfileJSONFor = function (user) {
         return {
             username: this.username,
+            email: this.email,
             bio: this.bio,
             image: this.image || 'https://avatars.dicebear.com/api/personas/' + this.username + '.svg',
             favorites: this.favorites,
