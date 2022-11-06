@@ -8,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Profile } from '../core/models/profile.model';
 import { User, UserService } from '../core';
 import { concatMap, tap } from 'rxjs/operators';
-// import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-profile',

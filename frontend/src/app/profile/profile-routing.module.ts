@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './profile.component';
 import { ProfileResolver } from './profile-resolve.service';
+import { ProfileProductsComponent } from './user-MY_Products/profile-MyProducts.component';
 
 const routes: Routes = [
   {
@@ -11,14 +12,9 @@ const routes: Routes = [
       profile: ProfileResolver,
     },
     children: [
-      // {
-      //   path: '',
-      //   component: ProfileArticlesComponent,
-      // },
-      // {
-      //   path: 'favorites',
-      //   component: ProfileFavoritesComponent,
-      // },
+      { path: '', component: ProfileProductsComponent },
+      { path: 'products', component: ProfileProductsComponent },
+      // { path: 'favorites', component: ProfileLikesComponent }
     ],
   },
 ];

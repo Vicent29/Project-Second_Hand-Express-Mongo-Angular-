@@ -17,7 +17,6 @@ export class ProductService {
 
   getAll_Products(params: any): Observable<Product[]> {
     return this.http.get<Product[]>(baseUrl + "?offset=" + params.offset);
-    // return this.http.get<Product[]>(`${baseUrl}`,{params});
   }
 
   getListProduct(filters: any, params: any): Observable<Product[]> {
@@ -57,4 +56,8 @@ export class ProductService {
   unfavorite(slug: string): Observable<Product> {
     return this.http.delete(`${baseUrl}/${slug}/favorite`);
   }
+
+  all_products_user(email:String): Observable<Product[]> {
+    return this.http.get<Product[]>(`${baseUrl}/products/${email}`);
+  }//all_products_user
 }
