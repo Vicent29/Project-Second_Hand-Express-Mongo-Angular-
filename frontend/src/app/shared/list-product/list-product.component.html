@@ -1,4 +1,4 @@
-<app-search (filterEvent)="getListProduct($event)"></app-search>
+<app-search (filterEvent)="getListProduct($event)"></app-search><br>
 <app-filter (filterEvent)="getListProduct($event)"></app-filter>
 <div *ngIf="listProducts.length == 0"></div>
 <div *ngIf="listProducts" class="container">
@@ -19,7 +19,7 @@
     <div *ngIf="!product">No product</div>
   </div>
 </div>
-<nav class="d-flex justify-content-center mt-4" *ngIf="listProducts.length != 0 && totalPages.length != 1">
+<nav id="pagination" class="d-flex justify-content-center mt-4" *ngIf="listProducts.length != 0 && totalPages.length != 1">
   <ul class="pagination pg-blue">
     <li *ngIf="currentPage != 1" class="page-item" (click)="setPageTo(currentPage-1)">
       <span class="page-link">Previous</span>

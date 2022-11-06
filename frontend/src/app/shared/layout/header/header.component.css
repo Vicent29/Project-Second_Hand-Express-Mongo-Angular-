@@ -39,18 +39,21 @@ nav {
   grid-auto-flow: row;
   grid-template-areas: "img name";
   height: 40%;
-  width: auto;
+  width: 40%;
+  max-width:auto ;
 
 } 
 
 .btn_profile img {
   grid-area: img;
   grid-column: 1/2;
-  width: 65%;
+  width: 90%;
   margin-top: -7%;
   margin-left: 22%;
   display: flex;
   justify-content: center;
+  background-color:black;
+  border-radius: 50px;
 }
 
 .username {

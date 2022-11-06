@@ -1,9 +1,52 @@
+.filter {
+    margin-left: 2%;
+}
 .filters {
     position: sticky;
-    left: 2%;
-    width: 20%;
+    left: 1%;
+    width: 65%;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #bbeffd;
 }
 .filters .filter{
     display: flex;
     flex-flow: column;
+}
+
+.precio p {
+    display: inline;
+}
+
+.precio p:last-child {
+    margin-left: 8%;
+}
+
+.min_price , .max_price {
+    width: 36%;
+}
+
+.max_price {
+    margin-left: 2%;
+}
+
+.div_btn {
+display: flex;
+/* margin-left: 30%; */
+justify-content: center;
+align-items: center;
+margin-bottom: 2%;
+}
+
+.btn_filter {
+    background-color: #bbeffd;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.btn_filter:hover {
+    border-color: black;
+    font-size:large;
+    background-color: antiquewhite;
+    color: black;
 }

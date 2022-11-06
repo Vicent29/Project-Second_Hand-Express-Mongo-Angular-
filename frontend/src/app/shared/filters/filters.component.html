@@ -2,36 +2,52 @@
     <div class="filters">
         <div class="filter">
             <div>
-                <input type="checkbox" name="" id="nuevo" formControlName="Nuevo">Nuevo
+                <b>Estado del producto</b>
+                <ul>
+                    <div>
+                        <input type="checkbox" name="" id="nuevo" formControlName="Nuevo">Nuevo
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="comonuevo" formControlName="ComoNuevo">Como nuevo
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="enbuenestado" formControlName="EnBuenEstado">En buen estado
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="encondicionesaceptables"
+                            formControlName="EnCondicionesAceptables">En
+                        condiciones aceptables
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="lohadadotodo" formControlName="LoHaDadoTodo">Lo ha dado todo
+                    </div>
+                </ul>
             </div>
             <div>
-                <input type="checkbox" name="" id="comonuevo" formControlName="ComoNuevo">Como nuevo
+                <b>Precio</b>
+                <ul>
+                    <div>
+                        <div class="precio"><p>Min. precio</p> <p>Max. precio</p></div>
+                        <input class="min_price" type="number" formControlName="minprice">
+                        <input class="max_price" type="number" formControlName="maxprice">
+                    </div>
+                </ul>
             </div>
             <div>
-                <input type="checkbox" name="" id="enbuenestado" formControlName="EnBuenEstado">En buen estado
+                <b>
+                    Disponibilidad
+                </b>
+                <ul>
+                    <div>
+                        <input type="checkbox" name="" id="EnStock" formControlName="EnStock">En stock
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="EnTienda" formControlName="EnTienda">En tienda
+                    </div>
+                </ul>
             </div>
-            <div>
-                <input type="checkbox" name="" id="encondicionesaceptables" formControlName="EnCondicionesAceptables">En
-                condiciones aceptables
-            </div>
-            <div>
-                <input type="checkbox" name="" id="lohadadotodo" formControlName="LoHaDadoTodo">Lo ha dado todo
-            </div>
-            <div>
-                <input type="number" formControlName="minprice">
-                <input type="number" formControlName="maxprice">
-            </div>
-            <b>
-                Disponibilidad
-            </b>
-            <div>
-                <input type="checkbox" name="" id="EnStock" formControlName="EnStock">En stock
-            </div>
-            <div>
-                <input type="checkbox" name="" id="EnTienda" formControlName="EnTienda">En tienda
-            </div>
-            <div>
-                <button type="button" (click)="getValues()">Go</button>
+            <div class="div_btn">
+                <button class="btn_filter" type="button" (click)="getValues()">APLICAR</button>
             </div>
         </div>
     </div>

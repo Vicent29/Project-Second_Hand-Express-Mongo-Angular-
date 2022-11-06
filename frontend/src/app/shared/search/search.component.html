@@ -1,8 +1,9 @@
 <form [formGroup]="formSearch">
-    <div class="search">
-        <div class="filter">
-            <input type="text" autocomplete="off" name="search" id="search" formControlName="search">
-            <button type="button" (click)="getSearch()">Go</button>
+    <div class="wrap">
+        <div class="search">
+            <input type="text" autocomplete="off" name="search" class="searchTerm" id="search" formControlName="search"
+                placeholder="What are you looking for?">
+            <button type="button" class="searchButton" (click)="getSearch()"><i class="fa fa-search"></i></button>
         </div>
     </div>
 </form>
