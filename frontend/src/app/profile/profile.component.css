@@ -1,0 +1,85 @@
+.all_profile{
+  display: grid;
+  justify-items: center;
+  margin-top: 1%;
+}
+.div_profile_user {
+  /* background-color: aquamarine; */
+  width: 30%;
+  height: 350px;
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "img num_followers num_follows"
+    "img btn_follow btn_follow"
+    "username bio bio"
+    "post post post";
+}
+
+.img_user {
+  width: 60%;
+  grid-area: img;
+  grid-column: 1/2;
+  grid-row: 1/4;
+}
+
+.img_user img {
+  background-color: black;
+  border-radius: 100px;
+}
+
+.username {
+  grid-area: username;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  margin-top: 2%;
+  margin-left: 20%;
+  font-size: xx-large;
+}
+
+
+.num_followers {
+  background-color: red;
+  grid-area: num_followers;
+  grid-column: 2/3;
+  grid-row: 1/2;
+
+}
+
+
+
+.num_follows {
+  grid-area: num_follows;
+  grid-column: 3/4;
+  grid-row: 2/3;
+
+}
+
+
+#follow {
+  grid-area: btn_follow;
+  grid-column: 2/4;
+  grid-row: 3/4;
+  display: flex;
+  justify-content: center;
+}
+
+#bio {
+  grid-area: bio;
+  grid-column: 2/4;
+  grid-row: 4/5;
+  display: flex;
+  justify-content: center;
+}
+
+.btn_post_fav {
+  grid-area: post;
+  grid-column: 1/4;
+  grid-row: 5/6;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}

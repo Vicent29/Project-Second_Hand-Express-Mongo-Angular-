@@ -1,41 +1,49 @@
-<div class="user-info">
-  <div class="container">
-    <div class="row">
+<div class="all_profile">
+  <div class="div_profile_user">
+    <div class="left_info">
+      <div class="img_user">
+        <img src="https://avatars.dicebear.com/api/personas/{{profile.username}}.svg" alt="user image"
+          class="user-img" />
+      </div>
+      <div class="username">
+        <p>{{ profile.username }}</p>
 
-      <div class="col-xs-12 col-md-10 offset-md-1">
-        <img src="https://avatars.dicebear.com/api/personas/{{profile.username}}.svg" alt="user image" class="user-img"
-          style="width: 50px;" />
-        <h4>{{ profile.username }}</h4>
-        <p>{{ profile.bio }}</p>
+      </div>
+    </div>
+
+    <div class="right_info">
+      <div class="num_followers">
+        <p>200</p>
+        <p>FOLLOWERS</p>
+      </div>
+      <div class="num_follows">
+        <p>20</p>
+        <p>FOLLOWS</p>
+      </div>
+      <div id="follow">
         <app-follow-button [hidden]="isUser" [profile]="profile" (toggle)="onToggleFollowing($event)">
         </app-follow-button>
         <a [routerLink]="['/settings']" [hidden]="!isUser" class="btn btn-sm btn-outline-secondary action-btn">
-          <i class="ion-gear-a"></i> Edit Profile Settings
-        </a>
+          <i class="fa-solid fa-user-pen"></i>Edit my profile </a>
       </div>
-
+      <p id="bio">{{ profile.bio }}</p>
     </div>
-  </div>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-10 offset-md-1">
+    <div class="btn_post_fav">
       <div class="articles-toggle">
         <ul class="nav nav-pills outline-active">
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-              [routerLink]="['/profile', profile.email, 'products']">My Posts</a>
+              [routerLink]="['/profile/', profile.email]">My Posts</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-              [routerLink]="['/profile', profile.email, 'favorites']"> Favorited Posts </a>
+              [routerLink]="['/profile/', profile.email, 'favorites', profile.email]"> Favorited Posts </a>
           </li>
         </ul>
       </div>
-
-      <router-outlet></router-outlet>
     </div>
-
   </div>
 </div>
+
+<router-outlet></router-outlet>

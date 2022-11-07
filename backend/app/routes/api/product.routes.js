@@ -8,7 +8,6 @@ const product = require("../../controllers/product.controller.js");
 
 // Preload product
 router.param("product", function (req, res, next, slug) {
-  console.log("hola");
   Product.findOne({ slug: slug })
     .populate("author")
     .then(function (product) {
@@ -190,13 +189,15 @@ router.get("/products/:user", function (req, res, next) {
 });
 
 router.get("/favorite/:user", function (req, res, next) {
-    console.log("hola");
-    send.json(req.user.favorites)
-
-    procut.find({id: req.user.favorites})
-
-    santi : favoritos [asdklasjd, asldkjlksd, kalsdjlasj]
-
+  Product.find({_id: req.user.favorites})
+  .then(function (data) {
+    if (!data) {
+      return res.sendStatus(401);
+    }
+    console.log(data);
+    return res.json(data);
+  })
+  .catch(next);
 });
 
 module.exports = router;

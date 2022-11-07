@@ -60,4 +60,10 @@ export class ProductService {
   all_products_user(email:String): Observable<Product[]> {
     return this.http.get<Product[]>(`${baseUrl}/products/${email}`);
   }//all_products_user
+
+  fav_products_user(email:String): Observable<Product[]> {    
+    return this.http.get<Product[]>(`${baseUrl}/favorite/${email}`);
+  }//all_products_user
+
+  
 }

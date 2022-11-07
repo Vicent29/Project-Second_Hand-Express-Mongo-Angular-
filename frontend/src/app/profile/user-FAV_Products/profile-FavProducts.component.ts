@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService, Product, UserService, User, Profile } from '../../core';
+import {
+  ProductService,
+  Product,
+  UserService,
+  User,
+  Profile,
+} from '../../core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-profile-MyProducts',
-  templateUrl: './profile-MyProducts.component.html',
-  styleUrls: ['./profile-MyProducts.component.css'],
+  selector: 'app-profile-FavProducts',
+  templateUrl: './profile-FavProducts.component.html',
+  styleUrls: ['./profile-FavProducts.component.css'],
 })
-export class ProfileProductsComponent implements OnInit {
+export class ProfileFavProductsComponent implements OnInit {
   profile: Profile = {} as Profile;
   currentUser: User = {} as User;
   products: {
@@ -21,21 +27,21 @@ export class ProfileProductsComponent implements OnInit {
   constructor(
     private ProductService: ProductService,
     private userService: UserService,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     this.route.data.subscribe({
       next: (data) => {
-        this.profile = data['profile']['user'] as Profile;  
-        this.getProducts();
+        this.profile = data['profile']['user'] as Profile;
+        this.getFavProducts();
       },
       error: (e) => console.error(e),
     }); //get profile
   }
 
-  getProducts() {
-    this.ProductService.all_products_user(this.profile.email).subscribe({
+  getFavProducts() {
+    this.ProductService.fav_products_user(this.profile.email).subscribe({
       next: (data) => {
         let newdata = JSON.parse(JSON.stringify(data));
         for (let row in data) {
@@ -47,6 +53,8 @@ export class ProfileProductsComponent implements OnInit {
             author: newdata[row].author,
           });
         }
+        console.log(this.products);
+        
       },
       error: (error) => console.error(error),
     });

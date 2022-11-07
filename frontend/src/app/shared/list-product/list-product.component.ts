@@ -75,8 +75,7 @@ export class ProductListComponent implements OnInit {
     }
 
     this.ProductService.getListProduct(filters, this.params).subscribe({
-      next: (data) => { console.log(data);
-      
+      next: (data) => {
         let all_dates_products = JSON.parse(JSON.stringify(data));
         if (data[1] != this.prodquantity) {
           this.prodquantity = JSON.parse(JSON.stringify(data[1]));
