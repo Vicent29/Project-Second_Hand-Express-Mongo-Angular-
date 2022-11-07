@@ -30,12 +30,15 @@ export class ProfileComponent implements OnInit {
       next: (data) => {
         console.log(data);
         this.profile = data['profile']['user'] as Profile;
+        this.cd.markForCheck();
       },
       error: (e) => console.error(e),
     }); //get profile
 
     this.userService.currentUser.subscribe({
-      next: (data) => (this.isUser = data.username === this.profile.username),
+      next: (data) => {(this.isUser = data.username === this.profile.username)
+        this.cd.markForCheck();
+      },
       error: (e) => console.error(e),
     }); //check current user
   }

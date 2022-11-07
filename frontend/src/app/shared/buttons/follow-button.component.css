@@ -1,0 +1,11 @@
+.btn {
+    font-size: large;
+    border: 0px;
+    background-color: transparent;
+}
+
+.btn:hover {
+    background-color:transparent;
+    color: orange;
+    border: 0px;
+}

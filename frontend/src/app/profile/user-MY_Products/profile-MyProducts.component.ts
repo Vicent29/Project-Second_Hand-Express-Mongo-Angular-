@@ -35,6 +35,7 @@ export class ProfileProductsComponent implements OnInit {
   }
 
   getProducts() {
+    this.products = []
     this.ProductService.all_products_user(this.profile.email).subscribe({
       next: (data) => {
         let newdata = JSON.parse(JSON.stringify(data));

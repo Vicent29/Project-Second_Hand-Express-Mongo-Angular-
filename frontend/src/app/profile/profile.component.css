@@ -1,8 +1,9 @@
-.all_profile{
+.all_profile {
   display: grid;
   justify-items: center;
   margin-top: 1%;
 }
+
 .div_profile_user {
   /* background-color: aquamarine; */
   width: 30%;
@@ -36,36 +37,53 @@
   grid-row: 1/2;
   display: flex;
   margin-top: 2%;
-  margin-left: 20%;
+  margin-left: 15%;
   font-size: xx-large;
 }
 
-
 .num_followers {
-  background-color: red;
   grid-area: num_followers;
   grid-column: 2/3;
   grid-row: 1/2;
-
 }
 
-
+.num_followers p:first-child {
+  margin-left: 20%;
+}
 
 .num_follows {
   grid-area: num_follows;
   grid-column: 3/4;
-  grid-row: 2/3;
+  grid-row: 1/2;
+  margin-left: 90%;
+  margin-top: -57%;
+}
 
+.num_follows p:first-child {
+  position: relative;
+  margin-left: 150%;
 }
 
 
 #follow {
+  width: 150%;
   grid-area: btn_follow;
   grid-column: 2/4;
   grid-row: 3/4;
   display: flex;
   justify-content: center;
+  border-radius: 10px;
+  background-color: rgb(9, 9, 9);
+  color: white !important;
 }
+
+#follow .btn {
+  color: white !important;
+  width: 130%;
+  border: 0px;
+}
+
+
 
 #bio {
   grid-area: bio;
@@ -73,6 +91,14 @@
   grid-row: 4/5;
   display: flex;
   justify-content: center;
+  width: 150%;
+}
+
+.about {
+  position: relative;
+  color: red;
+  margin-top: 15%;
+  margin-bottom: -3%;
 }
 
 .btn_post_fav {
@@ -81,5 +107,5 @@
   grid-row: 5/6;
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: -5%
 }

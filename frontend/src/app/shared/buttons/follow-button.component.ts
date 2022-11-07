@@ -8,6 +8,7 @@ import { of } from 'rxjs';
 @Component({
   selector: 'app-follow-button',
   templateUrl: './follow-button.component.html',
+  styleUrls: ['./follow-button.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FollowButtonComponent {

@@ -6,6 +6,8 @@ import { ProductService } from 'src/app/core/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs';
 import { ThisReceiver } from '@angular/compiler';
+import { UserService, User } from 'src/app/core';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-list-product',
@@ -18,6 +20,9 @@ export class ProductListComponent implements OnInit {
   listCategories: Category[] = [];
   slug_Category: String = '';
   listProductByCategory: [] = [];
+  favorite: Product[] = []
+  currentUser: User = {} as User;
+  emit : String[] = []
 
   currentPage: number = 1;
   totalPages: Array<number> = [];
@@ -43,8 +48,9 @@ export class ProductListComponent implements OnInit {
   constructor(
     private ProductService: ProductService,
     private CategoryService: CategoryService,
-    private ActivatedRoute: ActivatedRoute
-  ) {}
+    private ActivatedRoute: ActivatedRoute,
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
     this.routeFilters = atob(
@@ -53,6 +59,39 @@ export class ProductListComponent implements OnInit {
     this.slug_Category =
       this.ActivatedRoute.snapshot.paramMap.get('slug') || '';
     this.setPageTo(this.currentPage);
+
+    this.userService.currentUser.subscribe({
+      next: (user: User) => {
+        if (user.username == null) { console.log("no user logged") }
+        else {
+          this.currentUser = user
+          // console.log(user);
+          // this.getHighlight(user)
+          // console.log("hola")
+        }
+      }
+    })
+  }
+
+  getHighlight(user: User) {
+    this.ProductService.fav_products_user(user.email).subscribe({
+      next: (alldata) => {
+        console.log(alldata);
+
+        let slugs: Product[] = []
+        alldata.map(data => { slugs.push(data.slug) })
+        this.listProducts.map(product => {
+          if (slugs.indexOf(product.slug) == -1) {
+            product['favorited'] = false
+          } else {
+            product['favorited'] = true
+          }
+        })
+        this.emit = JSON.parse(JSON.stringify(this.listProducts))
+      },
+      error: (e) => { console.log(e) },
+
+    })
   }
 
   getListProduct(filters: {}) {
@@ -91,11 +130,12 @@ export class ProductListComponent implements OnInit {
             prod_nom: productsCurrenPage[i].prod_nom,
             price: productsCurrenPage[i].price,
             img_prod: productsCurrenPage[i].img_prod[0],
-            author:productsCurrenPage[i].author
+            author: productsCurrenPage[i].author
           });
         }
 
         this.listProducts = this.data_prod;
+        this.getHighlight(this.currentUser)
         this.totalPages = Array.from(
           new Array(Math.ceil(ProductCount / this.params.limit)),
           (val, index) => index + 1
@@ -114,7 +154,7 @@ export class ProductListComponent implements OnInit {
     this.getListProduct(this.filters);
   }
 
-  onToggleFavorite(favorited : boolean, product: Product) {    
-    product['favorited'] = favorited;    
+  onToggleFavorite(favorited: boolean, product: Product) {
+    product['favorited'] = favorited;
   }
 }

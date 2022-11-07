@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { Product, ProductService, UserService } from '../../core';
 import { of } from 'rxjs';
-import { concatMap ,  tap } from 'rxjs/operators';
+import { concatMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-favorite-button',
@@ -12,14 +12,16 @@ import { concatMap ,  tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FavoriteButtonComponent {
+
   constructor(
     private productService: ProductService,
     private router: Router,
     private userService: UserService,
     private cd: ChangeDetectorRef
-  ) {}
+  ) { }
 
   @Input() product!: Product;
+  @Input() emit!: String[];
   @Output() toggle = new EventEmitter<boolean>();
   isSubmitting = false;
 
@@ -28,7 +30,6 @@ export class FavoriteButtonComponent {
 
     this.userService.isAuthenticated.pipe(concatMap(
       (authenticated) => {
-        
         // Not authenticated? Push to login screen
         if (!authenticated) {
           this.router.navigateByUrl('/auth/login');
@@ -36,26 +37,26 @@ export class FavoriteButtonComponent {
         }
 
         // Favorite the article if it isn't favorited yet
-        if (!this.product.favorited) { 
-         return this.productService.favorite(this.product.slug)
-          .pipe(tap(
-            data => {
-              this.isSubmitting = false;
-              this.toggle.emit(true);
-            },
-            err => this.isSubmitting = false
-          ));
+        if (!this.product.favorited) {          
+          return this.productService.favorite(this.product.slug)
+            .pipe(tap(
+              data => {
+                this.isSubmitting = false;
+                this.toggle.emit(true);
+              },
+              err => this.isSubmitting = false
+            ));
 
-        // Otherwise, unfavorite the article
+          // Otherwise, unfavorite the article
         } else {
           return this.productService.unfavorite(this.product.slug)
-          .pipe(tap(
-            data => {
-              this.isSubmitting = false;
-              this.toggle.emit(false);
-            },
-            err => this.isSubmitting = false
-          ));
+            .pipe(tap(
+              data => {
+                this.isSubmitting = false;
+                this.toggle.emit(false);
+              },
+              err => this.isSubmitting = false
+            ));
         }
 
       }

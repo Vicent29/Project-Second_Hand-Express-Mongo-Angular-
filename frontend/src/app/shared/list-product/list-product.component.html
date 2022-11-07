@@ -10,6 +10,7 @@
         <div class="price">{{product.price}}€</div>
         <div calss="author" [routerLink]="['/profile/', product.author]"><img class="img_author" src="https://avatars.dicebear.com/api/personas/{{product.author}}.svg" alt=""></div>
         <app-favorite-button
+        [emit]= "emit"
         [product]="product"
         (toggle)="onToggleFavorite($event, product)"
         class="pull-xs-right">

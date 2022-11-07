@@ -21,6 +21,6 @@ export class ProfileResolver implements Resolve<Profile> {
   ): Observable<any> {   
     console.log(route.params['username']);
     return this.profilesService.getOther(route.params['username'])
-      .pipe(catchError((error) => this.router.navigate(['/home'])));
+      .pipe(catchError((error) => this.router.navigate(['/auth/login'])));
   }
 }
