@@ -21,7 +21,7 @@
         <p>FOLLOWS</p>
       </div>
       <div id="follow">
-        <app-follow-button [hidden]="isUser" [profile]="profile" (toggle)="onToggleFollowing($event)">
+        <app-follow-button [hidden]="isUser" [emit]="emit" [profile]="profile" (toggle)="onToggleFollowing($event)">
         </app-follow-button>
         <a [routerLink]="['/settings']" [hidden]="!isUser" class="btn btn-sm btn-outline-secondary action-btn">
           <i class="fa-solid fa-user-pen"></i> Edit my profile </a>

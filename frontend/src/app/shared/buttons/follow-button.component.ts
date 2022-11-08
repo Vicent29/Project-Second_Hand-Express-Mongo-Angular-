@@ -20,6 +20,7 @@ export class FollowButtonComponent {
   ) {}
 
   @Input() profile!: Profile;
+  @Input() emit!: {};
   @Output() toggle = new EventEmitter<boolean>();
   isSubmitting = false;
 

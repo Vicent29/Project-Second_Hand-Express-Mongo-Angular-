@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
 import { Profile } from '../models/profile.model';
+import { User } from '../models/user.model';
 import { map } from 'rxjs/operators';
 
 const baseUrl = 'http://localhost:3000/profile';
@@ -27,5 +28,9 @@ export class ProfilesService {
 
   unfollow(email: string): Observable<any> {
     return this.http.delete(`${baseUrl}/${email}/follow`);
+  }
+
+  getfollows(): Observable<User[]>{
+    return this.http.get<User[]>(`${baseUrl}/follows`);
   }
 }

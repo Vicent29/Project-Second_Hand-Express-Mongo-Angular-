@@ -1,0 +1,68 @@
+/* Public coment */
+form{
+  width: 70%;
+  margin-left: 15%;
+ border-radius: 10px;
+ border: 2px solid black;
+
+}
+
+fieldset {
+  /* margin-left: 10%; */
+  /* background-color: red; */
+}
+
+#all_public_coment {
+  width: 100%;
+  height: 150px;
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows:  100%; 
+}
+
+.username {
+  background-color: aqua;
+  height: 150px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.username img {
+  width: 55%;
+  background-color: black;
+  border-radius: 60px;
+  margin-top: 1%;
+  margin-left: 22%;
+}
+
+.username p{
+  font-size: x-large;
+  background-color: bisque;
+  text-align: center;
+  margin-top: 1.2%;
+  border-bottom-left-radius: 10px;
+}
+
+.write_com {
+  
+}
+
+.write_com textarea {
+  height: 150px;
+}
+
+.btns {
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display:grid;
+  grid-template-columns: 100%;
+  grid-template-rows:  50% 50%; 
+}
+
+.btns button {
+  margin-left: 10%;
+  margin-top: 4%;
+  width: 80%;
+  height: 80%;
+}

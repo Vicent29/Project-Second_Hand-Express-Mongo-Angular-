@@ -182,7 +182,6 @@ router.get("/products/:user", function (req, res, next) {
       if (!data) {
         return res.sendStatus(401);
       }
-      console.log(data);
       return res.json(data);
     })
     .catch(next);
@@ -194,7 +193,6 @@ router.get("/favorite/:user", function (req, res, next) {
     if (!data) {
       return res.sendStatus(401);
     }
-    console.log(data);
     return res.json(data);
   })
   .catch(next);

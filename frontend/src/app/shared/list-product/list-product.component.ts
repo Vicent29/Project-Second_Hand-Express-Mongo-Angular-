@@ -76,7 +76,6 @@ export class ProductListComponent implements OnInit {
   getHighlight(user: User) {
     this.ProductService.fav_products_user(user.email).subscribe({
       next: (alldata) => {
-        console.log(alldata);
 
         let slugs: Product[] = []
         alldata.map(data => { slugs.push(data.slug) })

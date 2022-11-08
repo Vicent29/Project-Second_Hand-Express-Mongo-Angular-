@@ -89,6 +89,14 @@ export class DetailsComponent implements OnInit {
             );
     }
 
+    cancelComent() {
+      var comment= this.commentControl.value;
+      comment = '';
+   
+        console.log(comment);
+        
+    }
+
     populateComments(slug: string) {
         this.commentsService.getAll(slug)
             .subscribe(comments => {
