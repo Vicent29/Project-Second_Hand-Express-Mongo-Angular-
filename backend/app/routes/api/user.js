@@ -54,7 +54,6 @@ router.post('/login', function (req, res, next) {
 });
 
 router.put('/', auth.required, function (req, res, next) {
-  console.log(req.body.user);
   User.findById(req.auth.id).then(function (user) {
     if (!user) { return res.sendStatus(401); }
 
@@ -71,8 +70,6 @@ router.put('/', auth.required, function (req, res, next) {
       user.image = req.body.user.image;
     }
     if (req.body.user.password != "") {
-      console.log("cambio");
-      console.log(req.body.user.password);
       user.setPassword(req.body.user.password);
     }
 

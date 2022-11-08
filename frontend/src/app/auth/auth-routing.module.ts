@@ -21,7 +21,6 @@ const routes: Routes = [
     // canActivate: [NoAuthGuard]
   }
 ];
-console.log();
 
 
 @NgModule({

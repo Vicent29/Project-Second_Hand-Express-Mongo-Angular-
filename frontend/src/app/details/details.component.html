@@ -2,39 +2,34 @@
   <div *ngIf="!product">No product</div>
   <div class="product" *ngIf="product">
     <figure class="snip1423">
-      <img src="" alt="" />
+      <img src='/assets/img/products/{{ product.img_prod }}' alt="" />
       <h3>{{ product.prod_nom }}</h3>
       <div class="price">{{ product.price }}€</div>
+      <app-favorite-button
+      [emit]= "emit"
+      [product]="product"
+      (toggle)="onToggleFavorite($event, product)"
+      class="pull-xs-right">
+    </app-favorite-button>
     </figure>
   </div>
 </div>
 
-<app-details-comment
-  *ngFor="let comment of comments; trackBy: trackByFn"
-  [comment]="comment"
-  (deleteComment)="onDeleteComment(comment)"
->
+<app-details-comment *ngFor="let comment of comments; trackBy: trackByFn" [comment]="comment"
+  (deleteComment)="onDeleteComment(comment)">
 </app-details-comment>
-
 <br /><br />
 <form id="form_add" class="card comment-form" (ngSubmit)="addComment()">
   <fieldset [disabled]="isSubmitting">
     <div *appShowAuthed="true" id="all_public_coment">
       <div class="username">
-        <img [routerLink]="['/profile', userimg]"
-          src="https://avatars.dicebear.com/api/personas/{{ userimg }}.svg"
-          alt="user image"
-          class="comment-author-img"
-        />
+        <img [routerLink]="['/profile', userimg]" src="https://avatars.dicebear.com/api/personas/{{ userimg }}.svg"
+          alt="user image" class="comment-author-img" />
         <p [routerLink]="['/profile', userimg]">{{ userimg }}</p>
       </div>
       <div class="write_com">
-        <textarea
-          class="form-control"
-          placeholder="Write a comment..."
-          rows="3"
-          [formControl]="commentControl"
-        ></textarea>
+        <textarea class="form-control" placeholder="Write a comment..." rows="3"
+          [formControl]="commentControl"></textarea>
       </div>
       <div class="btns">
         <button class="btn btn-sm btn-primary" type="submit">

@@ -1,10 +1,14 @@
 /* Public coment */
-form{
+form {
   width: 70%;
   margin-left: 15%;
- border-radius: 10px;
- border: 2px solid black;
+  border-radius: 10px;
+  border: 2px solid black;
 
+}
+
+.product {
+  padding: 30px;
 }
 
 fieldset {
@@ -17,7 +21,7 @@ fieldset {
   height: 150px;
   display: grid;
   grid-template-columns: 15% 70% 15%;
-  grid-template-rows:  100%; 
+  grid-template-rows: 100%;
 }
 
 .username {
@@ -35,7 +39,7 @@ fieldset {
   margin-left: 22%;
 }
 
-.username p{
+.username p {
   font-size: x-large;
   background-color: bisque;
   text-align: center;
@@ -43,9 +47,7 @@ fieldset {
   border-bottom-left-radius: 10px;
 }
 
-.write_com {
-  
-}
+.write_com {}
 
 .write_com textarea {
   height: 150px;
@@ -55,9 +57,19 @@ fieldset {
   background-color: white;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  display:grid;
+  display: grid;
   grid-template-columns: 100%;
-  grid-template-rows:  50% 50%; 
+  grid-template-rows: 50% 50%;
+}
+
+.btns p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+  margin-top: 4%;
+  width: 80%;
+  height: 80%;
 }
 
 .btns button {
@@ -65,4 +77,8 @@ fieldset {
   margin-top: 4%;
   width: 80%;
   height: 80%;
+}
+
+img {
+  width: 30%;
 }

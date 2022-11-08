@@ -33,4 +33,9 @@ export class ProfilesService {
   getfollows(): Observable<User[]>{
     return this.http.get<User[]>(`${baseUrl}/follows`);
   }
+
+  getCountFoll(email: string){
+    return this.http.get(`${baseUrl}/count/${email}`);
+  }
+  
 }

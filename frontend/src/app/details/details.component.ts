@@ -21,6 +21,7 @@ export class DetailsComponent implements OnInit {
     commentFormErrors = {};
     isSubmitting = false;
     isDeleting = false;
+    emit : String[] = [];
     userimg!: String;
 
     constructor(
@@ -34,7 +35,6 @@ export class DetailsComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        console.log(this.ActivatedRoute.snapshot.paramMap.get('slug'))
         this.getProduct(this.ActivatedRoute.snapshot.paramMap.get('slug')!);
         this.populateComments(this.ActivatedRoute.snapshot.paramMap.get('slug')!);
 
@@ -44,9 +44,12 @@ export class DetailsComponent implements OnInit {
         if (slug) {
             this.ProductService.get(slug)
                 .subscribe({
-                    next: (data) => {
+                    next: (data) => { console.log(data);
+                        
+
                         this.product = data;
-                        this.getUser()
+                        this.getUser();
+                        this.getHighlight(this.currentUser);
                     },
                     error: (e) => { console.error(e) }
                 });
@@ -59,7 +62,6 @@ export class DetailsComponent implements OnInit {
             (userData: User) => {
                 this.currentUser = userData;
                 this.userimg = userData.username;
-                console.log(this.canModify);
 
                 this.cd.markForCheck();
             }
@@ -75,11 +77,11 @@ export class DetailsComponent implements OnInit {
             .add(this.product.slug, commentBody)
             .subscribe(
                 comment => {
-                    // this.comments.unshift(comment);
                     this.commentControl.reset('');
                     this.isSubmitting = false;
                     this.cd.markForCheck();
                     this.populateComments(this.product.slug)
+                    this.redirectTo(`/details/${this.product.slug}`)
                 },
                 errors => {
                     this.isSubmitting = false;
@@ -90,11 +92,8 @@ export class DetailsComponent implements OnInit {
     }
 
     cancelComent() {
-      var comment= this.commentControl.value;
-      comment = '';
-   
-        console.log(comment);
-        
+        var comment = this.commentControl.value;
+        this.commentControl.setValue('');
     }
 
     populateComments(slug: string) {
@@ -111,15 +110,49 @@ export class DetailsComponent implements OnInit {
         return index;
     }
 
-    onDeleteComment(comment:any) {
+    onDeleteComment(comment: any) {
         this.commentsService.destroy(comment.id, this.product.slug)
-          .subscribe(
-            success => {
-              this.comments = this.comments.filter((item) => item !== comment);
-              this.cd.markForCheck();
-              this.populateComments(this.product.slug)
-            }
-          );
-      }
+            .subscribe(
+                success => {
+                    this.comments = this.comments.filter((item) => item !== comment);
+                    this.populateComments(this.product.slug)
+                    this.cd.markForCheck();
+                    this.redirectTo(`/details/${this.product.slug}`)
+                    //   this.router.navigate(['/details/',this.product.slug]);
+                }
+            );
+    }
+
+    redirectTo(uri: string) {
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+            this.router.navigate([uri]));
+    }
+
+    getHighlight(user: User) {
+
+        this.ProductService.fav_products_user(user.email).subscribe({
+            next: (alldata) => {
+                let slugs : Product[] = []
+                alldata.map(data => { slugs.push(data.slug) })
+                  if (slugs.indexOf(this.product.slug) == -1) {
+                    console.log("no");
+                    
+                    this.product['favorited'] = false
+                  } else {
+                    console.log("sii");
+                    
+                    this.product['favorited'] = true
+                  }
+                this.emit = JSON.parse(JSON.stringify(this.product))
+            },
+            error: (e) => { console.log(e) },
+
+        })
+    }
+
+
+    onToggleFavorite(favorited: boolean, product: Product) {
+        product['favorited'] = favorited;
+    }
 
 }//class

@@ -47,7 +47,6 @@ exports.findAll = async (req, res) => {
     let filters;
     if (req.query.filters) {
       filters = JSON.parse(req.query.filters);
-      console.log(filters);
     } else {
       filters = { quality: "", price: [0, 0], search: "", category: '' }
     }
@@ -89,9 +88,7 @@ exports.findAll = async (req, res) => {
       let first = filters.category.substr(0, 1).toUpperCase();
       if (filters.category.indexOf('-') == -1) {
         const categories = await Category.findOne({ cat_name: first + filters.category.replace(/\.[^/.]+$/, "").substr(1) })
-        console.log(categories);
         query = { id_prod_cat: first + categories.slug.substr(1) };
-        console.log(first + categories.slug.substr(1));
       } else {
         query = { id_prod_cat: first + filters.category.substr(1) };
       }
@@ -103,7 +100,6 @@ exports.findAll = async (req, res) => {
       .limit(Number(limit))
       .skip(Number(offset));
     const QuantityProducts = await Product.find(query).countDocuments();
-    console.log(QuantityProducts);
 
     if (!data_products) {
       res.status(404).json({ msg: "No existe el product" });
@@ -144,7 +140,6 @@ exports.update = async (req, res) => {
   }
   try {
     let old_product = await Product.findOne({ slug: req.params.id });
-    // console.log(product);
     if (old_product.prod_nom !== req.body.prod_nom && req.body.prod_nom !== undefined) {
       old_product.slug = null;
     }//end if

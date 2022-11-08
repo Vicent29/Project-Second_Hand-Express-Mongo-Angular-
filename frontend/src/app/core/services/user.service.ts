@@ -61,7 +61,6 @@ export class UserService {
 
   attemptAuth(type: any, credentials: any): Observable<User> {
     const route = type === 'login' ? '/login' : '/register';
-    // console.log(this.http.post<User>(baseUrl+route, {user : credentials}));
 
     return this.http.post<User>(baseUrl + route, { user: credentials }).pipe(
       map((data) => {

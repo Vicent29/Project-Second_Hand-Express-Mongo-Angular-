@@ -36,7 +36,6 @@ module.exports = mongoose => {
 
   schema.methods.slugify = function () {
     this.slug = slug(this.prod_nom) + '-' + (Math.random() * Math.pow(36, 6) | 0).toString(36);
-    console.log(this.slug);
   };//slugify
 
   schema.methods.updateFavoriteCount = function () {
@@ -58,6 +57,7 @@ module.exports = mongoose => {
       id_prod_typ: this.id_prod_typ,
       prod_desc: this.prod_desc,
       price: this.price,
+      img_prod : this.img_prod[0],
       id_prod_cat: this.id_prod_cat,
       disponibility: this.disponibility,
       favorites: this.favorites || 0,

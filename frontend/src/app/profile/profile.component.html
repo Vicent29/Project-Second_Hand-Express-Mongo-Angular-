@@ -13,12 +13,12 @@
 
     <div class="right_info">
       <div class="num_followers">
-        <p>200</p>
+        <p>{{countFollowers}}</p>
         <p>FOLLOWERS</p>
       </div>
       <div class="num_follows">
-        <p>20</p>
-        <p>FOLLOWS</p>
+        <p>{{countFollowing}}</p>
+        <p>FOLLOWING</p>
       </div>
       <div id="follow">
         <app-follow-button [hidden]="isUser" [emit]="emit" [profile]="profile" (toggle)="onToggleFollowing($event)">

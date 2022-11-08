@@ -71,7 +71,6 @@ router.delete("/", product.deleteAll);
 // Favorite a product
 router.post("/:product/favorite", auth.required, function (req, res, next) {
   var productId = req.product._id;
-  // console.log(productId);
   // res.send(req.auth.id)
   User.findById(req.auth.id)
     .then(function (user) {
@@ -109,7 +108,6 @@ router.delete("/:product/favorite", auth.required, function (req, res, next) {
 
 router.get("/:product/comment", auth.optional, function (req, res, next) {
   var productSlug = req.product.slug;
-  console.log("hoa");
 
   Promise.resolve(req.auth ? User.findById(req.auth.id) : null)
     .then(function (user) {

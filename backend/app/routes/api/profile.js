@@ -30,20 +30,24 @@ router.get("/", auth.required, function (req, res, next) {
 });
 
 router.get("/follows", auth.required, function (req, res, next) {
-    User.findById({_id : req.auth.id}).then(function(user) {
-        if (!user) {
-            return res.sendStatus(401);
-          }
+  User.findOne({ _id: req.auth.id }).then(function (user) {
+    if (!user) {
+      return res.sendStatus(401);
+    }
 
-        User.find({_id : user.following}).then(function(users) {
-            console.log("hola");
-            return res.json(users);
-        })
-    }).catch(next);
+    User.find({ _id: user.following }).then(function (users) {
+      return res.json(users);
+    })
+  }).catch(next);
 });
 
+router.get("/count/:email", auth.optional, function (req, res, next) {
+return res.json({ followers: req.profile.followers.length, following: req.profile.following.length })
+})
+
+
+
 router.get("/:email", auth.required, function (req, res, next) {
-  console.log("hola");
   User.findById(req.profile.id)
     .then(function (user) {
       if (!user) {
@@ -65,6 +69,7 @@ router.post("/:email/follow", auth.required, function (req, res, next) {
           return res.sendStatus(401);
         }
 
+        req.profile.newfollower(req.auth.id)
         return user.follow(profileId).then(function () {
           return res.json({ profile: req.profile.toProfileJSONFor(user) });
         });
@@ -83,6 +88,7 @@ router.delete("/:email/follow", auth.required, function (req, res, next) {
           return res.sendStatus(401);
         }
 
+        req.profile.delfollower(req.auth.id)
         return user.unfollow(profileId).then(function () {
           return res.json({ profile: req.profile.toProfileJSONFor(user) });
         });

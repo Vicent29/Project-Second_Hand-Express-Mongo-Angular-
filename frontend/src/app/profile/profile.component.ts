@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Profile } from '../core/models/profile.model';
 import { User, UserService, ProfilesService } from '../core';
 import { concatMap, tap } from 'rxjs/operators';
@@ -18,20 +18,22 @@ export class ProfileComponent implements OnInit {
   profile: Profile = {} as Profile;
   currentUser: User = {} as User;
   isUser: boolean = false;
-  emit : {} = {}
+  emit: {} = {};
+  countFollowers : number=0;
+  countFollowing: number = 0;
 
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
     private cd: ChangeDetectorRef,
-    private profilesService: ProfilesService
-  ) {}
+    private profilesService: ProfilesService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.route.data.subscribe({
       next: (data) => {
         this.profile = data['profile']['user'] as Profile;
-        console.log(this.profile);
         this.cd.markForCheck();
       },
       error: (e) => console.error(e),
@@ -45,18 +47,32 @@ export class ProfileComponent implements OnInit {
       error: (e) => console.error(e),
     }); //check current user
 
-    let emfollows: String[] = [];
+   
+
     this.profilesService.getfollows().subscribe((data) => {
-      data.map((user) => {
+      data.map((user) => {         
         if (this.profile.email == user.email) {
           this.profile.following = true
         }
       });
       this.emit = JSON.parse(JSON.stringify(this.profile))
     });
+
+
+    this.profilesService.getCountFoll(this.profile.email).subscribe((data) => {
+      this.countFollowers = JSON.parse(JSON.stringify(data)).followers;
+      this.countFollowing = JSON.parse(JSON.stringify(data)).following;
+    });
+
+    
+  }
+
+  redirectTo(uri: string) {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+      this.router.navigate([uri]));
   }
 
   onToggleFollowing(following: boolean) {
     this.profile.following = following;
   }
-} //class
+}

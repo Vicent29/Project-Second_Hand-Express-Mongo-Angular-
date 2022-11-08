@@ -1,4 +1,3 @@
-// console.log("Prueba jsss");
 module.exports = {
     serializeOneCategory(category) {
         return {

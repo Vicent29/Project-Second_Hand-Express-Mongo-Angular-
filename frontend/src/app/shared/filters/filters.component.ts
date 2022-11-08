@@ -72,7 +72,6 @@ export class FiltersComponent {
         }
         if (min > max) min = 0, max = 0;
         this.emit = ({ quality: values, price: [min, max], disponibility: disponibilities })
-        console.log(this.emit);
 
         this.location.replaceState('/shop/' + btoa(JSON.stringify(this.emit)));
         this.filterEvent.emit(this.emit)

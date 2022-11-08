@@ -65,9 +65,6 @@ export class ProductListComponent implements OnInit {
         if (user.username == null) { console.log("no user logged") }
         else {
           this.currentUser = user
-          // console.log(user);
-          // this.getHighlight(user)
-          // console.log("hola")
         }
       }
     })
