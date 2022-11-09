@@ -14,11 +14,12 @@
               product.author
             }}.svg" alt="" />
         </div>
-        <!-- <app-favorite-button
-            [product]="product"
-            (toggle)="onToggleFavorite($event, product)"
-            class="pull-xs-right">
-        </app-favorite-button> -->
+        <app-favorite-button
+        [emit]= "emit"
+        [product]="product"
+        (toggle)="onToggleFavorite($event, product)"
+        class="pull-xs-right">
+      </app-favorite-button>
       </figure>
     </div>
     <div *ngIf="!product">No product</div>

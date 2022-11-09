@@ -8,4 +8,5 @@ export class Product {
     img_prod?: String;
     favorited?: boolean;
     author?:String;
+    disponibility?:String;
 }

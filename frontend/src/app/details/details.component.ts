@@ -111,14 +111,15 @@ export class DetailsComponent implements OnInit {
     }
 
     onDeleteComment(comment: any) {
+        console.log("estamosaquii");
+        
         this.commentsService.destroy(comment.id, this.product.slug)
             .subscribe(
                 success => {
                     this.comments = this.comments.filter((item) => item !== comment);
-                    this.populateComments(this.product.slug)
+                    this.populateComments(this.product.slug);
                     this.cd.markForCheck();
-                    this.redirectTo(`/details/${this.product.slug}`)
-                    //   this.router.navigate(['/details/',this.product.slug]);
+                    this.redirectTo(`/details/${this.product.slug}`);
                 }
             );
     }

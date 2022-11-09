@@ -1,13 +1,18 @@
 <br>
-<div class="card">
-    <div class="card-block">
-      <p class="card-text">{{ comment.body }}</p>
-    </div>
-    <div class="card-footer">
-      <a class="comment-author" [routerLink]="['/profile', comment.author.email]"><img [src]="comment.author.image || 'https://static.productionready.io/images/smiley-cyrus.jpg'" alt="author image" class="comment-author-img" width="50px"/></a>
-      &nbsp;
+<!-- <div *ngIf="comment"><h1>Comments:</h1></div> -->
+<div class="cards">
+    <div class="username_all">
+      <a class="comment-author" [routerLink]="['/profile', comment.author.email]"><img [src]="comment.author.image || 'https://static.productionready.io/images/smiley-cyrus.jpg'" alt="author image" class="comment-author-img"/></a>
       <a class="comment-author" [routerLink]="['/profile', comment.author.email]">{{ comment.author.username }}</a>
-      <span class="date-posted">{{ comment.createdAt | date: 'short' }}</span>
-      <span class="mod-options" [hidden]="!canModify"><i class="ion-trash-a" (click)="deleteClicked()"></i></span>
     </div>
-  </div>
+
+      <div class="body_comment">
+        <p class="card-text">{{ comment.body }}</p>
+        <span class="date-posted">{{ comment.createdAt | date: 'short' }}</span>
+      </div>
+      <div class="delete_one">
+        <span class="mod-options" [hidden]="!canModify" (click)="deleteClicked()"><i class="fa-solid fa-trash"></i></span>
+        <span class="mod-options" [hidden]="canModify" (click)="nodeleted()"><i class="fa-solid fa-ban"></i></span>
+        
+      </div>
+</div>

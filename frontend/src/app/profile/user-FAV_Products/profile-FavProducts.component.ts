@@ -23,7 +23,9 @@ export class ProfileFavProductsComponent implements OnInit {
     img_prod: string;
     author: string;
   }[] = [];
-
+  listProducts: Product [] = [];
+  emit : String[] = []
+ 
   constructor(
     private ProductService: ProductService,
     private userService: UserService,
@@ -53,10 +55,38 @@ export class ProfileFavProductsComponent implements OnInit {
             author: newdata[row].author,
           });
         }
-        console.log(this.products);
-        
+        this.listProducts = this.products;
+        this.getHighlight(this.profile);
       },
       error: (error) => console.error(error),
     });
   } //getProducts
+
+  getHighlight(user: Profile) {
+    console.log(user.email);
+
+    this.ProductService.fav_products_user(user.email).subscribe({
+      next: (alldata) => {
+      
+
+        let slugs: Product[] = []
+        alldata.map(data => { slugs.push(data.slug) })
+        this.listProducts.map(product => {
+          if (slugs.indexOf(product.slug) == -1) {
+            product['favorited'] = false
+          } else {
+            product['favorited'] = true
+          }
+        })
+        this.emit = JSON.parse(JSON.stringify(this.listProducts))
+      },
+      error: (e) => {
+        console.log(e);
+      },
+    });
+  }
+
+  onToggleFavorite(favorited: boolean, product: Product) {
+    product['favorited'] = favorited;
+  }
 }

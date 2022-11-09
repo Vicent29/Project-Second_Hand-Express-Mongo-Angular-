@@ -61,6 +61,7 @@ nav {
   grid-column: 2/3;
   text-align: center;
   margin-top: 2%;
+  text-transform: uppercase;
 }
 
 .btn_logout,
