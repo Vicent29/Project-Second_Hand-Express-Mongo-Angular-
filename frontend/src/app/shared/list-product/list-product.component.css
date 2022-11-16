@@ -103,8 +103,9 @@ app-favorite-button {
 }
 
 app-search {
+  margin-top: 1%;
   display: flex;
-  margin-left: 47%;
+  justify-content: center;
 }
 
 app-filter {

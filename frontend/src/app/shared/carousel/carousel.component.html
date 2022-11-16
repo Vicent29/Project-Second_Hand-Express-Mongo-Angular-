@@ -1,17 +1,19 @@
 <div id="carousel_div" class="carousel slide" data-ride="carousel">
+    <div class="flex">
 
-    <button class="arrow_prev" (click)='getPrev()'><img src="../../../assets/img/img_web/arrow_left"
-            alt="Arrow prev"></button>
+        <button class="arrow_prev" (click)='getPrev()'><img src="../../../assets/img/img_web/arrow_left"
+                alt="Arrow prev"></button>
 
-    <div class="carousel-inner div_img" role="listbox">
+        <div class="carousel-inner div_img" role="listbox">
 
-        <img src="../../../assets/img/category/{{ getSlide() }}" [routerLink]="['/shop/category/', getSlide()]"
-            alt="slide" class="image">
+            <img src="../../../assets/img/category/{{ getSlide() }}" [routerLink]="['/shop/category/', getSlide()]"
+                alt="slide" class="image">
 
+        </div>
+
+        <button class="arrow_next" (click)='getNext()'><img src="../../../assets/img/img_web/arrow_right"
+                alt="Arrow prev"></button>
     </div>
-
-    <button class="arrow_next" (click)='getNext()'><img src="../../../assets/img/img_web/arrow_right"
-            alt="Arrow prev"></button>
 
 </div>
 <div class="div_dots">

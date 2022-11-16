@@ -8,8 +8,8 @@ body{
 
 .search {
   width: 100%;
-  position: relative;
   display: flex;
+  justify-content: center;
 }
 
 .searchTerm {
@@ -40,8 +40,19 @@ body{
 }
 
 /*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: 200%;
-  margin-top: 7%;
-  margin-left: -50%;
+
+@media screen and (max-width : 1000px) {
+  .search input {
+    width: 250px!important;
+  }
+}
+
+@media screen and (max-width : 700px) {
+  .search input {
+    width: 200px!important;
+  }
+}
+
+.search input {
+  width: 500px;
 }

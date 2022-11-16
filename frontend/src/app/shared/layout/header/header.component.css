@@ -1,4 +1,37 @@
+
 header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+}
+
+.logo {
+  width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .div_logo {
+    width: 20% !important;
+  }
+}
+
+
+@media screen and (min-width: 700px) {
+  .div_logo {
+    width: 30%;
+  }
+}
+
+
+@media screen and (min-width: 0px) {
+  .div_logo {
+    width: 40%;
+  }
+}
+
+
+/* header {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-auto-flow: row;
@@ -96,4 +129,4 @@ nav button:hover {
 
 nav button {
   margin-right: 2%;
-}
+} */
