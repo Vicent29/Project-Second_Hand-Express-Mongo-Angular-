@@ -19,6 +19,7 @@ color: rgb(161, 158, 155);
 }
 
 app-search {
+  margin-top: 5%;
   display: flex;
   justify-content: center;
 }

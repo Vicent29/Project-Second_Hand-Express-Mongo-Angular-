@@ -1,17 +1,15 @@
 <div class="all_profile">
   <div class="div_profile_user">
-    <!-- <div class="left_info"> -->
-      <div class="img_user">
-        <img src="https://avatars.dicebear.com/api/personas/{{profile.username}}.svg" alt="user image"
-          class="user-img" />
-      </div>
-      <div class="username">
-        <p>{{ profile.username }}</p>
 
-      </div>
-    <!-- </div> -->
 
-    <!-- <div class="right_info"> -->
+    <div class="inf_user">
+      <img src="https://avatars.dicebear.com/api/personas/{{profile.username}}.svg" alt="user image" class="user-img" />
+      <p>{{ profile.username }}</p>
+    </div>
+
+
+
+    <div class="grid">
       <div class="num_followers">
         <p>{{countFollowers}}</p>
         <p>FOLLOWERS</p>
@@ -28,21 +26,23 @@
       </div>
       <p id="about">ABOUT ME:</p>
       <p id="bio">{{ profile.bio }}</p>
-    <!-- </div> -->
+    </div>
 
-    <div class="btn_post_fav">
-      <div class="articles-toggle">
-        <ul class="nav nav-pills outline-active">
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-              [routerLink]="['/profile/', profile.email]">My Posts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-              [routerLink]="['/profile/', profile.email, 'favorites', profile.email]"> Favorited Posts </a>
-          </li>
-        </ul>
-      </div>
+  </div>
+
+
+  <div class="btn_post_fav">
+    <div class="articles-toggle">
+      <ul class="nav nav-pills outline-active">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="['/profile/', profile.email]">My Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="['/profile/', profile.email, 'favorites', profile.email]"> Favorited Posts </a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

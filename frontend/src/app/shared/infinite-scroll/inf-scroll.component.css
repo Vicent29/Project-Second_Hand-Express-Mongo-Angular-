@@ -1,24 +1,38 @@
+@media screen and (max-width: 1561px) {
+   .container {
+      margin-top: 100px !important;
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-around !important;
+      margin-left: auto !important;
+   }
+
+   .card_category {
+      width: 333px !important;
+   }
+
+}
+
 @font-face {
-    font-family: "Lobster";
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/lobster/v28/neILzCirqoswsqX9zo-mM5Ez.woff2)
-      format("woff2");
-    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+   font-family: "Lobster";
+   font-style: normal;
+   font-weight: 400;
+   src: url(https://fonts.gstatic.com/s/lobster/v28/neILzCirqoswsqX9zo-mM5Ez.woff2) format("woff2");
+   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
       U+FE2E-FE2F;
-  }
+}
 
 .infinityCat_div {
-    margin-top: 6%;
+   margin-top: 6%;
 }
- h1{
-    text-align: center;
-    transform: translateX(-27%);
-    width: 100%;
-    font-family: "Lobster";
- }
 
- .container{
+h1 {
+   text-align: center;
+   width: 100%;
+   font-family: "Lobster";
+}
+
+.container {
    width: 100%;
    display: flex;
    flex-wrap: wrap;
@@ -31,23 +45,23 @@
 
 }
 
- .category {
-    width: 100%;
-    border: solid 1px black;
-    border-radius: 10px;
-    text-align: center;
-    font-size: xx-large;
-    margin-top: 3%;
-    background-color: bisque;
- }
+.category {
+   width: 100%;
+   border: solid 1px black;
+   border-radius: 10px;
+   text-align: center;
+   font-size: xx-large;
+   margin-top: 3%;
+   background-color: bisque;
+}
 
- .category:hover{
+.category:hover {
    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
- }
+}
 
- .category img {
-    width: 80%;
-    height: 250px;
-    border-radius: 10px;
-    margin-top: 10px;
- }
+.category img {
+   width: 80%;
+   height: 250px;
+   border-radius: 10px;
+   margin-top: 10px;
+}

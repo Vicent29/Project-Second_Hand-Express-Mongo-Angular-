@@ -1,7 +1,7 @@
 <nav>
         
   <div class="container">
-    <a htrf="#" id="logo" routerLink="home"><img src="../../../../assets/img/header/icono2.png" alt=""> WISHPOP</a>  
+    <a id="logo" routerLink="home"><img src="../../../../assets/img/header/icono2.png" alt=""> WISHPOP</a>  
     <div class="links">
       <a><img id="menu-icon" class="image" src="../../../../assets/img/header/bar.png" alt="icon"></a>
       <ul>
@@ -9,19 +9,19 @@
         <li><a class="opc1" routerLink="shop">Shop</a></li>
         <li *appShowAuthed="false"><a routerLink="auth/login"><i class="fa-solid fa-user"></i></a></li>  
         <li *appShowAuthed="false"><a routerLink="auth/register"><i class="fa-solid fa-user-plus"></i></a></li> 
-        <li class="img_profile" *appShowAuthed="true">
+        <li class="img_profile li_name" *appShowAuthed="true">
           <a class="info_user" href="#" [routerLink]="['/profile/', currentUser.email]">
             <img src="https://avatars.dicebear.com/api/personas/{{currentUser.username}}.svg" alt=""/>
         </a>
         </li>
-        <li *appShowAuthed="true">
+        <li *appShowAuthed="true" class="li_img">
           <a class="info_user" [routerLink]="['/profile/', currentUser.email]">
             <p class="username">{{ currentUser.username }}</p>
         </a>
         </li>
         <li *appShowAuthed="true">
           <a [routerLink]="['/profile/',currentUser.email,'favorites',currentUser.email]">
-            <i class="fa-solid fa-heart cor"></i>
+            <i class="fa-solid fa-heart"></i>
           </a>
         </li>
         <li *appShowAuthed="true">

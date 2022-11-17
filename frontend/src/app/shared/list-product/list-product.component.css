@@ -1,3 +1,26 @@
+@media screen and (max-width: 1650px) {
+  .container {
+    display: flex !important;
+    justify-content: space-around !important;
+    margin-left: auto !important;
+  }
+
+  .item {
+    width: 333px !important;
+  }
+
+  #pagination {
+    margin-left: auto !important;
+  }
+
+  app-filter {
+    width: 100%!important;
+    margin-bottom: 1%;
+  }
+}
+
+
+
 .container {
   width: 100%;
   display: flex;
@@ -87,7 +110,7 @@
   border: 2px solid black
 }
 
-.img_author:hover{
+.img_author:hover {
   background-color: #CEF6F5;
 }
 
@@ -103,7 +126,7 @@ app-favorite-button {
 }
 
 app-search {
-  margin-top: 1%;
+  margin-top: 3%;
   display: flex;
   justify-content: center;
 }

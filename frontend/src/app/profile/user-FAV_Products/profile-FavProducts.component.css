@@ -1,3 +1,17 @@
+@media screen and (max-width: 1561px) {
+  .container {
+    margin-top: 100px!important;
+    width: 100%!important;
+    display: flex !important;
+    justify-content: space-around !important;
+    margin-left: auto !important;
+  }
+
+  .item {
+    width: 333px !important;
+  }
+}
+
 .container {
     width: 120%;
     display: flex;
