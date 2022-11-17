@@ -2,8 +2,8 @@
 <!-- <div *ngIf="comment"><h1>Comments:</h1></div> -->
 <div class="cards">
     <div class="username_all">
-      <a class="comment-author" [routerLink]="['/profile', comment.author.email]"><img [src]="comment.author.image || 'https://static.productionready.io/images/smiley-cyrus.jpg'" alt="author image" class="comment-author-img"/></a>
-      <a class="comment-author" [routerLink]="['/profile', comment.author.email]">{{ comment.author.username }}</a>
+      <a class="comment-author comment-img" [routerLink]="['/profile', comment.author.email]"><img [src]="comment.author.image || 'https://static.productionready.io/images/smiley-cyrus.jpg'" alt="author image" class="comment-author-img"/></a>
+      <a class="comment-author comment-name" [routerLink]="['/profile', comment.author.email]"><p>{{ comment.author.username }}</p></a>
     </div>
 
       <div class="body_comment">

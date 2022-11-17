@@ -1,19 +1,22 @@
 @media screen and (max-width: 800px) {
   .info_prod p {
-    font-size: 15px!important;
+    font-size: 15px !important;
   }
   figure {
     flex-direction: column;
   }
   figure img {
-    width: 100%!important;
+    width: 100% !important;
     border-radius: 10px;
   }
   .info_prod {
     border-radius: 10px;
-    border-left:10px double!important;
+    border-left: 10px double !important;
   }
 
+  .cards .username_all .comment-name p {
+    display: none!important;
+  }
 }
 
 /* Public coment */
@@ -57,7 +60,7 @@ fieldset {
   border: 5px double white;
 }
 .username img:hover {
-  background-color: #CEF6F5;
+  background-color: #cef6f5;
 }
 
 .username p {
@@ -137,7 +140,7 @@ figure .info_prod {
 }
 
 .info_prod p {
-font-size: large;
+  font-size: large;
 }
 
 .btns_details {
@@ -145,18 +148,18 @@ font-size: large;
   justify-content: space-around;
 }
 .btns_details button {
-  background-color: #CEF6F5;
+  background-color: #cef6f5;
   border-radius: 10px;
 }
 
 .fa-cart-shopping {
-  color:  #047cfc;
+  color: #047cfc;
   width: 100%;
   height: 40px;
 }
 
 .fa-cart-shopping:hover {
- color: rgb(88, 187, 88);
+  color: rgb(88, 187, 88);
 }
 
 /* Style Alll coments */
@@ -186,7 +189,7 @@ font-size: large;
   border: 5px double white;
 }
 .username_all img:hover {
-  background-color: #CEF6F5;
+  background-color: #cef6f5;
 }
 
 .username_all a {
@@ -220,10 +223,12 @@ font-size: large;
   align-items: center;
 }
 
-.fa-trash, .fa-ban {
+.fa-trash,
+.fa-ban {
   width: 100%;
   height: 40px;
 }
-.fa-trash:hover, .fa-ban:hover {
+.fa-trash:hover,
+.fa-ban:hover {
   color: red;
 }

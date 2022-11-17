@@ -1,21 +1,35 @@
-<header>
-  <div class="div_logo">
-    <img class="logo" src="../../../../assets/img/header/logo.png" routerLink="home" alt="logo">
+<nav>
+        
+  <div class="container">
+    <a htrf="#" id="logo" routerLink="home"><img src="../../../../assets/img/header/icono2.png" alt=""> WISHPOP</a>  
+    <div class="links">
+      <a><img id="menu-icon" class="image" src="../../../../assets/img/header/bar.png" alt="icon"></a>
+      <ul>
+        <li><a class="opc1" routerLink="home">Home</a></li>
+        <li><a class="opc1" routerLink="shop">Shop</a></li>
+        <li *appShowAuthed="false"><a routerLink="auth/login"><i class="fa-solid fa-user"></i></a></li>  
+        <li *appShowAuthed="false"><a routerLink="auth/register"><i class="fa-solid fa-user-plus"></i></a></li> 
+        <li class="img_profile" *appShowAuthed="true">
+          <a class="info_user" href="#" [routerLink]="['/profile/', currentUser.email]">
+            <img src="https://avatars.dicebear.com/api/personas/{{currentUser.username}}.svg" alt=""/>
+        </a>
+        </li>
+        <li *appShowAuthed="true">
+          <a class="info_user" [routerLink]="['/profile/', currentUser.email]">
+            <p class="username">{{ currentUser.username }}</p>
+        </a>
+        </li>
+        <li *appShowAuthed="true">
+          <a [routerLink]="['/profile/',currentUser.email,'favorites',currentUser.email]">
+            <i class="fa-solid fa-heart cor"></i>
+          </a>
+        </li>
+        <li *appShowAuthed="true">
+          <a routerLink="auth/login" (click)="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </a>
+        </li>
+      </ul>  
+    </div>
   </div>
-  <nav>
-    <button class="btn_home" routerLink="home">Home</button>
-    <button class="btn_shop" routerLink="shop">Shop</button>
-    <button class="btn_login" *appShowAuthed="false" routerLink="auth/login"><i class="fa-solid fa-user"></i></button>
-    <button class="btn_reg" *appShowAuthed="false" routerLink="auth/register"><i
-        class="fa-solid fa-user-plus"></i></button>
-
-    <button class="btn_profile" *appShowAuthed="true" [routerLink]="['/profile/', currentUser.email]"><img
-        src="https://avatars.dicebear.com/api/personas/{{ currentUser.username }}.svg" alt="">
-      <p class="username">{{ currentUser.username }}</p>
-    </button>
-    <button class="btn_like" *appShowAuthed="true" [routerLink]="['/profile/', currentUser.email, 'favorites', currentUser.email]"><i
-        class="fa-solid fa-heart"></i></button>
-    <button class="btn_logout" *appShowAuthed="true" routerLink="auth/login" (click)="logout()"><i
-        class="fa-solid fa-right-from-bracket"></i></button>
-  </nav>
-</header>
+</nav>
