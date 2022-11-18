@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-profile-FavProducts',
   templateUrl: './profile-FavProducts.component.html',
-  styleUrls: ['./profile-FavProducts.component.css'],
+  styleUrls: ['./profile-FavProducts.component.scss'],
 })
 export class ProfileFavProductsComponent implements OnInit {
   profile: Profile = {} as Profile;

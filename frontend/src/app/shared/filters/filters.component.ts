@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 @Component({
     selector: 'app-filter',
     templateUrl: './filters.component.html',
-    styleUrls: ['./filters.component.css'],
+    styleUrls: ['./filters.component.scss'],
 })
 
 export class FiltersComponent {

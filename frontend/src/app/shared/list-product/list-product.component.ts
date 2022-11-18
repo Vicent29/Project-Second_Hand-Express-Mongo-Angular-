@@ -12,7 +12,7 @@ import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-list-product',
   templateUrl: './list-product.component.html',
-  styleUrls: ['./list-product.component.css'],
+  styleUrls: ['./list-product.component.scss'],
 })
 export class ProductListComponent implements OnInit {
 

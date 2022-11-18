@@ -16,7 +16,7 @@ import { NotificationService, User } from '../core';
 @Component({
   selector: 'app-details-comment',
   templateUrl: './details-comment.component.html',
-  styleUrls: ['./details.component.css'],
+  styleUrls: ['./details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DetailsCommentComponent implements OnInit, OnDestroy {

@@ -1,18 +1,26 @@
 .div_settings {
-  margin: 0px auto;
   background-color: #cef6f5;
   border: 2px solid black;
   border-radius: 10px;
   width: 30%;
   background-color: white;
   box-shadow: #ba9d5b 0px 20px 30px -10px;
+  margin: 0px auto;
 }
 
 form {
-  display: flexenter;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  background-color: green;
+  margin-right: 0px;
+  position: sticky;
 }
 
 h1 {
+  width: 100%;
   text-align: center;
   margin-top: 2%;
 }
@@ -31,12 +39,30 @@ button {
   display: flex;
   justify-content: space-around;
   margin-bottom: 4%;
+  
 }
 
 img {
+  margin-left: 30%;
   margin-top: 2%;
-  margin-left: 35%;
   width: 40%;
   background-color: black;
   border-radius: 50px;
+}
+
+@media screen and (max-width: 850px) {
+  .div_settings {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .div_settings {
+    width: 70%;
+  }
+
+  .div_button {
+    margin-left: 40%;
+    width: 20%!important;
+  }
 }

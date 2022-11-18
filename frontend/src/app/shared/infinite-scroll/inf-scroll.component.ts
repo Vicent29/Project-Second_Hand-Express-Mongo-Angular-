@@ -5,7 +5,7 @@ import { CategoryService } from 'src/app/core/services/category.service';
 @Component({
     selector: 'app-infinite-scroll',
     templateUrl: './inf-scroll.component.html',
-    styleUrls: ['./inf-scroll.component.css'],
+    styleUrls: ['./inf-scroll.component.scss'],
 })
 
 export class InfiniteScroll {
