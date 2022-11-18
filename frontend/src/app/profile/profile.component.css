@@ -1,178 +1,147 @@
-@media screen and (max-width: 1561px) {
-  .div_profile_user {
-    display: flex;
-    justify-content: center;
-    flex-direction: column !important;
-  }
-}
-
-
-
-
-.div_profile_user {
+.flex {
+  width: 40%;
+  margin: 0px auto;
   display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-.inf_user img, .inf_user p {
-  background-color: black;
-  border-radius: 100px;
-  border: 10px double white;
-} 
-
-.inf_user {
-width: 100%;
-}
-
-.inf_user p {
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-} 
-
-.grid {
-  display:grid;
-  grid-template-columns: 50% 50;
-  grid-template-rows: 33.3% 33.3% 33.3%;
-  grid-area: "followers following"
-              "" ;
-
-  /* grid-column: 2/3;
-  grid-row: 1/2; */
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .all_profile {
-  display: grid;
-  justify-items: center;
+  justify-content: space-around;
   margin-top: 1%;
 }
 
-.div_profile_user {
- display: flex;
- justify-content: center;
+.img_username {
+  width: 30%;
 }
 
-.img_user {
-  width: 60%;
-  margin-left: 27%;
+.img_username img {
+  width: 200px;
+  background-color: black;
+  border-radius: 150px;
+  border: 10px double white;
 }
 
-.username {
-
-  display: flex;
-  margin-top: 2%;
-  margin-left: 15%;
-  font-size: xx-large;
-  display: flex;
-  justify-content: center;
+.img_username p {
+  margin-top: 1%;
+  text-align: center;
   text-transform: uppercase;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-.num_followers p:first-child {
-
+.info_right {
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: x-large;
+  flex-direction: column;
+  text-align: center;
+}
 
+.info_foll {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .num_followers p:last-child {
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
   background-color: black;
-  color: white;
   border-radius: 10px;
-  border: 2px solid white;
-}
-
-.num_follows p:first-child {
-
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-  font-size: x-large
+  border: 8px double white;
+  color: white;
+  padding: 5px;
 }
 
 .num_follows p:last-child {
-
-  display: flex;
-  justify-content: center;
   background-color: black;
-  color: white;
   border-radius: 10px;
-  border: 2px solid white;
+  border: 8px double white;
+  color: white;
+  padding: 5px;
+}
+
+.num_followers p:first-child,
+.num_follows p:first-child {
+  font-weight: bold;
+  font-size: x-large;
 }
 
 #follow {
- 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 34px;
+  width: 260px;
+  margin-left: 1%;
   border-radius: 10px;
   border: 5px double white;
   background-color: rgb(9, 9, 9);
   color: white !important;
 }
-
 #follow:hover {
   border: 5px double rgb(64, 105, 239);
 }
-
-.edit_pprofile:hover {
-  color: #CEF6F5;
-}
-
-.edit_pprofile {
-  text-decoration: none;
-  color: white;
-}
-
-#about {
-
+.about p:first-child {
+  margin-bottom: -1%;
   color: red;
-  margin-top: -10%;
-
+  font-weight: bold;
 }
-
-#bio {
-
-  display: flex;
-  justify-content: left;
-  width: 150%;
+.about {
+  margin-top: 5%;
+  text-align: left !important;
 }
-
 .btn_post_fav {
-
-
+  display: flex;
+  margin-top: 1%;
+  justify-content: center;
 }
 
-.img_user img {
-  background-color: black;
-  border-radius: 100px;
-  border: 10px double white;
+@media screen and (max-width: 1260px) {
+  .flex {
+    width: 40%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1%;
+  }
 
-} */
+  .img_username {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about {
+    text-align: center !important;
+  }
+
+  #follow { 
+    width: 70%;
+    margin: 0px auto ;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .flex {
+    margin-left: 30%;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  #follow { 
+    width: 80%;
+  }
+  .about {
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #follow { 
+    width: 90%;
+  }
+  .about {
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  #follow { 
+    width: 100%;
+  }
+  .about {
+    text-align: center !important;
+  }
+}

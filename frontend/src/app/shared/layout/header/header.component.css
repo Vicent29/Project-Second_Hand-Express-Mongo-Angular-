@@ -1,171 +1,103 @@
-*
-{
-    -wibkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -o-box-sizing:border-box;
-    box-sizing:border-box;
-    padding:0px;
-    margin:0px;
+* {
+  -wibkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* End Global Rules */
 
-.container
-{
-    margin:auto;
-    padding-left:15px;
-    padding-right:15px;
+.container {
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
 
 /* Start Style NavBar  */
 
-nav{
-    background-color: black; 
-    width: 100%;
-    height: 85px;
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    border-bottom: 5px solid white;
+nav {
+  background-color: black;
+  width: 100%;
+  height: 85px;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: 5px solid white;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 li {
-    display: inline-block;
-    float:left;
-    padding:10px;
-    font-size:25px;
-    width: auto;
+  display: inline-block;
+  float: left;
+  padding: 10px;
+  font-size: 25px;
+  width: auto;
 }
 
-a{
-    color:#FFF;
-    text-decoration:none;
-    font-weight:bold;
+a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-a:hover{
-    color:#e4e6e7;
-    text-decoration: none;  
+a:hover {
+  color: #e4e6e7;
+  text-decoration: none;
 }
 
-#logo{
-    margin:20px 0 20px 20px;
-    font-family:sans-serif;
-    font-size:30px;
-    cursor:pointer;
-    color:#e4e6e7;
-    float:left;
-    height:50px;
-    display:block;
+#logo {
+  margin: 20px 0 20px 20px;
+  font-family: sans-serif;
+  font-size: 30px;
+  cursor: pointer;
+  color: #e4e6e7;
+  float: left;
+  height: 50px;
+  display: block;
 }
 
 #logo img {
   width: 20%;
 }
 
-#logo:hover{
-    text-decoration:none;
-    font-weight: bold;
-    color: #CEF6F5 !important;
-    font-style: italic;
+#logo:hover {
+  text-decoration: none;
+  color: #fff;
 }
 
-.links{
-    float:right;
-    padding:18px;
+.links {
+  float: right;
+  padding: 18px;
 }
 
-a .image{
-    display:none;
+a .image {
+  display: none;
 }
 
-#menu-icon{
-    display:hidden;
-    width:32px;
-    height:32px;
+#menu-icon {
+  display: hidden;
+  width: 32px;
+  height: 32px;
 }
 
 .info_user img {
   width: 40px;
-  background-color: #CEF6F5;
+  background-color: #cef6f5;
   border-radius: 50px;
-}
-
-.info_user img:hover {
-  background-color: bisque;
-}
-
-.info_user p:hover {
- color: bisque
 }
 
 .info_user p {
   text-transform: uppercase;
 }
-.fa-heart, .fa-right-from-bracket {
-  font-size: xx-large;
-}
 
-.fa-heart:hover {
+.cor:hover {
   color: red;
-
-}
-
-.fa-right-from-bracket:hover {
-color: rgb(117, 234, 117);
-}
-.opc1:hover{
-  font-weight: bold;
-  color: #CEF6F5 !important;
-  font-style: italic;
-}
-
-
-@media (max-width: 990px) 
-{
-#menu-icon{
-        display:inline-block;
-}
-.links{
-    padding:20px 10px;
-}    
-    
-.links ul {
-        
-    display:none;
-    position:absolute;
-    padding:20px;
-    background-color: black;
-    top:76px;
-    right:10px;
-    width:40%;
-    border: 2px solid white;
-
-        
-}
-    
-.links:hover ul{
-    display:block;
-      
-}
-    
-.links li    {
-    text-align:center;
-    width:100%;
-    padding:15px 0;
-    margin:0;
-    border: 2px solid white;
-}
-
-.img_profile {
-  position: relative;
-  margin-top: -150%;
 }
 
 .li_name {
@@ -176,8 +108,39 @@ color: rgb(117, 234, 117);
   border-top: 0px !important;
 }
 
-.div_user {
-  background-color: red !important;
-}
-    
+@media (max-width: 990px) {
+  #menu-icon {
+    display: inline-block;
+  }
+  .links {
+    padding: 20px 10px;
+  }
+
+  .links ul {
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background-color: black;
+    top: 76px;
+    right: 10px;
+    width: 40%;
+    border: 2px solid white;
+  }
+
+  .links:hover ul {
+    display: block;
+  }
+
+  .links li {
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
+    margin: 0;
+    border: 2px solid white;
+  }
+
+  .img_profile {
+    position: relative;
+    margin-top: -150%;
+  }
 }

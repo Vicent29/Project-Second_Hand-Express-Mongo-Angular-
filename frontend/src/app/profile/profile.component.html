@@ -1,46 +1,44 @@
 <div class="all_profile">
-  <div class="div_profile_user">
 
-
-    <div class="inf_user">
-      <img src="https://avatars.dicebear.com/api/personas/{{profile.username}}.svg" alt="user image" class="user-img" />
+  <div class="flex"> 
+    <div class="img_username">
+      <img src="https://avatars.dicebear.com/api/personas/{{ profile.username }}.svg" alt="user image" class="user-img"/>
       <p>{{ profile.username }}</p>
     </div>
 
-
-
-    <div class="grid">
-      <div class="num_followers">
-        <p>{{countFollowers}}</p>
-        <p>FOLLOWERS</p>
-      </div>
-      <div class="num_follows">
-        <p>{{countFollowing}}</p>
-        <p>FOLLOWING</p>
+    <div class="info_right">
+      <div class="info_foll">
+        <div class="num_followers">
+          <p>{{ countFollowers }}</p>
+          <p>FOLLOWERS</p>
+        </div>
+        <div class="num_follows">
+          <p>{{ countFollowing }}</p>
+          <p>FOLLOWING</p>
+        </div>
       </div>
       <div id="follow">
-        <app-follow-button [hidden]="isUser" [emit]="emit" [profile]="profile" (toggle)="onToggleFollowing($event)">
-        </app-follow-button>
+        <app-follow-button [hidden]="isUser" [emit]="emit" [profile]="profile" (toggle)="onToggleFollowing($event)"></app-follow-button>
         <a [routerLink]="['/settings']" [hidden]="!isUser" class="edit_pprofile">
-          <i class="fa-solid fa-user-pen"></i> Edit my profile </a>
+          <i class="fa-solid fa-user-pen"></i> Edit my profile
+        </a>
       </div>
-      <p id="about">ABOUT ME:</p>
-      <p id="bio">{{ profile.bio }}</p>
+      <div class="about">
+        <p id="about">ABOUT ME:</p>
+        <p id="bio">{{ profile.bio }}</p>
+      </div>
     </div>
-
-  </div>
-
+</div>
 
   <div class="btn_post_fav">
     <div class="articles-toggle">
       <ul class="nav nav-pills outline-active">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            [routerLink]="['/profile/', profile.email]">My Posts</a>
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/profile/', profile.email]">My Posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-            [routerLink]="['/profile/', profile.email, 'favorites', profile.email]"> Favorited Posts </a>
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/profile/',profile.email,'favorites',profile.email]">Favorited Posts
+          </a>
         </li>
       </ul>
     </div>
