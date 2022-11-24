@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo_container
+    volumes:
+      - "./mongo/import.sh:/docker-entrypoint-initdb.d/import.sh"
+      - ./mongo/dump/first_proyect_prod:/dump
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: first_proyect_prod
+    restart: always
+  backend:
+    image: imageName
