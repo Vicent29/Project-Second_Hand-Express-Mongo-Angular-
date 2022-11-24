@@ -1,5 +1,6 @@
 version: '3'
 services:
+  #crearemos un servicio que utilizaremos para realizar la conexión a la base de datos
   mongodb:
     image: mongo
     container_name: mongo_container
@@ -8,7 +9,7 @@ services:
       - ./mongo/dump/first_proyect_prod:/dump
     restart: always
     networks:
-      - wishpop
+      - practica_net
   backend:
     build: ./backend
     container_name: backend_container
@@ -17,10 +18,20 @@ services:
     ports:
       - 3000:3000
     networks:
-      - wishpop
+      - practica_net
     command: npm run dev
     restart: always
   frontend:
     build: ./frontend
+    container_name: frontend_container
+    ports:
+      - 4200:4200
+    command: npm run start
+    restart: always
+    depends_on:
+      - backend
+    networks:
+      - practica_net
+# Necesitaremos declarar una network para que los diferentes servicos se puedean comunicar entre ellos
 networks:
-  wishpop:
+  practica_net:
