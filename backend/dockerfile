@@ -1,0 +1,18 @@
+# STAGE 1
+FROM node:19-alpine AS install
+WORKDIR /app
+COPY package.json .
+RUN npm install
+
+# STAGE 2
+FROM node:19-alpine
+WORKDIR /app
+COPY --from=install /app/node_modules ./node_modules
+# COPY --from=install package-lock.json ./package-lock.json
+COPY package.json .
+COPY package-lock.json .
+COPY app ./app
+COPY server.js .
+COPY ./env_example.txt ./.env
+RUN apk update && apk add bash
+EXPOSE 3000

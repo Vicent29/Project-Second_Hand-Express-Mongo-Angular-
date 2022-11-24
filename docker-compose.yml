@@ -6,10 +6,21 @@ services:
     volumes:
       - "./mongo/import.sh:/docker-entrypoint-initdb.d/import.sh"
       - ./mongo/dump/first_proyect_prod:/dump
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
-      MONGO_INITDB_DATABASE: first_proyect_prod
     restart: always
+    networks:
+      - wishpop
   backend:
-    image: imageName
+    build: ./backend
+    container_name: backend_container
+    depends_on:
+      - mongodb
+    ports:
+      - 3000:3000
+    networks:
+      - wishpop
+    command: npm run dev
+    restart: always
+  frontend:
+    build: ./frontend
+networks:
+  wishpop:
