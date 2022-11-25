@@ -50,5 +50,5 @@ variables.env
 
 # Secret
 
-app/config
+# app/config
 *.env
