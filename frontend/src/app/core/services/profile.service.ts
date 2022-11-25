@@ -6,7 +6,7 @@ import { Profile } from '../models/profile.model';
 import { User } from '../models/user.model';
 import { map } from 'rxjs/operators';
 
-const baseUrl = 'http://localhost:3000/profile';
+const baseUrl = 'http://localhost:8082/api/profile';
 
 @Injectable({
   providedIn: 'root',

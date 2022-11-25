@@ -5,7 +5,7 @@ import { Comment } from '../models';
 import { map } from 'rxjs/operators';
 import { Product } from '../models/product.model';
 
-const baseUrl = 'http://localhost:3000/product';
+const baseUrl = 'http://localhost:8082/api/product';
 
 @Injectable({
   providedIn: 'root'

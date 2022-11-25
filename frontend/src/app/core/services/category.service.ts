@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Category } from '../models/category.model';
 import { Product } from '../models/product.model';
 
-const baseUrl = 'http://localhost:3000/category';
+const baseUrl = 'http://localhost:8082/api/category';
 
 @Injectable({
   providedIn: 'root'

@@ -6,7 +6,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { JwtService } from './jwt.service';
 import { User } from '../models';
 import { map, distinctUntilChanged } from 'rxjs/operators';
-const baseUrl = 'http://localhost:3000/user';
+const baseUrl = 'http://localhost:8082/api/user';
 
 @Injectable({
   providedIn: 'root',

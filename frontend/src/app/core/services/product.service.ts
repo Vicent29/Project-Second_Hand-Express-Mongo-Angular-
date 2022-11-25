@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 import { prepareEventListenerParameters } from '@angular/compiler/src/render3/view/template';
 
-const baseUrl = 'http://localhost:3000/product';
+const baseUrl = 'http://localhost:8082/api/product';
 
 @Injectable({
   providedIn: 'root'

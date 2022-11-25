@@ -5,6 +5,7 @@ COPY package.json .
 RUN npm install
 
 # STAGE 2 --> copiaremos todas las dependencias necesarias del Stage 1 y los archivos y variables de entorno que necesitaremos del proyecto.
+FROM node:19-alpine
 WORKDIR /app
 COPY --from=install /app/node_modules ./node_modules
 COPY package.json .
