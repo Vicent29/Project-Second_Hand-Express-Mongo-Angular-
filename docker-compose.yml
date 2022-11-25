@@ -55,6 +55,16 @@ services:
       - "8082:80"
     restart: always
     command: nginx -g 'daemon off;'
+  prometheus:
+    image: prom/prometheus:v2.20.1
+    ports:
+      - "9090:9090"
+    container_name: prometheus_practica
+    volumes:
+    - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+    networks:
+      - practica_net
+    command: --config.file=/etc/prometheus/prometheus.yml
 # Necesitaremos declarar una network para que los diferentes servicos se puedean comunicar entre ellos
 networks:
   practica_net:

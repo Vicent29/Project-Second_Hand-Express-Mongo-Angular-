@@ -1,3 +1,4 @@
+const client = require('prom-client');
 const dotenv = require("dotenv").config()
 const express = require('express');
 const cors = require("cors");
@@ -13,10 +14,51 @@ const app = express();
 var corsOptions = {
     origin: process.env.CORSURL || "http://localhost:4200"
 };
-app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false  }));
+app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 
 app.use(cors(corsOptions));
 app.use(logger('dev'));
+
+
+
+
+
+const collectDefaultMetrics = client.collectDefaultMetrics;
+collectDefaultMetrics({ timeout: 5000 });
+
+const counterHomeEndpoint = new client.Counter({
+    name: 'counterHomeEndpoint',
+    help: 'The total number of processed requests'
+});
+
+const counterMessageEndpoint = new client.Counter({
+    name: 'counterMessageEndpoint',
+    help: 'The total number of processed requests to get endpoint'
+});
+
+
+app.get('/', (req, res) => {
+    counterHomeEndpoint.inc();
+    res.send('Hello world\n');
+});
+
+app.get('/message', (req, res) => {
+    counterMessageEndpoint.inc();
+    res.send('Message endpoint\n');
+});
+
+
+app.get('/metrics', (req, res) => {
+    res.set('Content-Type', client.register.contentType);
+    // res.end(client.register.metrics());
+    client.register.metrics().then(data => res.send(data));
+});
+
+
+
+
+
+
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -39,9 +81,9 @@ mongoose.connect(dbConfig, {
 });
 
 // define a simple route
-app.get('/', (req, res) => {
-    res.json({ "message": "Welcome to Second Hand application. Organize and keep track of all your products." });
-});
+// app.get('/', (req, res) => {
+//     res.json({ "message": "Welcome to Second Hand application. Organize and keep track of all your products." });
+// });
 
 require('./app/models/');
 require('./app/config/passport');
