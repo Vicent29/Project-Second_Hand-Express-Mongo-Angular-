@@ -25,7 +25,7 @@ sudo docker compose up --build
 # Documentación del proyecto:
 
 ## DOCKER-COMPOSE:
-En el [docker-compose](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/docker-compose.yml) es el archivo que se encargara de ejecutar cada uno de los servicios que componene la aplicación. En Wishpop hemos configurado los siguientes servicios:
+En el [docker-compose](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/docker-compose.yml) es el archivo que se encargará de ejecutar cada uno de los servicios que componenen la aplicación. En Wishpop hemos configurado los siguientes servicios:
 - mongodb
 - backend
 - frontend
@@ -49,11 +49,11 @@ En el [docker-compose](https://github.com/Vicent29/Project-Second_Hand-Express-M
     networks:
       - practica_net
 ```
-- En restore se relaizara en un script, el cual lo podemos encontrar con el nombre de [import.sh](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/mongo/import.sh) dentro de la carpeta de mongo.
+- En restore se realizará en un script, el cual lo podemos encontrar con el nombre de [import.sh](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/mongo/import.sh) dentro de la carpeta de mongo.
 
 ## 🔹Contenedor / Servicio [BACKEND](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/tree/master_docker_compose/backend) :
 
-- En primer lugar, crearemos un [dockerfile_backend](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/backend/dockerfile) el cual estará formado por 2 stage, las cuales partiran de una imagen "node:19-alpine", que tendran una contextura para crear una imagen del backend, la cual utilizaresmo más adelante en el [docker-compose](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/docker-compose.yml), hay que añadir que partirá del puerto 3000.
+- En primer lugar, crearemos un [dockerfile_backend](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/backend/dockerfile) el cual estará formado por 2 stage, las cuales partiran de una imagen "node:19-alpine", que tendran una contextura para crear una imagen del backend, la cual utilizaremos más adelante en el [docker-compose](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/docker-compose.yml), hay que añadir que partirá del puerto 3000.
 
 ```
 # STAGE 1
@@ -75,7 +75,7 @@ RUN apk update && apk add bash
 EXPOSE 3000
 ```
 
-- Este servicio se encargará de generar imagen de la parte backend del proyecto. El servicio se denominará "backend_container", partirá de una imagen creada por su [dockerfile_backend](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/backend/dockerfile) y no se ejecutará hasta que el servicio de "mongodb" este funcionando. Por otra parte, le hemos asignado el puerto 30000:3000, además tambien hemos añadido el "restart" y la "network" correspondiente como en el servicio anetrior. Por último, cuando el contendor este levantado ejecutará el "npm run dev", el cual arrancará el backend.
+- Este servicio se encargará de generar imagen de la parte backend del proyecto. El servicio se denominará "backend_container", partirá de una imagen creada por su [dockerfile_backend](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/backend/dockerfile) y no se ejecutará hasta que el servicio de "mongodb" este funcionando. Por otra parte, le hemos asignado el puerto 30000:3000, además también hemos añadido el "restart" y la "network" correspondiente como en el servicio anetrior. Por último, cuando el contendor este levantado ejecutará el "npm run dev", el cual arrancará el backend.
 
 ```
  #Servivio de backend
@@ -109,7 +109,7 @@ COPY . .
 RUN apk update && apk add bash
 EXPOSE 4200
 ```
-- Este servicio se encargará de generar imagen de la parte frontend del proyecto. El servicio se denominará "frontend_container", partirá de una iamgen creada por su [dockerfile_frontend](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/frontend/Dockerfile) y no se ejecutará hasta que el servicio de "backend" este funcionando. Por otra parte, le hemos asignado el puerto 4200:4200, ademas tambien hemos añadido el "restart" y la "network" correspondiente como en el servicio anetrior. Por último, cuando el contendor este levantado ejecutará el "npm run start", el cual arrancará el frontend.
+- Este servicio se encargará de generar imagen de la parte frontend del proyecto. El servicio se denominará "frontend_container", partirá de una iamgen creada por su [dockerfile_frontend](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/frontend/Dockerfile) y no se ejecutará hasta que el servicio de "backend" este funcionando. Por otra parte, le hemos asignado el puerto 4200:4200, además también hemos añadido el "restart" y la "network" correspondiente como en el servicio anetrior. Por último, cuando el contendor este levantado ejecutará el "npm run start", el cual arrancará el frontend.
 
 ```
   #Servicio de frontend
@@ -164,7 +164,7 @@ EXPOSE 4200
     command: nginx -g 'daemon off;'
 ```
 - Tendremos que modificar en el backend el router ([idex.js](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/backend/app/routes/index.js)) y añadir "/api" 
-- Ademas hemos tenido que modificar todos los "servicies" en el frontend para poder realizar las redirecciones correctamente.
+- Además hemos tenido que modificar todos los "servicies" en el frontend para poder realizar las redirecciones correctamente.
     - [Service Category](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/frontend/src/app/core/services/category.service.ts)
     - [Service Comment](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/frontend/src/app/core/services/comment.service.ts)
     - [Service Product](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/frontend/src/app/core/services/product.service.ts)
@@ -191,7 +191,7 @@ EXPOSE 4200
 ```
 
 ## 🔹Contenedor / Servicio [GRAFANA](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/tree/master_docker_compose/prometheus) :
-- Este servicio se encargará de la visualización y el formato de datos métricos del Prometheus.Para ello partiremos de una imagen de grafana:7.1.5, el nombre del contendor "grafana_practica",el cual asociaremos a los puertos 3500:3000. Por otra parte crearemos un volumen el cual se encargara de la [configuración de grafana](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/prometheus/datasources.yml) la cual se encuentra dentro de la carpeta [prometheus](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/tree/master_docker_compose/prometheus) y otro volumen  creado en el docker-compose myGrafanaVol asociandolo a var/lib/grafana. Seguidamente le idicamos el [archivo .env](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/prometheus/.env) que contiene las variables de entorno, Por ultimo le asignaremos la "network" para la comunicación con los otros servicios y lo cofiguraremmos para que se ejecute cuando el servico de "prometheus" funcione correctamente.
+- Este servicio se encargará de la visualización y el formato de datos métricos del Prometheus.Para ello partiremos de una imagen de grafana:7.1.5, el nombre del contendor "grafana_practica",el cual asociaremos a los puertos 3500:3000. Por otra parte crearemos un volumen el cual se encargará de la [configuración de grafana](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/prometheus/datasources.yml) la cual se encuentra dentro de la carpeta [prometheus](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/tree/master_docker_compose/prometheus) y otro volumen  creado en el docker-compose myGrafanaVol asociandolo a var/lib/grafana. Seguidamente le idicamos el [archivo .env](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/prometheus/.env) que contiene las variables de entorno, Por ultimo le asignaremos la "network" para la comunicación con los otros servicios y lo cofiguraremos para que se ejecute cuando el servico de "prometheus" funcione correctamente.
 
 ```
 #Servicio de Grafana, nos permite la visualización y el formato de datos métricos del Prometheus
@@ -213,7 +213,7 @@ EXPOSE 4200
 ```
 - Para comprobar el uso de grafana, entraemos [aqui]{(http://localhost:3500):
     - Pulsaremos en el ➕ , CREATE, New panel
-    - Configuraremos las metricas bajo a la izquierda, por ejemplo seleccionaremos "counterMessageEndpoint"
+    - Configuraremos las métricas bajo a la izquierda, por ejemplo seleccionaremos "counterMessageEndpoint"
     - Guardaremos el Dashboard arriba a la derecha.
     - Por último, para comprobar que funciona correctamente, ponemos en otra ventana del navegador "http://localhost:3000/message" o pulsa [aqui](http://localhost:3000/message)
     - Si vuleves al dashboard de grafana deberías de ver una modificación en el gráfico.
