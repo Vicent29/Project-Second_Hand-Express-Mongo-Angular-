@@ -227,7 +227,7 @@ EXPOSE 4200
 - [Loadbalancer_Backend_Categories](http://localhost:8082/api/category) 
 - [Loadbalncer_Frontend](http://localhost:8082/)  
 - [Mongo-Express](http://localhost:8081)
-- [Prometheus](http://localhost:9090)
+- [Prometheus](http://localhost:9090/targets)
 - [Prometheus Metrics](http://localhost:3000/metrics)
 - [Graphana](http://localhost:3500)
 
