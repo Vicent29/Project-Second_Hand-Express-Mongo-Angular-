@@ -1,6 +1,6 @@
 version: '3'
 services:
-  #crearemos un servicio que utilizaremos para realizar la conexión a la base de datos
+  #Servivo de Mongo para la base de datos
   mongodb:
     image: mongo
     container_name: mongo_container
@@ -10,6 +10,7 @@ services:
     restart: always
     networks:
       - practica_net
+  #Servivio de backend
   backend:
     build: ./backend
     container_name: backend_container
@@ -21,6 +22,7 @@ services:
       - practica_net
     command: npm run dev
     restart: always
+  #Servivio de frontend
   frontend:
     build: ./frontend
     container_name: frontend_container
@@ -32,6 +34,7 @@ services:
       - backend
     networks:
       - practica_net
+  #Servio de Mongo con express para monitorizar y administrar la base de datos con una iterface
   mongo-express:
     image: mongo-express
     container_name: adminMongo_container
@@ -44,6 +47,7 @@ services:
     restart: always
     networks:
       - practica_net
+  #Servicio de Loadbalancer para repartir o administrar la carga 
   loadbalancer_nginx:
     image: nginx
     container_name: loadbalancer
@@ -55,16 +59,36 @@ services:
       - "8082:80"
     restart: always
     command: nginx -g 'daemon off;'
+  #Servicio de Prometheus para monitorizar las metricas
   prometheus:
     image: prom/prometheus:v2.20.1
     ports:
       - "9090:9090"
     container_name: prometheus_practica
     volumes:
-    - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+    - "./prometheus/:/etc/prometheus"
     networks:
       - practica_net
     command: --config.file=/etc/prometheus/prometheus.yml
-# Necesitaremos declarar una network para que los diferentes servicos se puedean comunicar entre ellos
+  #Servicio de Grafana, nos permite la visualización y el formato de datos métricos del Prometheus
+  grafana:
+    image: grafana/grafana:7.1.5
+    container_name: grafana_practica
+    restart: always
+    ports:
+      - "3500:3000"
+    volumes:
+      - ./prometheus/datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+      - myGrafanaVol:/var/lib/grafana
+    env_file:
+      - ./prometheus/.env
+    depends_on:
+      - prometheus
+    networks:
+      - practica_net
+#Red que utilizara todos los servicios para poder comunicarse entre ellos
 networks:
   practica_net:
+#Declaración de volumenes
+volumes:
+  myGrafanaVol:

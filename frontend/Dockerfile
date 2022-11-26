@@ -2,7 +2,7 @@
 FROM node:19-alpine AS install
 WORKDIR /app
 COPY package.json .
-RUN npm install
+RUN ["npm", "install"]
 
 # STAGE 2
 FROM node:19-alpine

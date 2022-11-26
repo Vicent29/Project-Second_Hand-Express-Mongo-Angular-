@@ -1,10 +1,10 @@
-# STAGE 1 --> encargado de instalar todas las dependencias necesarias.
+# STAGE 1
 FROM node:19-alpine AS install
 WORKDIR /app
 COPY package.json .
 RUN npm install
 
-# STAGE 2 --> copiaremos todas las dependencias necesarias del Stage 1 y los archivos y variables de entorno que necesitaremos del proyecto.
+# STAGE 2
 FROM node:19-alpine
 WORKDIR /app
 COPY --from=install /app/node_modules ./node_modules

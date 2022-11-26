@@ -1,55 +1,64 @@
-# Wishpop
+# Wishpop - Docker
 
 Produced by [Santi Martínez Albert](https://github.com/santimaal) and [Vicent Esteve Ferre](https://github.com/Vicent29)
 
-## Tech
+# 🤷‍♂️¿Como arrancarlo?
 
-Las tecnologias empleadas para estre proyecto son:
-
-- [Express](https://expressjs.com/es/) - version 4.17.1 - backend
-- [Angular](https://angular.io/) version 13.3.0 - frontend
-
-## Funciones
-
-La web se compone de 5 ventanas principalmente:
-
-
-1. __Toda la web:__ 
-Al largo de la web tenemos algunas funciones que se pueden realizar desde cualquier ventana.
-  * Search/Buscador de productos
-
-2. __Home:__ 
-En la ventana Home el usuario tiene su primera impresión sobre nuestra tienda, donde se puede observar un carousel y un infinite-scroll con las diferentes categorias que tenemos en nuestra tienda.
-  * Carousel con salto de página
-  * Infinite-scroll con salto a página
-
-3. __Shop:__ 
-La tienda que tiene nuestra web es lo mas importante, ya que en esta se puede hacer una busqueda mediante diferentes filtros, también podemos elegir el precio por un rango, uso y si esta en stock o en tienda . Cuando estas interesado sobre un producto puede hacer click donde le lleva a una informacion concisa sobre el producto seleccionado. También tenemos un marcador de me gustas para que el usuario cuando inicie sesión de nuevo pueda ver los productos que le gustaron.
-  * Listado de productos
-  * Filtrar productos
-  * Paginación
-
-4. __Login/Register:__
-En nuestra tienda cualquier usuario puede registrarse y posteriormente loguearse, también puede ver los productos de ese mismo usuario y el de otros, dar like a los productos y dar follow a otros usuarios.
-
-5. __Profile:__
-En nustra tienda puede ver su perfil y el de otros usuarios, ver sus productos y sus likes, también puede cambiar su nombre de usuario y su contraseña entre otros.
-
-<!-- 
-And of course Santi's snake itself is open source with a [public repository](https://github.com/santimaal/snakejs)
- on GitHub.
-
-## Installation
-
-Santi's snake requires [Node.js](https://nodejs.org/) v10+ to run.
-
-Install the dependencies and devDependencies and start the server.
-
-```s
-npm install
-npm run dev
+- En primer lugar, debemos de tener docker instalado en nuestro dispositivo:
+```
+sudo apt-get install docker-engine -y
+sudo service docker start
+sudo service docker status --> comprobar que esta arrancado
 ```
 
-> Note: if the backend isn't running, u can't do the login/register
+- En segundo lugar, nos descargaremos el proyecto entero y dentro del proyecto comprobaremos que estamos dentro de la rama dockerizada (***master_docker_compose***):
+```
+git clone https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-.git
+git branch 
+```
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax) -->
+- Por ultimo, pondremos el cotenedor en marcha (el ***"--build"*** es opcional, lo utilizaremos para volver a crear la imagen): 
+```
+sudo docker compose up --build
+```
+
+# Documentación del proyecto:
+
+## DOCKER-COMPOSE:
+En el [docker-compose](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/blob/master_docker_compose/docker-compose.yml) es el archivo que se encargara de ejecutar cada uno de los servicios que componene la aplicación. En Wishpop hemos configurado los siguientes servicios:
+- mongodb
+- backend
+- frontend
+- mongo-express
+- loadbalancer_nginx
+- prometheus
+- grafana
+
+## Contenedor / Servicio [MONGODB](https://github.com/Vicent29/Project-Second_Hand-Express-Mongo-Angular-/tree/master_docker_compose/mongo) :
+
+## Contenedor / Servicio BACKEND :
+
+## Contenedor / Servicio FRONTEND :
+
+## Contenedor / Servicio MONGO-EXPRESS :
+
+## Contenedor / Servicio LOADBALANCER :
+
+## Contenedor / Servicio PROMETHEUS :
+
+## Contenedor / Servicio GRAFANA :
+
+
+# 🖇 Redirecciones para cada uno de los servicios
+- [Backend_Products](http://localhost:3000/api/product) 
+- [Backend_Categories](http://localhost:3000/api/category) 
+- [Frontend](http://localhost:4200) 
+- [Loadbalancer_Backend_Products](http://localhost:8082/api/product) 
+- [Loadbalancer_Backend_Categories](http://localhost:8082/api/category) 
+- [Loadbalncer_Frontend](http://localhost:8082/)  
+- [Mongo-Express](http://localhost:8081)
+- [Prometheus](http://localhost:9090)
+- [Prometheus Metrics](http://localhost:3000/metrics)
+- [Graphana](http://localhost:3500)
+- [Dashboard-example_Message_Graphana](http://localhost:3500/d/TcMVUrOVz/dashboard-message?orgId=1)
+
