@@ -10,7 +10,7 @@ services:
     restart: always
     networks:
       - practica_net
-  #Servivio de backend
+  #Servicio de backend
   backend:
     build: ./backend
     container_name: backend_container
@@ -22,7 +22,7 @@ services:
       - practica_net
     command: npm run dev
     restart: always
-  #Servivio de frontend
+  #Servicio de frontend
   frontend:
     build: ./frontend
     container_name: frontend_container
@@ -34,7 +34,7 @@ services:
       - backend
     networks:
       - practica_net
-  #Servio de Mongo con express para monitorizar y administrar la base de datos con una iterface
+  #Servicio de Mongo con express para monitorizar y administrar la base de datos con una iterface
   mongo-express:
     image: mongo-express
     container_name: adminMongo_container
