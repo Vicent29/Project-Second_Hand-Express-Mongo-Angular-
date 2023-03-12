@@ -1,4 +1,4 @@
-#🔸 Wishpop
+# 🔸Wishpop
 
 Produced by [Santi Martínez Albert](https://github.com/santimaal) and [Vicent Esteve Ferre](https://github.com/Vicent29)
 
